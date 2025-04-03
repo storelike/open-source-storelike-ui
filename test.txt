@@ -1,3 +1,5 @@
 echo "Test PR" > test.txt
 git add test.txt
 git commit -m "Добавил тестовый файл"
+
+git push origin test-pr

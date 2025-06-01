@@ -1,15 +1,11 @@
 # build output
 dist/
-/build/
 
 # generated types
 .astro/
 
 # dependencies
 node_modules/
-# React Router
-/.react-router/
-
 
 # logs
 npm-debug.log*

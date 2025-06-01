@@ -1,0 +1,30 @@
+{
+  "name": "molecular-mercury",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "prepare": "ts-node generate-tsconfig-paths.ts",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/partytown": "^2.1.4",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/sitemap": "^3.4.0",
+    "@tailwindcss/vite": "^4.1.8",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "astro": "^5.8.1",
+    "astro-icon": "^1.1.5",
+    "astro-seo": "^0.8.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.6.1",
+    "tailwindcss": "^4.1.8"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}

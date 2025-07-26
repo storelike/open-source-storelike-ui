@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import UserAgreementReact from "../components/react-components/flatpages-react/user-agreement";
+import localeTextSite from "../locale/locale_text_site.json";
+---
+
+<Layout
+	title={localeTextSite.pages.userAgreement.title}
+	description={localeTextSite.pages.userAgreement.description}>
+	<Container>
+		<UserAgreementReact client:load />
+	</Container>
+</Layout>

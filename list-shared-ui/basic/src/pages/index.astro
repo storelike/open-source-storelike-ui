@@ -1,0 +1,20 @@
+---
+import Container from "../components/Container.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import seoData from '../const/seo/seo-data-site.json'
+import Reviews from "../components/Reviews.astro";
+import FAQ from "../components/FAQ.astro";
+import ListProductSection from "../components/ListProductSection.astro";
+import Features from "../components/Features.astro";
+---
+
+<Layout title={seoData.SITE_TITLE} description={seoData.SITE_DESCRIPTION}>
+  <Container>    
+    <Hero />
+    <Features />
+    <ListProductSection />
+    <Reviews />
+    <FAQ />
+  </Container>
+</Layout>

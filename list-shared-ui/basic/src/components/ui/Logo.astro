@@ -1,0 +1,13 @@
+---
+import PropsLogoNavbar from '../../const/navbar/logo.json'
+---
+
+<a href="/" class="flex items-center lg:space-x-2">
+  <img
+    src={PropsLogoNavbar.path}
+    alt={PropsLogoNavbar.alt}
+    width={PropsLogoNavbar.widthLogo}
+    height={PropsLogoNavbar.heightLogo}
+  />
+  {PropsLogoNavbar.isTitle && <span class="font-bold text-[clamp(6px,4vw,18px)]">{PropsLogoNavbar.title}</span>}
+</a>

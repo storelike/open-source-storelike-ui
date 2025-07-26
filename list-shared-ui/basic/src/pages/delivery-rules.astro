@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import DeliveryRulesReact from '../components/react-components/flatpages-react/delivery-rules';
+import localeTextSite from "../locale/locale_text_site.json";
+---
+
+<Layout
+	title={localeTextSite.pages.deliveryRules.title}
+	description={localeTextSite.pages.deliveryRules.description}
+>
+<Container>   
+	<DeliveryRulesReact client:load />
+</Container>   
+</Layout>

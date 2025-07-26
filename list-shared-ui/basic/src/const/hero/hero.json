@@ -1,0 +1,21 @@
+{
+  "bgTheme": "black",
+  "textColorTheme": "white",
+  "bgBtnOne": "#db1200",
+  "colorBtnOne": "linear-gradient(135deg, #E5E4E2, #C0C0C0, #B0B0B0, #FFFFFF); box-shadow: 10px 0 20px rgba(255, 255, 255, 0.8), 0 0 20px rgba(224, 224, 224, 0.5); border-radius: 10px; filter: brightness(1.2) contrast(1.1); padding: 15px; color: #ccfaf5;",
+  "bgBtnTwo": "black",
+  "colorBtnTwo": "linear-gradient(135deg, #E5E4E2, #C0C0C0, #B0B0B0, #FFFFFF); box-shadow: 10px 0 20px rgba(55, 255, 255, 0.8), 0 0 40px rgba(224, 224, 224, 0.5); border-radius: 10px; filter: brightness(1.2) contrast(1.1); padding: 15px; color: #ccfaf5;",
+  "title": "Помогаем бизнесу. \n\n \n\n Запустим САЙТ + БОТ + РЕКЛАМА + ИИ Ассистент.",
+  "subtitle": "# \n\n---\n\n## **✔️ Мгновенный старт** (Автоворонка продаж под ключ)\nЗапустите бизнес с готовым сайтом и рекламой.\n\n## **✔️ Полная гибкость и универсальность**\nМеняйте контент в любой момент — даже когда реклама в деле.\n\n## \nПодходит для **любого бизнеса** и задач.\n\n## **✔️ Доступно без абонентской оплаты**. \n\n---\n\n"
+  ,  "button_one":"Получить",
+  "button_two": "Заявка",
+  "isActiveBtnTwo": true,
+  "isActiveBtnOne": true,
+  "link_button_one": "/contact",
+  "link_button_two": "/call-to-action",
+  "isRoundedMainImg": true,
+  "isBlackAndWhitePhoto": false,
+  "isCustomHero" : false,
+  "isHeroBackgroundImg" : false,
+  "colorTextIsBackgroundImg" : "#ccfaf5"
+}

@@ -1,0 +1,51 @@
+{
+  "bgNavbar": "linear-gradient(135deg, #E5E4E2, #C0C0C0, #B0B0B0, #FFFFFF); box-shadow: 10px 0 20px rgba(255, 255, 255, 0.8), 0 0 20px rgba(224, 224, 224, 0.5); border-radius: 10px; filter: brightness(1.2) contrast(1.1); padding: 15px; color: #ccfaf5;",
+  "textColorNavbar": "#000000",
+  "roundedNavbar": true,
+  "bgBurger": "#ffffff",
+  "textColorBurger": "#000000",
+  "links": [
+    {
+      "path": "/",
+      "label": "Главная",
+      "is_active": true
+    },
+    {
+      "path": "/about",
+      "label": "О нас",
+      "is_active": true
+    },
+    {
+      "path": "/products",
+      "label": "Услуги",
+      "is_active": true,
+      "badge": false,
+      "titleBadge": "Акция"
+    },
+    {
+      "path": "/portfolio",
+      "label": "Наши работы",
+      "is_active": true
+    },
+    {
+      "path": "/#reviews",
+      "label": "Отзывы",
+      "is_active": true
+    },
+    {
+      "path": "/contact",
+      "label": "Контакты",
+      "is_active": true
+    },
+    {
+      "path": "/offer-agreement",
+      "label": "Оферта",
+      "is_active": false
+    },
+    {
+      "path": "tel:+79500790722",
+      "label": "+7 (950) 079 07 22",
+      "is_active": true
+    }
+  ]
+}

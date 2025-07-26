@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import OfferAgreementReact from '../components/react-components/flatpages-react/offer-agreement';
+import localeTextSite from "../locale/locale_text_site.json";
+---
+
+<Layout
+	title={localeTextSite.pages.offerAgreement.title}
+	description={localeTextSite.pages.offerAgreement.description}
+>
+<Container>   
+	<OfferAgreementReact client:load />
+</Container>   
+</Layout>

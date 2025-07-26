@@ -1,0 +1,19 @@
+/* BurgerMenuButton.module.css */
+.burgerButton {
+  position: fixed;
+  z-index: 50;
+  top: 1.5rem; 
+  right: 1.5rem;
+  padding: 5px;
+  color: var(--burger-color);
+  transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.burgerButton:hover {
+  color: var(--burger-hover-color); /* Цвет при наведении */
+  
+}
+
+.burgerButton:focus {
+  outline: none; /* Убираем обводку */
+}

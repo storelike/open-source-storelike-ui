@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import PortfolioReact from '../components/react-components/flatpages-react/portfolio';
+import localeTextSite from "../locale/locale_text_site.json";
+---
+
+<Layout
+	title={localeTextSite.pages.portfolio.title}
+	description={localeTextSite.pages.portfolio.description}>
+<Container>   
+	<PortfolioReact client:load />
+</Container>   
+</Layout>

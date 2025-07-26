@@ -1,0 +1,20 @@
+---
+import Container from "../components/Container.astro";
+
+import Layout from "../layouts/Layout.astro";
+import seoData from '../const/seo/seo-data-site.json'
+import AppReact from "../components/react-components/app-react";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+
+---
+
+<Layout title=`${seoData.SITE_TITLE}` description=`${seoData.SITE_DESCRIPTION}`>
+  <Container>
+    <Hero />
+    <Features />   
+    <div class="flex items-center justify-center">
+   <AppReact client:only />  
+</div> 
+  </Container>
+</Layout>

@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import PrivacyPolicyReact from '../components/react-components/flatpages-react/privacy-policy';
+import localeTextSite from "../locale/locale_text_site.json";
+---
+
+<Layout
+title={localeTextSite.pages.privacyPolicy.title}
+description={localeTextSite.pages.privacyPolicy.description}>
+<Container>   
+	<PrivacyPolicyReact client:load />
+</Container>   
+</Layout>

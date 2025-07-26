@@ -1,0 +1,90 @@
+{
+  "BurgerMenu": {
+    "main_burger": {
+      "label": "Основной бургер",
+      "title": "ETStudio | Иркутск"
+    },
+    "main_burger_subtitle": {
+      "label": "Подзаголовок основного бургера",
+      "title": "Помогаем бизнесу быть онлайн. Без ежегодных и ежемесячных платежей."
+    },
+    "main": {
+      "label": "Главная страница",
+      "title": "Главная",
+      "is_active": true,
+      "link": "/"
+    },
+    "about": {
+      "label": "О нас",
+      "title": "О нас",
+      "is_active": true,
+      "link": "/about"
+    },
+    "products": {
+      "label": "Услуги",
+      "title": "Услуги",
+      "is_active": true,
+      "link": "/products"
+    },
+    "portfolio": {
+      "label": "Мои работы",
+      "title": "Наши работы",
+      "is_active": true,
+      "link": "/portfolio"
+    },
+    "offer_agreement": {
+      "label": "Соглашение оферта",
+      "title": "Соглашение оферта",
+      "is_active": true,
+      "link": "/offer-agreement"
+    },
+    "privacy_policy": {
+      "label": "Политика конфиденциальности",
+      "title": "Политика конфиденциальности",
+      "is_active": false,
+      "link": "privacy-policy"
+    },
+    "user_agreement": {
+      "label": "Пользовательское соглашение",
+      "title": "Пользовательское соглашение",
+      "is_active": false,
+      "link": "user-agreement"
+    },
+    "сontact": {
+      "label": "Контакты",
+      "title": "Контакты",
+      "is_active": true,
+      "link": "contact"
+    },
+    "delivery_rules": {
+      "label": "Правила доставки",
+      "title": "Правила доставки",
+      "is_active": false,
+      "link": "delivery-rules"
+    },
+    "phone": {
+      "label": "Номер телефона",
+      "title": "+79500790722"
+    },
+    "telegram_number": {
+      "label": "Номер Telegram",
+      "title": "ETStudio38Bot"
+    },
+    "whatsapp_number": {
+      "label": "Номер WhatsApp",
+      "title": "+79500790722"
+    },
+    "vk_link": {
+      "label": "вконтакте",
+      "title": "buildberries"
+    },
+    "email": {
+      "label": "Электронная почта",
+      "title": "team@x038it.ru"
+    },
+    "login": {
+      "label": "Кнопка входа",
+      "title": "Войти"
+    }
+  }
+}

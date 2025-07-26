@@ -1,0 +1,42 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "./Layout.astro";
+import FormSendOrderReact from "../components/react-components/form-send-order-react";
+import localeTextSite from "../locale/locale_text_site.json";
+
+interface AstroProps {
+  title: string;
+  price: number;
+  discount: number;
+  is_delivery: boolean;
+}
+
+const props: AstroProps = Astro.props as AstroProps;
+
+const { title, price, discount, is_delivery } = props;
+const priceDiscont = price - (price * discount) / 100;
+
+const orderDataSendTelegram = {
+  title,
+  discountedPrice:priceDiscont,
+  is_delivery
+};
+---
+
+
+<Layout title={title} description="">
+    <Container>
+     
+  
+     <FormSendOrderReact orderDataSendTelegram={orderDataSendTelegram} client:load />
+
+
+      <div class="text-center mt-8">
+        <a
+          href="/"
+          class=" bg-blue-500 px-5 py-3 rounded-md hover:bg-blue-700 transition"
+          >← {localeTextSite.globalSettings.btnToMain}</a
+        >
+      </div>
+    </Container>
+  </Layout>

@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import AboutReact from '../components/react-components/flatpages-react/about';
+import localeTextSite from "../locale/locale_text_site.json";
+---
+
+<Layout
+	title={localeTextSite.pages.about.title}
+	description={localeTextSite.pages.about.description}
+>
+<Container>   
+	<AboutReact client:load />
+</Container>   
+</Layout>

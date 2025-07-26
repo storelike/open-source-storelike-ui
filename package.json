@@ -10,21 +10,39 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.3.0",
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.3.0",
+    "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.4.0",
+    "@iconify-json/bx": "^1.2.2",
+    "@iconify-json/simple-icons": "^1.2.36",
+    "@iconify-json/uil": "^1.2.3",
     "@tailwindcss/vite": "^4.1.8",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "astro": "^5.8.1",
     "astro-icon": "^1.1.5",
     "astro-seo": "^0.8.4",
+    "browser-image-compression": "^2.0.2",
+    "markdownlint": "^0.38.0",
+    "quill": "^2.0.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-input-mask": "^2.0.4",
+    "react-markdown": "^10.1.0",
+    "react-modal": "^3.16.3",
     "react-router": "^7.6.1",
-    "tailwindcss": "^4.1.8"
+    "react-router-dom": "^7.6.1",
+    "sharp": "^0.34.2",
+    "tailwindcss": "^4.1.8",
+    "transliteration": "^2.3.5",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "@types/react-input-mask": "^3.0.6",
     "ts-node": "^10.9.2"
   }
 }

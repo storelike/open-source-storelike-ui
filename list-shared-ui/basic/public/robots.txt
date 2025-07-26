@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /thank-you/
+Disallow: /call-to-action/
+Disallow: /index-editor/
+Disallow: /init-payment/
+Disallow: /send-order/
+
+Sitemap: https://ox1c.ru/sitemap-index.xml

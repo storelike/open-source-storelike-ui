@@ -1,0 +1,168 @@
+{
+    "globalSettings": {
+        "locale": "ru",
+        "iconCurrency": "₽",
+        "btnToMain": "На главную",
+        "btnBack": "Назад"
+    },
+    "components": {
+        "reactComponents": {
+            "callToActionIconReact": {
+                "indexCallToActionIconReact": {
+                    "ariaLabel": "Открыть форму обратной связи"
+                },
+                "formCallToAction": {
+                    "errorMessage": "Ошибка при отправке сообщения. Попробуйте еще раз.",
+                    "errorMessagePhone": "Введите корректный номер телефона (11 цифр).",
+                    "errorMessageEmail": "Введите корректный номер Email).",
+                    "errorMessageDefault": "Ошибка при отправке сообщения. Попробуйте еще раз.",
+                    "title": "Связаться с нами",
+                    "namePlaceholder": "Ваше имя",
+                    "maskPlaceholder": "+7 (999) 999-99-99",
+                    "phonePlaceholder": "Ваш телефон",
+                    "emailPlaceholder": "Ваш email",
+                    "messagePlaceholder": "Ваше сообщение",
+                    "btnSend": "Отправить",
+                    "btnSpinnerLoader": "Идет отправка..."
+                },
+                "modalCallToAction": {
+                    "btnClose": "Закрыть"
+                }
+            },
+            "feedbackForm": {
+                    "errorRequiredFields": "Заполните все поля корректно.",
+                    "errorDefaultSendForm": "Ошибка при отправке формы.",
+                    "errorSendForm" : "Ошибка отправки. Попробуйте позже.", 
+                    "successDefaultSendMessage": "Сообщение успешно отправлено!",
+                    "errorFormName": "Введите ваше имя.",
+                    "labelPhone" : "Телефон",
+                    "labelEmail" : "Электронная почта",
+                    "maskPlaceholder": "+7 (999) 999-9999",
+                    "contactMethodPlaceholder" : "Введите телефон",
+                    "emailPlaceholder" : "Введите электронную почту",
+                    "errorFormPhone" : "Введите корректный телефон (11 цифр).",
+                    "errorFormEmail" : "Введите корректный адрес электронной почты.",
+                    "errorFormMessage" : "Введите сообщение.",
+                    "btnSend": "Отправить",
+                    "btnSpinnerLoader": "Идет отправка..."
+                },
+            "flatpagesReact" : {
+                "errorLoadForm": "Ошибка при загрузке HTML-файла:"
+            },
+            "formSendOrderReact" : {
+                "deliveryEmptyMsg" : "Доставка не указана",
+                "errorMessage" : "Ошибка при отправке сообщения. Попробуйте еще раз.",
+                "errorDefaultMessage" : "Ошибка: ",
+                "title" : "Связаться с нами",
+                "namePlaceholder": "Ваше имя",
+                "maskPlaceholder": "+7 (999) 999-99-99",
+                "phonePlaceholder": "Ваш телефон",
+                "emailPlaceholder": "Ваш email",
+                "messagePlaceholder": "Дополнительная информация по заказу",
+                "deliveryPlaceholder" : "Укажите адрес доставки",
+                "btnSend": "Отправить",
+                "btnSpinnerLoader": "Идет отправка..."
+            },
+            "productCard" : {
+                "btnDetails": "Подробнее",
+                "btnPay": "Оплатить"
+            },
+            "productDescription" : {
+                "btnDetails": "Еще больше подробностей..."
+            },
+            "quizQuestionsReact" : {
+                "modalQuiz" : {
+                    "ariaLabel": "Закрыть",
+                    "btnClose": "Закрыть"
+                },
+                "quiz" : {
+                    "errorSelectedAnswer": "Пожалуйста, выберите ответ перед продолжением.",
+                    "errorsFields": "Пожалуйста, заполните ваше ФИО, телефон и email",
+                    "successMessage" : "Ваши ответы успешно отправлены!",
+                    "title" : "Связаться с нами",
+                    "namePlaceholder": "Ваше имя",
+                    "maskPlaceholder": "+7 (999) 999-99-99",
+                    "phonePlaceholder": "Ваш телефон",
+                    "emailPlaceholder": "Ваш email",
+                    "messagePlaceholder": "Дополнительная информация по заказу",
+                    "additionallyMsgPlaceholder": "Введите дополнительную информация", 
+                    "deliveryPlaceholder" : "Укажите адрес доставки",
+                    "btnSend": "Отправить ответы",
+                    "btnSpinnerLoader": "Идет отправка...",
+                    "labelCommunicationMethod": "Предпочтительный способ связи",
+                    "previousQuestion" : "Назад",
+                    "nextQuestion" : "Далее"
+                }               
+            },
+            "thankYouReact" : {
+                "title": "Спасибо за вашу заявку!",
+                "subtitle" : "С вами свяжутся в ближайшее время по данным, которые вы указали:",
+                "labelEmail" : "Электронная почта",
+                "labelPhone" : "Телефон",
+                "textMessage" : "Ваше сообщение отправлено:"
+            }
+        }
+    },
+    "pages": {
+        "api": {
+            "feedback": {
+                "requiredFieldsMsg": "Заполните все обязательные поля.",
+                "successMsgSend": "Ваше сообщение успешно отправлено!",
+                "errorMsgSend": "Ошибка при обработке запроса."
+            }
+        },
+        "products": {
+            "moreDetail": "Подробнее...",
+            "iconPrice": "₽"
+        },
+        "page404": {
+            "title": "404 Not Found",
+            "description": "Page not found",
+            "text": "Того, что вы искали, не существует",
+            "button": {
+                "text": "На главную",
+                "href": "/"
+            }
+        },
+        "about": {
+            "title": "О тренере",
+            "description": "Представляет краткую информацию о компании или организации, её миссии, ценностях и ключевых достижениях."
+        },
+        "contactUs": {
+            "title": "Контакты",
+            "description": "Содержит информацию о способах связи с компанией, включая адрес, телефон, электронную почту и форму обратной связи, а также карту с расположением офиса.",
+            "dataTitle": {
+                "innTitle": "ИНН",
+                "kppTitle": "КПП",
+                "paymentAccountTitle": "Расчетный счет",
+                "bankTitle": "Банк",
+                "correspondentAccountTitle": "Корреспондентский счет",
+                "bikTitle": "БИК"
+            }
+        },
+        "deliveryRules": {
+            "title": "Правила доставки",
+            "description": "Представляет информацию о условиях и сроках доставки товаров, а также о возможных вариантах доставки, стоимости и правилах возврата."
+        },
+        "offerAgreement": {
+            "title": "Соглашение оферта",
+            "description": "Содержит условия и положения, регулирующие отношения между компанией и клиентом, включая права и обязанности сторон, процесс заключения сделки и ответственность за нарушения."
+        },
+        "portfolio": {
+            "title": "Мои работы",
+            "description": "Представляет краткую информацию о выполненных проектах, их особенностях, результатах и подходах компании, а также демонстрирует успешные примеры работы с клиентами."
+        },
+        "privacyPolicy": {
+            "title": "Политика конфиденциальности",
+            "description": "Описывает, как компания собирает, использует и защищает личные данные пользователей, а также их права на конфиденциальность и меры безопасности для защиты информации."
+        },
+        "thankYou": {
+            "title": "Thank You",
+            "description": "Страница, благодарящая пользователя за действие (например, покупку, подписку или отправку формы), с подтверждением успешного выполнения и возможными дальнейшими инструкциями."
+        },
+        "userAgreement": {
+            "title": "Пользовательское соглашение",
+            "description": "Описывает условия использования сайта или сервиса, права и обязанности пользователей, а также правила взаимодействия с контентом и ресурсами, предоставляемыми компанией."
+        }
+    }
+}

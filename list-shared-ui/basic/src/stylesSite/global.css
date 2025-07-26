@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Old-Soviet';
+  src: url('/fonts/Old-Soviet.otf') format('opentype');
+  font-style: normal;
+  font-display: swap;  /* Обеспечивает мгновенную замену шрифта */
+}
+
+/* Применение шрифта ко всей странице */
+body {
+  font-family: 'Old-Soviet', sans-serif;
+}

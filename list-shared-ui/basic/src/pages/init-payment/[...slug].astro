@@ -1,0 +1,23 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import InitPaymentProductLayout from '../../layouts/InitPaymentProductLayout.astro';
+
+export async function getStaticPaths() {
+	const products = await getCollection('products');
+	return products.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+
+type Props = CollectionEntry<'products'>;
+
+const post = Astro.props as Props;
+const slug = post.slug;
+const { Content } = await post.render();
+
+---
+
+<InitPaymentProductLayout slug={slug} {...post.data}>
+	<Content />
+</InitPaymentProductLayout>

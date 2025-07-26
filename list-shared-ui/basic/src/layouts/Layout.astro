@@ -1,0 +1,150 @@
+---
+import { SEO } from "astro-seo";
+import seoData from '../const/seo/seo-data-site.json'; 
+import colorTheme from "../const/hero/hero.json";
+import Navbar from "../components/navbar/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import YandexAnalytics from "../components/react-components/app-react/seo/yandex-analytics";
+import localeTextSite from "../locale/locale_text_site.json";
+import "../stylesSite/global.css";
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+type TwitterCardType = "summary" | "summary_large_image" | "app" | "player";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+// Извлекаем данные из seoData
+const {
+  nameImgOpengraph,
+  titleSiteDefault,
+  twitterCreator,
+  twitterSite,
+  twitterCard,
+  numberGoogleMetric: rawGoogleMetric,
+  numberYandexMetric,
+  yandexWebmaster,
+  seoKeywords
+} = seoData;
+
+// Приведение значения numberGoogleMetric к числу
+const numberGoogleMetric = Number(rawGoogleMetric) || null;
+
+const resolvedImageWithDomain = new URL(
+  nameImgOpengraph,
+  Astro.site
+).toString();
+
+const { title, description } = Astro.props;
+
+const makeTitle = title
+  ? `${title} | ${titleSiteDefault}`
+  : titleSiteDefault;
+
+---
+
+<!DOCTYPE html>
+<html lang={localeTextSite.globalSettings.locale || "ru"}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<link rel="preload" href="/fonts/Old-Soviet.otf" as="font" type="font/otf" crossorigin="anonymous">
+
+
+
+    <meta name="generator" content={Astro.generator} />
+    <meta name="keywords" content={seoKeywords} />
+
+    <meta name="yandex-verification" content={yandexWebmaster} />
+
+    {/* Google Tag Manager */}
+    {numberGoogleMetric && (
+      <>
+        <script
+          type="text/partytown"
+          src={`https://www.googletagmanager.com/gtag/js?id=${numberGoogleMetric}`}
+        ></script>
+        <script type="text/partytown">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "${numberGoogleMetric}");
+          `}
+        </script>
+      </>
+    )}
+
+    {/* Canonical URL */}
+    <link rel="canonical" href={canonicalURL} />
+
+    <SEO
+      title={makeTitle}
+      description={description}
+      canonical={canonicalURL}
+      twitter={{
+        creator: twitterCreator,
+        site: twitterSite,
+        card: twitterCard as TwitterCardType,
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: titleSiteDefault,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: titleSiteDefault,
+        },
+      }}
+    />
+  </head>
+
+  <style is:global>
+    img {
+      content-visibility: auto;
+    }
+
+ 
+  
+  </style>
+  <Navbar />
+  <body >
+    {/* Google Tag Manager (noscript) */}
+    {numberGoogleMetric && (
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${numberGoogleMetric}`}
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        ></iframe>
+      </noscript>
+    )}
+    {/* End Google Tag Manager */}
+     
+    <div
+      class="pt-16"
+      id="bgTheme" 
+      style={{
+        background: colorTheme.bgTheme,
+        color: colorTheme.textColorTheme,        
+      }}
+    >
+      <slot />
+      <Footer />
+    </div> 
+
+    {numberYandexMetric && <YandexAnalytics client:idle />}
+    
+  </body>  
+</html>

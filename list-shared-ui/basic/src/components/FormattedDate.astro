@@ -1,0 +1,20 @@
+---
+interface Props {
+  date: Date | string; // Разрешаем тип string для случаев, если дата передается как строка
+}
+
+const { date } = Astro.props;
+const formattedDate = typeof date === 'string' ? new Date(date) : date;
+
+if (!(formattedDate instanceof Date) || isNaN(formattedDate.valueOf())) {
+  throw new Error('Invalid date provided to FormattedDate component');
+}
+---
+
+<time datetime={formattedDate.toISOString()}>
+  {formattedDate.toLocaleDateString('ru-ru', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  })}
+</time>

@@ -1,0 +1,1082 @@
+{
+    "cmQuiz": {
+        "labelSection":"Квиз",
+        "iconTitleGiftBox": {
+            "label":"Поле для ввода названия titleGiftBox",      
+            "value": "Заявка"
+        },
+        "iconSubtitleGiftBox": {
+            "label":"Поле для ввода названия subtitleGiftBox ",
+            "value": "Ответьте на вопросы и получите подарок/скидку!"
+        },
+        "iconButtonGiftBox": {
+            "label":"Поле для ввода названия buttonGiftBox ",
+            "value": "Отправить"
+        },
+        "modalTitle": {
+            "label":"Поле для ввода названия modalTitle ",
+             "value": "Спасибо за участие!"
+        },
+        "modalSubtitle": {
+            "label":"Поле для ввода названия modalSubtitle ",
+            "value": "Ваши ответы были успешно сохранены."
+        }, 
+        "title": {
+            "label":"Поле для ввода названия title ",
+            "value": "Всего 3 вопроса!"
+            
+        },
+        "subtitle": {
+            "label":"Поле для ввода названия subtitle ",
+            "value": "По завершении — подарок/скидка*"
+        },
+        "questions": 
+        {
+            "label":"Поле для ввода названия questions ",
+            "value": [
+                {
+                    "question": "В какой сфере вы хотите продвигать ваш бизнес?",
+                    "options": [
+                        "Продажа физических товаров",
+                        "Цифровые товары и услуги",
+                        "Обучение и консалтинг",
+                        "Сфера услуг (косметология, ремонт и т.д.)",
+                        "Маркетплейс для других продавцов"
+                    ]
+                },
+                {
+                    "question": "Какие цели вы хотите достичь с помощью продвижения?",
+                    "options": [
+                        "Увеличить количество клиентов",
+                        "Повысить узнаваемость бренда",
+                        "Продвинуть товары/услуги через рекламные каналы",
+                        "Развить онлайн-торговлю и продажи",
+                        "Построить стратегию долгосрочного роста"
+                    ]
+                },
+                {
+                    "question": "Какой канал продвижения вам наиболее интересен?",
+                    "options": [
+                        "SEO — поисковая оптимизация",
+                        "Реклама в социальных сетях (Instagram, Facebook и т.д.)",
+                        "Email-маркетинг и рассылки",
+                        "Реклама через Яндекс.Директ и Google Ads",
+                        "Продвижение через Telegram и мессенджеры"
+                    ]
+                }
+            ]
+        }
+    },
+    "cmProducts": {
+        "labelSection":"Продукты/услуги",
+        "title_meta_tag":{
+            "label": "Мететег заголовок ",
+            "value": ""
+        },
+        "description_meta_tag":{
+            "label": "Мететег описание ",
+            "value": ""
+        },
+        "keywords_meta_tag":{
+            "label": "Мететег ключевые слова ",
+            "value": ""
+        },
+        "author_meta_tag":{
+            "label": "Мететег автор ",
+            "value": ""
+        },
+        "bgCard": {
+            "label": "Цвет фона карточек",
+            "value": "#c8c9c0"
+        },
+        "cardTextColor": {
+            "label": "Цвет текста на карточках",
+            "value": "#000000"
+        },
+        "title": {
+            "label": "Заголовок секции",
+            "value": "Услуги/Продукты"
+        },
+        "subtitle": {
+            "label": "Подзаголовок секции",
+            "value": "Узнайте больше, выбрав интересующие вас позиции, или свяжитесь с нами для консультации и получения персональных рекомендаций."
+        },
+        "textButtonToOrder": {
+            "label": "Текст кнопки заказа",
+            "value": "Заказать"
+        },
+        "isBlackAndWhitePhoto": {
+            "label": "Отображать фото в черно-белом стиле",
+            "value": true
+        }
+    },
+    "cmSeo": {
+        "labelSection":"Настойки SEO",
+        "lang": {
+            "label": "Язык сайта",
+            "value": "ru"
+        },
+        "siteHttps": {
+            "label": "Основной URL сайта",
+            "value": "https://ox1c.ru"
+        },
+        "siteTitle": {
+            "label": "Основной заголовок сайта",
+            "value": "БИЗНЕС САЙТ + РЕКЛАМА | Скорость и эффективность"
+        },
+        "siteDescription": {
+            "label": "Описание сайта",
+            "value": "Рекламируйте товары или услуги, меняйте контент под любую нишу, даже когда реклама уже в деле!"
+        },
+        "nameImgOpengraph": {
+            "label": "Изображение для Open Graph",
+            "value": "/opengraph.png"
+        },
+        "titleSiteDefault": {
+            "label": "Заголовок по умолчанию",
+            "value": "Ox1C"
+        },
+        "twitterCreator": {
+            "label": "Twitter: автор",
+            "value": "@buildberries"
+        },
+        "twitterSite": {
+            "label": "Twitter: сайт",
+            "value": "@buildberries"
+        },
+        "twitterCard": {
+            "label": "Тип карточки Twitter",
+            "value": "summary_large_image"
+        },
+        "numberYandexMetric": {
+            "label": "Номер Яндекс.Метрики",
+            "value": 98674688
+        },
+        "yandexWebmaster": {
+            "label": "Код подтверждения Яндекс.Вебмастер",
+            "value": "5d338e3ac57de073"
+        },
+        "numberGoogleMetric": {
+            "label": "Номер Google Tag Manager",
+            "value": "GTM-TV3S9FQS"
+        },
+        "seoKeywords": {
+            "label": "SEO ключевые слова главной странице",
+            "value": "БИЗНЕС САЙТ + РЕКЛАМА, интернет магазин, бесплатно интерент-магазин"
+        },
+        "yaGoalTitleQuiz": {
+            "label": "Яндекс.Цель — квиз",
+            "value": "quiz-form"
+        },
+        "yaGoalTitleCallToAction": {
+            "label": "Яндекс.Цель — призыв к действию",
+            "value": "call-to-action"
+        },
+        "yaGoalTitleContactForm": {
+            "label": "Яндекс.Цель — контактная форма",
+            "value": "main-contact-form"
+        },
+        "yaGoalTitleSendOrder": {
+            "label": "Яндекс.Цель — отправка заказа",
+            "value": "send-order-form"
+        }
+    },    
+    "cmFeatures": {
+        "labelSection": "Преимущества",
+        "title": {
+            "label": "Поле для ввода названия title",
+            "value": "Рекламируйте товары или услуги, меняйте контент под любую нишу, даже когда реклама уже в деле!"
+        },
+        "subtitle": {
+            "label": "Поле для ввода названия subtitle",
+            "value": "В комплект поставки входят CMS. В нем использованы лучшие компоненты самых современных инструментов и добавлены собственные инновации."
+        },
+        "items": {
+            "label": "Поле для ввода элементов items",
+            "value": [
+                {
+                    "title": "Используйте свой CMS",
+                    "description": "Создавайте сайт без программистов, или добавьте веб-компоненты простого HTML.",
+                    "icon": "bx:bxs-briefcase"
+                },
+                {
+                    "title": "100% статичный HTML, без JS",
+                    "description": "Этот сайт рендерит всю страницу в статичный HTML, по умолчанию исключая весь JavaScript из итоговой сборки.",
+                    "icon": "bx:bxs-window-alt"
+                },
+                {
+                    "title": "Компоненты по требованию",
+                    "description": "Нужен JS? Сайт может автоматически оживлять интерактивные компоненты, когда они становятся видимыми на странице.",
+                    "icon": "bx:bxs-data"
+                },
+                {
+                    "title": "Широкая интеграция",
+                    "description": "Сайт поддерживает TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX и любые другие npm-пакеты.",
+                    "icon": "bx:bxs-bot"
+                },
+                {
+                    "title": "SEO-оптимизация",
+                    "description": "Автоматические карты сайта, RSS-ленты, пагинация и коллекции упрощают SEO и распространение. Просто работает!",
+                    "icon": "bx:bxs-file-find"
+                },
+                {
+                    "title": "Сообщество",
+                    "description": "Buildberries — это проект, который планируется поддерживаться сотнями участников, создающих тысячи индивидуальных вкладов.",
+                    "icon": "bx:bxs-user"
+                }
+            ]
+        }
+    },
+    "cmContactUs": {
+        "labelSection": "Контакты777",
+        "title_meta_tag": {
+            "label": "Мететег заголовок ",
+            "value": "t"
+        },
+        "description_meta_tag":{
+            "label": "Мететег описание ",
+            "value": "t"
+        },
+        "keywords_meta_tag":{
+            "label": "Мететег ключевые слова ",
+            "value": "t"
+        },
+        "author_meta_tag":{
+            "label": "Мететег автор ",
+            "value": "t"
+        },
+        "title": {
+            "label": "Заголовок",
+            "value": "Контакты"
+        },
+        "subtitle": {
+            "label": "Подзаголовок",
+            "value": "Мы здесь для того, чтобы помочь."
+        },
+        "formTitle": {
+            "label": "Заголовок формы",
+            "value": "Чтобы связаться"
+        },
+        "formSubtitle": {
+            "label": "Подзаголовок формы",
+            "value": "Заполните форму - укажите электронную почту или мобильный телефон."
+        },
+        "formPlaceholderName": {
+            "label": "Поле: ФИО",
+            "value": "ФИО"
+        },
+        "formPlaceholderEmail": {
+            "label": "Поле: Email/Телефон",
+            "value": "Адрес электронной почты или номер телефона"
+        },
+        "formPlaceholderTextarea": {
+            "label": "Поле: Сообщение",
+            "value": "Ваше сообщение"
+        },
+        "address": {
+            "label": "Адрес",
+            "value": "664005, г. Иркутск, улица 2-я Железнодорожная, д. 30, кв./оф. 54"
+        },
+        "phone": {
+            "label": "Телефон",
+            "value": "+7 (914) 927-21-11"
+        },
+        "email": {
+            "label": "Электронная почта",
+            "value": "team@x038it.ru"
+        },
+        "nameCompany": {
+            "label": "Название компании",
+            "value": "ООО ЭЛЬТРАНССЕРВИС38"
+        },
+        "nameBankTitle": {
+            "label": "Заголовок банковских реквизитов",
+            "value": "Банковские реквизиты"
+        },
+        "inn": {
+            "label": "ИНН",
+            "value": "3812115138"
+        },
+        "kpp": {
+            "label": "КПП",
+            "value": "381201001"
+        },
+        "paymentAccount": {
+            "label": "Расчетный счет",
+            "value": "40702810823350001981"
+        },
+        "nameBank": {
+            "label": "Название банка",
+            "value": "Банк: АО АЛЬФА-БАНК"
+        },
+        "correspondentAccount": {
+            "label": "Корреспондентский счет",
+            "value": "30101810600000000774"
+        },
+        "bik": {
+            "label": "БИК",
+            "value": "045004774"
+        },
+        "operatingMode": {
+            "label": "Режим работы",
+            "value": "Режим работы"
+        },
+        "operatingModeWorkDay": {
+            "label": "Рабочие дни",
+            "value": "Понедельник - Пятница: 09:00 - 18:00"
+        },
+        "operatingModeSaturday": {
+            "label": "Суббота",
+            "value": "Суббота: 10:00 - 16:00"
+        },
+        "operatingModeSunday": {
+            "label": "Воскресенье",
+            "value": "Воскресенье: выходной"
+        },
+        "isCompanyDetails": {
+            "label": "Показать реквизиты компании",
+            "value": true
+        },
+        "isFioForm": {
+            "label": "Сделать активным поле формы ФИО (проверьте отправку уведомления в Роскомнадзор по обработке персональных данных)",
+            "value": false
+        },
+        "isMessageActive": {
+            "label": "Сделать активным поле сообщение (проверьте отправку уведомления в Роскомнадзор по обработке персональных данных)",
+            "value": false
+        },
+        "isTelegram": {
+            "label": "Доп. ссылка на Telegram",
+            "value": true
+        },
+        "isWhatsapp": {
+            "label": "Доп. ссылка на WhatsApp",
+            "value": true
+        },
+        "isEmail": {
+            "label": "Доп. ссылка на Email",
+            "value": false
+        },
+        "isVk": {
+            "label": "Доп. ссылка на VKontakte",
+            "value": true
+        }
+    },
+    "cmAppConfig": {
+    "labelSection": "Настройки приложения",
+    "bgTheme": {
+        "label": "Фон сайта",
+        "value": "gray"
+    },
+    "textColorTheme": {
+        "label": "Цвет текста сайта",
+        "value": "black"
+    },
+    "passwordAdmin": {
+        "label": "Пароль администратора",
+        "value": "password38"
+    },
+    "emailAdmin": {
+        "label": "Email администратора",
+        "value": "admin@storelike.ru"
+    },
+    "tokenTelegram": {
+        "label": "Telegram токен",
+        "value": "6985872588:AAEDsBILdqiXGF3YhaSZZ_qjmIS7foCB2p4"
+    },
+    "chatIdTelegram": {
+        "label": "Telegram Chat ID",
+        "value": "-1001910712578"
+    },
+    "tinkoffEmailCompany": {
+        "label": "Email компании (Тинькофф)",
+        "value": "83952280298@mail.ru"
+    },
+    "tinkoffTaxionCompany": {
+        "label": "Система налогообложения (Тинькофф)",
+        "value": "usn_income_outcome"
+    },
+    "tinkoffTerminalKey": {
+        "label": "Терминальный ключ (Тинькофф)",
+        "value": "1728982674167"
+    },
+    "tinkoffSuccessUrl": {
+        "label": "URL успешной оплаты (Тинькофф)",
+        "value": "https://доменное имя/tinkoff-page-success"
+    },
+    "isPaymentButton": {
+        "label": "Показать кнопку оплаты",
+        "value": true
+    },
+    "buttonToOrder": {
+        "label": "Текст на кнопке заказа",
+        "value": "Заказать"
+    }
+    },
+    "cmFlatpagesAbout": {
+        "labelSection":"Страница О нас",
+        "title_meta_tag":{
+            "label": "Мететег заголовок ",
+            "value": ""
+        },
+        "description_meta_tag":{
+            "label": "Мететег описание ",
+            "value": ""
+        },
+        "keywords_meta_tag":{
+            "label": "Мететег ключевые слова ",
+            "value": ""
+        },
+        "author_meta_tag":{
+            "label": "Мететег автор ",
+            "value": ""
+        },
+        "title": {
+            "label": "О нас",
+            "value": "О нас"
+        }
+    },
+    "cmFlatpagesUserAgreement": {
+        "labelSection":"Страницы ПС",
+        "title_meta_tag":{
+            "label": "Мететег заголовок ",
+            "value": ""
+        },
+        "description_meta_tag":{
+            "label": "Мететег описание ",
+            "value": ""
+        },
+        "keywords_meta_tag":{
+            "label": "Мететег ключевые слова ",
+            "value": ""
+        },
+        "author_meta_tag":{
+            "label": "Мететег автор ",
+            "value": ""
+        },
+        "title": {
+            "label": "Пользовательское соглашение",
+            "value": "Пользовательское соглашение"
+        }
+    },
+    "cmFlatpagesPrivacyPolicy": {
+        "labelSection":"Страница ПК",
+        "title_meta_tag":{
+            "label": "Мететег заголовок ",
+            "value": ""
+        },
+        "description_meta_tag":{
+            "label": "Мететег описание ",
+            "value": ""
+        },
+        "keywords_meta_tag":{
+            "label": "Мететег ключевые слова ",
+            "value": ""
+        },
+        "author_meta_tag":{
+            "label": "Мететег автор ",
+            "value": ""
+        },
+        "title": {
+            "label": "Политика конфиденциальности",
+            "value": "Политика конфиденциальности"
+        }
+    },
+    "cmFlatpagesDeliveryRules": {
+        "labelSection":"Страница ПД",
+        "title_meta_tag":{
+            "label": "Мететег заголовок ",
+            "value": ""
+        },
+        "description_meta_tag":{
+            "label": "Мететег описание ",
+            "value": ""
+        },
+        "keywords_meta_tag":{
+            "label": "Мететег ключевые слова ",
+            "value": ""
+        },
+        "author_meta_tag":{
+            "label": "Мететег автор ",
+            "value": ""
+        },
+        "title": {
+            "label": "Правила доставки",
+            "value": "Правила доставки"
+        }
+    },
+    "cmFlatpagesPortfolio": {
+        "labelSection":"Страница НР",
+        "title_meta_tag":{
+            "label": "Мететег заголовок ",
+            "value": ""
+        },
+        "description_meta_tag":{
+            "label": "Мететег описание ",
+            "value": ""
+        },
+        "keywords_meta_tag":{
+            "label": "Мететег ключевые слова ",
+            "value": ""
+        },
+        "author_meta_tag":{
+            "label": "Мететег автор ",
+            "value": ""
+        },
+        "title": {
+            "label": "Наши работы",
+            "value": "Наши работы"
+        }
+    },
+    "cmFlatpagesOfferAgreement": {
+        "labelSection":"Страница СО",
+        "title_meta_tag":{
+            "label": "Мететег заголовок ",
+            "value": ""
+        },
+        "description_meta_tag":{
+            "label": "Мететег описание ",
+            "value": ""
+        },
+        "keywords_meta_tag":{
+            "label": "Мететег ключевые слова ",
+            "value": ""
+        },
+        "author_meta_tag":{
+            "label": "Мететег автор ",
+            "value": ""
+        },
+        "title": {
+            "label": "Соглашение оферта",
+            "value": "Соглашение оферта"
+        }
+    },
+    "cmFooter": {
+        "labelSection":"Футер",
+        "bgFooter": {
+            "label": "Фон футера",
+            "value": "#000000"
+        },
+        "isRoundedFooter": {
+            "label": "Скругление футера",
+            "value": false
+        },
+        "textColorFooter": {
+            "label": "Цвет текста в футере",
+            "value": "#ffffff"
+        },
+        "colorTextBoxLinkFooterPhone": {
+            "label": "Цвет текста ссылки 'Телефон' в футере",
+            "value": "#000000"
+        },
+        "isRoundedBoxLinkFooterPhone": {
+            "label": "Скругление блока ссылки 'Телефон'",
+            "value": true
+        },
+        "bgBoxLinkFooterPhone": {
+            "label": "Фон блока ссылки 'Телефон'",
+            "value": "#c8ddc6"
+        },
+        "colorTextBoxLinkFooterTelegram": {
+            "label": "Цвет текста ссылки 'Telegram' в футере",
+            "value": "#000000"
+        },
+        "isRoundedBoxLinkFooterTelegram": {
+            "label": "Скругление блока ссылки 'Telegram'",
+            "value": true
+        },
+        "bgBoxLinkFooterTelegram": {
+            "label": "Фон блока ссылки 'Telegram'",
+            "value": "#c8ddc6"
+        },
+        "colorTextBoxLinkFooterWhatsApp": {
+            "label": "Цвет текста ссылки 'WhatsApp' в футере",
+            "value": "#000000"
+        },
+        "isRoundedBoxLinkFooterWhatsApp": {
+            "label": "Скругление блока ссылки 'WhatsApp'",
+            "value": true
+        },
+        "bgBoxLinkFooterWhatsApp": {
+            "label": "Фон блока ссылки 'WhatsApp'",
+            "value": "#c8ddc6"
+        },
+        "colorTextBoxLinkFooterEmail": {
+            "label": "Цвет текста ссылки 'Email' в футере",
+            "value": "#000000"
+        },
+        "isRoundedBoxLinkFooterEmail": {
+            "label": "Скругление блока ссылки 'Email'",
+            "value": false
+        },
+        "bgBoxLinkFooterEmail": {
+            "label": "Фон блока ссылки 'Email'",
+            "value": "#c8ddc6"
+        },
+        "titleFooter": {
+            "label": "Заголовок футера",
+            "value": "Интернет-Магазин для быстрого старта"
+        },
+        "links": [
+            {
+                "path": "/",
+                "label": "Главная",
+                "isActive": false,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/about",
+                "label": "О нас",
+                "isActive": false,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/products",
+                "label": "Услуги",
+                "isActive": false,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/#reviews",
+                "label": "Отзывы",
+                "isActive": false,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/contact-us",
+                "label": "Контакты",
+                "isActive": false,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/offer-agreement",
+                "label": "Оферта",
+                "isActive": false,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/privacy-policy",
+                "label": "Политика конфиденциальности",
+                "isActive": true,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/user-agreement",
+                "label": "Пользовательское соглашение",
+                "isActive": true,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/delivery-rules",
+                "label": "Правила доставки",
+                "isActive": false,
+                "badge": false,
+                "titleBadge": "Акция"
+            }
+        ]
+    },
+    "cmHero": {
+    "labelSection":"Главный экран (Hero секция)",
+    
+    "bgThemeStyleCm": { 
+          "label": "Цвет фона Hero секции", 
+          "value":  "black",
+          "id": "idThemeHeroCm"
+         },
+
+    "colorThemeStyleCm": { 
+      "label": "Цвет текста Hero секции", 
+      "value": "white",
+      "id": "idThemeHeroCm"
+    },
+    "bgBtnOneStyleCm": {
+      "label": "Цвет фона кнопки", 
+      "value": "orange",
+      "id": "idBtnOneHeroCm"
+    },
+    "colorBtnOneStyleCm": {
+      "label": "Цвет текста кнопки", 
+      "value": "blue",
+      "id": "idBtnOneHeroCm"
+    },
+    "hoverBtnOneStyleCm": {
+      "label": "Цвет фона при наведении кнопки", 
+      "value": "orange",
+      "id": "idBtnOneHeroCm"
+    },
+    "customBtnOneStyleCm": {
+      "label": "Призвольные стили кнопки", 
+      "value": "background: linear-gradient(135deg, #E5E4E2, #C0C0C0, #B0B0B0, #FFFFFF); box-shadow: 10px 0 20px rgba(255, 255, 255, 0.8), 0 0 20px rgba(224, 224, 224, 0.5); border-radius: 10px; filter: brightness(1.2) contrast(1.1); padding: 15px; color: #ccfaf5;",
+      "id": "idBtnOneHeroCm"
+    },
+    "bgBtnTwoStyleCm": {
+      "label": "Цвет фона кнопки", 
+      "value": "orange",
+      "id": "idBtnTwoHeroCm"
+    },
+    "colorBtnTwoStyleCm": {
+      "label": "Цвет текста кнопки", 
+      "value": "blue",
+      "id": "idBtnTwoHeroCm"
+    },
+    "hoverBtnTwoStyleCm": {
+      "label": "Цвет фона при наведении кнопки", 
+      "value": "orange",
+      "id": "idBtnTwoHeroCm"
+    },
+    "customBtnTwoStyleCm": {
+      "label": "Призвольные стили кнопки", 
+      "value": "background: linear-gradient(135deg, #E5E4E2, #C0C0C0, #B0B0B0, #FFFFFF); box-shadow: 10px 0 20px rgba(255, 255, 255, 0.8), 0 0 20px rgba(224, 224, 224, 0.5); border-radius: 10px; filter: brightness(1.2) contrast(1.1); padding: 15px; color: #ccfaf5;",
+      "id": "idBtnTwoHeroCm"
+    },
+    "title": {
+      "label": "Заголовок",
+      "value": "Помогаем бизнесу. \n\n \n\n Запустим САЙТ + БОТ + РЕКЛАМА + ИИ Ассистент."
+  },
+    "subtitle": {
+            "label": "Подзаголовок",
+            "value": "✔️ Мгновенный старт** (Автоворонка продаж под ключ)\nЗапустите бизнес с готовым сайтом и рекламой."
+        },
+        "buttonOne": { "label": "Текст кнопки 1", "value": "Получить", "id": "btnOneHeroCm" },
+        "buttonTwo": { "label": "Текст кнопки 2", "value": "Заявка" },
+        "isActiveBtnOne": { "label": "Активность кнопки 1", "value": true },
+        "isActiveBtnTwo": { "label": "Активность кнопки 2", "value": true },
+        "linkButtonOne": { "label": "Ссылка кнопки 1", "value": "/contact" },
+        "linkButtonTwo": { "label": "Ссылка кнопки 2", "value": "/call-to-action" },
+        "isRoundedMainImg": { "label": "Скругленное изображение", "value": true },
+        "isBlackAndWhitePhoto": { "label": "Черно-белое фото", "value": false },
+        "isCustomHero": { "label": "Пользовательский Hero", "value": false },
+        "isHeroBackgroundImg": { "label": "Фоновое изображение", "value": false },
+        "colorTextIsBackgroundImgStyleCm": {
+            "label": "Цвет текста на фоне Hero",
+            "value": "#ccfaf5"
+        }
+        },
+    "cmNavbar": {
+        "labelSection":"навбар",
+        "bgNavbar": {
+            "label": "Фон навбара",
+            "value": "linear-gradient(135deg, #E5E4E2, #C0C0C0, #B0B0B0, #FFFFFF); box-shadow: 10px 0 20px rgba(255, 255, 255, 0.8), 0 0 20px rgba(224, 224, 224, 0.5); border-radius: 10px; filter: brightness(1.2) contrast(1.1); padding: 15px; color: #ccfaf5;"
+        },
+        "textColorNavbar": {
+            "label": "Цвет текста навбара",
+            "value": "#000000"
+        },
+        "roundedNavbar": {
+            "label": "Скругление навбара",
+            "value": true
+        },
+        "bgBurger": {
+            "label": "Фон иконки-бургера",
+            "value": "#ffffff"
+        },
+        "textColorBurger": {
+            "label": "Цвет иконки-бургера",
+            "value": "#000000"
+        },
+        "links": [
+            {
+                "path": "/",
+                "label": "Главная",
+                "isActive": true,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/about",
+                "label": "О нас",
+                "isActive": true,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/products",
+                "label": "Услуги",
+                "isActive": true,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/portfolio",
+                "label": "Наши работы",
+                "isActive": true,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/#reviews",
+                "label": "Отзывы",
+                "isActive": true,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/contact",
+                "label": "Контакты",
+                "isActive": true,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "/offer-agreement",
+                "label": "Оферта",
+                "isActive": false,
+                "badge": false,
+                "titleBadge": "Акция"
+            },
+            {
+                "path": "tel:+79500790722",
+                "label": "+7 (950) 079 07 22",
+                "isActive": true,
+                "badge": false,
+                "titleBadge": "Акция"
+            }
+        ]
+    },
+    "cmNavbarLogoConfig": {
+        "labelSection":"Логотип параметры",
+        "title": {
+            "label": "Город",
+            "value": "Иркутск"
+        },
+        "isTitle": {
+            "label": "Отображать заголовок",
+            "value": true
+        },
+        "path": {
+            "label": "Путь к логотипу",
+            "value": "/logo.svg"
+        },
+        "alt": {
+            "label": "Альтернативный текст",
+            "value": "Иркутск Storelike"
+        },
+        "widthLogo": {
+            "label": "Ширина логотипа",
+            "value": "82px"
+        },
+        "heightLogo": {
+            "label": "Высота логотипа",
+            "value": "82px"
+        }
+    },
+    "cmNavbarBurgerMenuReact": {
+        "labelSection":"Бергерменю",
+        "mainBurger": {
+            "label": "Основной бургер",
+            "value": "ETStudio | Иркутск"
+        },
+        "mainBurgerSubtitle": {
+            "label": "Подзаголовок основного бургера",
+            "value": "Помогаем бизнесу быть онлайн. Без ежегодных и ежемесячных платежей."
+        },
+        "links":[ {
+            "path": "/",
+            "label": "Главная страница",          
+            "isActive": true,           
+            "badge": false,
+            "titleBadge": "Акция"
+            },
+           {
+            "label": "О нас",           
+            "title": "О нас",
+            "isActive": true,
+            "path": "/about"        
+        },
+       {
+        "path": "/products",
+            "label": "Услуги", 
+            "isActive": true,           
+             "badge": false,
+            "titleBadge": "Акция"
+            
+        },
+        {
+            "path": "/portfolio",    
+            "label": "Мои работы",      
+            "isActive": true,                   
+            "badge": false,
+            "titleBadge": "Акция"
+            
+  
+        },
+   {    
+            "path": "/offer-agreement",
+            "label": "Соглашение оферта",           
+            "isActive": true,
+            "badge": false,
+            "titleBadge": "Акция"          
+      
+        },
+    {
+            "path": "/privacy-policy",
+            "label": "Политика конфиденциальности",     
+            "isActive": false,
+            "badge": false,
+            "titleBadge": "Акция"            
+      
+        },
+       {
+        "path": "/user-agreement",
+            "label": "Пользовательское соглашение",    
+            "isActive": false,
+            "badge": false,
+            "titleBadge": "Акция"           
+      
+        },
+{
+            "path": "/contact",
+            "label": "Контакты",           
+            "isActive": true,
+            "badge": false,
+            "titleBadge": "Акция"       
+        },
+   {
+            "path": "/delivery-rules",
+            "label": "Правила доставки",      
+            "isActive": false,
+            "badge": false,
+            "titleBadge": "Акция"         
+        },
+ {
+            "path": "+79500790722",
+            "label": "Номер телефона",
+            "isActive": false,
+            "badge": false,
+            "titleBadge": "Акция"
+            
+        },
+        {
+            "path": "ETStudio38Bot",
+            "label": "Номер Telegram",           
+            "isActive": false,
+            "badge": false,
+            "titleBadge": "Акция"
+            
+        },
+      {
+            "path": "+79500790722",
+            "label": "Номер WhatsApp",
+            "isActive": false,
+            "badge": false,
+            "titleBadge": "Акция"
+            
+        },
+    {
+            "path": "buildberries",
+            "label": "ВКонтакте",
+            "isActive": false,
+            "badge": false,
+            "titleBadge": "Акция"
+            
+        },
+       {
+            "path": "team@x038it.ru",
+            "label": "Электронная почта",    
+            "isActive": false,
+            "badge": false,
+            "titleBadge": "Акция"
+            
+        },
+   {
+            "link": "/signin",
+            "label": "Кнопка входа",
+            "isActive": false,
+            "badge": false,
+            "titleBadge": "Акция"            
+        }]
+    },
+    "cmReviews": {
+    "labelSection":"Отзывы",
+        "title": {
+            "label": "Заголовок",
+            "value": "Отзывы"
+        },
+        "list": [
+            {
+                "id": 1,
+                "author": "Иван Иванов",
+                "rating": 5,
+                "comment": "Прекрасный инструмент для создания сайтов!",
+                "img":"/siom.jpg"
+            },
+            {
+                "id": 2,
+                "author": "Мария Петрова",
+                "rating": 4,
+                "comment": "Удобный интерфейс и высокое качество.",
+                "img":"/siom.jpg"
+            },
+            {
+                "id": 3,
+                "author": "Алексей Смирнов",
+                "rating": 3,
+                "comment": "Хороший сервис, но есть некоторые недоработки.",
+                "img":"/siom.jpg"
+            },
+            {
+                "id": 4,
+                "author": "Елена Кузнецова",
+                "rating": 5,
+                "comment": "Идеальное решение для бизнеса!",
+                "img":"/siom.jpg"
+            },
+            {
+                "id": 5,
+                "author": "Дмитрий Лебедев",
+                "rating": 4,
+                "comment": "Легко настраивать и работать без программистов!",
+                "img":"/siom.jpg"
+            }
+        ]
+    },
+    "cmFaq": {
+    "labelSection":"Вопросы и ответы",
+        "bgFaq": {
+            "label": "Цвет фона блока FAQ",
+            "value": "#d68d66"
+        },
+        "textColorFaq": {
+            "label": "Цвет текста в блоке FAQ",
+            "value": "#000000"
+        },
+        "isRounded": {
+            "label": "Скругленные углы у блока FAQ",
+            "value": true
+        },
+        "faqTitle": {
+            "label": "Заголовок FAQ",
+            "value": "Часто задаваемые вопросы"
+        },
+        "faqs": [
+            {
+                "question": "Можно ли редактировать интернет-магазин без программистов?",
+                "answer": "Да, вы можете самостоятельно редактировать тексты, логотипы, фото и карточки товаров через удобную административную панель без необходимости в программистах."
+            },
+            {
+                "question": "Как настроить квиз для клиентов?",
+                "answer": "Квиз уже встроен в систему. Вы можете легко настроить вопросы и добавить новые через панель управления, чтобы повышать конверсию клиентов."
+            },
+            {
+                "question": "Как интегрировать магазин с Telegram-каналом?",
+                "answer": "Интеграция с Telegram бесплатна и настраивается в несколько кликов. Все заявки поступают мгновенно на ваш телефон через Telegram-канал для удобства обработки."
+            },
+            {
+                "question": "Есть ли поддержка продвижения в Яндекс.Директ?",
+                "answer": "Да, ваш магазин готов к быстрому запуску рекламных кампаний в Яндекс.Директ с помощью встроенных инструментов для продвижения."
+            },
+            {
+                "question": "Какая стоимость за обработку заявок?",
+                "answer": "Все заявки обрабатываются бесплатно и мгновенно поступают на ваш телефон через систему магазина, без дополнительных сборов."
+            }
+        ]
+    }
+}

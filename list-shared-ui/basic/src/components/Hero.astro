@@ -3,23 +3,23 @@ import { Picture } from "astro:assets";
 import heroImage from "../assets/hero.webp";
 import Link from "../components/ui/Link.astro";
 import { Icon } from "astro-icon/components";
-import heroText from '../const/hero/hero.json';
+import { cmHero } from '../locale/cms-locale.json';
 import MarkdownText from "../components/react-components/markdown-text";
 import HeroCustomReact from "../components/react-components/hero-custom-react";
 
 import Container from "../components/Container.astro";
 
-const isBackgroundImg = Boolean(heroText?.isHeroBackgroundImg);
+const isBackgroundImg = Boolean(cmHero?.isHeroBackgroundImg.value);
 ---
 
 {!isBackgroundImg ? 
 <section 
-style={`color: ${heroText.colorTextIsBackgroundImg}`}
+style={`color: ${cmHero.colorTextIsBackgroundImgStyleCm.value}`}
 class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
   <div class="order-first lg:order-none">
         
     <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter w-full">
-      {heroText.title}
+      {cmHero.title.value}
     </h1>
 
     <div class="py-6 order-last md:order-none md:block lg:hidden">
@@ -30,47 +30,47 @@ class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
         sizes="(max-width: 800px) 100vw, 620px"
         loading="eager"
         formats={['avif', 'webp']}
-        class={`${heroText.isRoundedMainImg ? 'rounded-2xl' : ''} ${heroText.isBlackAndWhitePhoto ? 'object-cover filter grayscale rounded-2xl' : 'rounded-lg'} `}
+        class={`${cmHero.isRoundedMainImg.value ? 'rounded-2xl' : ''} ${cmHero.isBlackAndWhitePhoto.value ? 'object-cover filter grayscale rounded-2xl' : 'rounded-lg'} `}
         />
     </div>
 
     <!-- Подзаголовок -->
     <div class="text-lg max-w-xl">
-      <MarkdownText text={heroText.subtitle} client:load />
+      <MarkdownText text={cmHero.subtitle.value} client:load />
     </div>
 
     <!-- Кнопки -->
     <div class="flex flex-col sm:flex-row gap-3">
-      {heroText.isActiveBtnOne && <Link
+      {cmHero.isActiveBtnOne.value && <Link
         id="btnOne"
         style="orange"
-        bgColor={heroText?.bgBtnOne} 
-        textColor={heroText?.colorBtnOne} 
-        href={heroText?.link_button_one}
+        bgColor={cmHero?.bgBtnOneStyleCm.value} 
+        textColor={cmHero?.colorBtnOneStyleCm.value} 
+        href={cmHero?.linkButtonOne.value}
         target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
         <Icon name="order" class="text-blue-300" />
-        {heroText.button_one}
+        {cmHero.buttonOne.value}
       </Link>}
-      {heroText.isActiveBtnTwo && <Link
+      {cmHero.isActiveBtnTwo.value && <Link
         id="btnTwo"
         size="lg"
         style="outline"
-        bgColor={heroText?.bgBtnTwo} 
-        textColor={heroText?.colorBtnTwo} 
+        bgColor={cmHero?.bgBtnTwoStyleCm.value} 
+        textColor={cmHero?.colorBtnTwoStyleCm.value} 
         rel="noopener"
-        href={heroText?.link_button_two}
+        href={cmHero?.linkButtonTwo.value}
         class="flex gap-1 items-center justify-center"
         target="_blank">
         <Icon name="chat" class="text-orange-300" />
-        {heroText.button_two}
+        {cmHero.buttonTwo.value}
       </Link>}
     </div>
   </div>
 
   <!-- Блок с картинкой для десктопной версии -->
-  <div class={`${heroText.isRoundedMainImg ? 'rounded-full' : ''} py-6 order-none hidden lg:block`}>
+  <div class={`${cmHero.isRoundedMainImg.value ? 'rounded-full' : ''} py-6 order-none hidden lg:block`}>
     <Picture
       src={heroImage}
       alt="Astronaut in the air"
@@ -78,46 +78,46 @@ class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
       formats={['avif', 'webp']}
-      class={`${heroText.isRoundedMainImg ? 'rounded-2xl' : ''} ${heroText.isBlackAndWhitePhoto ? 'object-cover filter grayscale rounded-2xl' : 'rounded-lg'} `} 
+      class={`${cmHero.isRoundedMainImg.value ? 'rounded-2xl' : ''} ${cmHero.isBlackAndWhitePhoto.value ? 'object-cover filter grayscale rounded-2xl' : 'rounded-lg'} `} 
       />
   </div>
 </section> : 
 
 <section 
-  style={`color: ${heroText.colorTextIsBackgroundImg}`}
+  style={`color: ${cmHero.colorTextIsBackgroundImgStyleCm.value}`}
   class="grid  lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
   <div class="order-first lg:order-none">
     <h1 class="text-3xl pb-2 lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter " >
-      {heroText.title}
+      {cmHero.title.value}
     </h1>
     <div class="text-lg max-w-xl">
-      <MarkdownText text={heroText.subtitle} client:load />
+      <MarkdownText text={cmHero.subtitle.value} client:load />
     </div>
     <div class="flex flex-col sm:flex-row gap-3">
-      {heroText.isActiveBtnOne && <Link
+      {cmHero.isActiveBtnOne.value && <Link
         id="btnOne"
         style="orange"
-        bgColor={heroText?.bgBtnOne} 
-        textColor={heroText?.colorBtnOne} 
-        href={heroText?.link_button_one}
+        bgColor={cmHero?.bgBtnOneStyleCm.value} 
+        textColor={cmHero?.colorBtnOneStyleCm.value} 
+        href={cmHero?.linkButtonOne.value}
         target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
         <Icon name="order" class="text-blue-300" />
-        {heroText.button_one}
+        {cmHero.buttonOne.value}
       </Link>}
-      {heroText.isActiveBtnTwo && <Link
+      {cmHero.isActiveBtnTwo.value && <Link
         id="btnTwo"
         size="lg"
         style="outline"
-        bgColor={heroText?.bgBtnTwo} 
-        textColor={heroText?.colorBtnTwo} 
+        bgColor={cmHero?.bgBtnTwoStyleCm.value} 
+        textColor={cmHero?.colorBtnTwoStyleCm.value} 
         rel="noopener"
-        href={heroText?.link_button_two}
+        href={cmHero?.linkButtonTwo.value}
         class="flex gap-1 items-center justify-center"
         target="_blank">
         <Icon name="chat" class="text-orange-300" />
-        {heroText.button_two}
+        {cmHero.buttonTwo.value}
       </Link>}
     </div>
   </div>
@@ -129,7 +129,7 @@ class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
 
 
 
-{heroText.isCustomHero && <section>
+{cmHero.isCustomHero.value && <section>
   <HeroCustomReact client:only />
 </section>}
 

@@ -3,12 +3,11 @@ import quizDataText from '../../../const/quiz/quiz.json';
 import seoData from '../../../const/seo/seo-data-site.json';
 import { FaWindowClose } from 'react-icons/fa';
 import { sendToTelegram } from './utils/sendToTelegram';
-import appConfigtext from '../../../const/app-config/app-config.json';
+import { cmContactUs, cmAppConfig } from "../../../locale/cms-locale.json";
 import ModalQuiz from '../../../components/react-components/quiz-questions-react/modal-quiz';
 import { FaPhone, FaTelegramPlane, FaEnvelope } from 'react-icons/fa';
 import ReactInputMask from 'react-input-mask';
 import YandexMetricaButton from '../app-react/seo/yandex-metrica-button';
-import textForm from "../../../const/contact-us/contact-us.json";
 
 interface QuizProps {
   setShowModalQuiz: (show: boolean) => void;
@@ -23,7 +22,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
   const [isFinished, setIsFinished] = useState(false);
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [userData, setUserData] = useState({
-    name: textForm.data.is_fio_form ? "":"NotName",
+    name: cmContactUs.isFioForm.value ? "":"NotName",
     phone: '',
     email: '',
     terms: false,
@@ -119,8 +118,8 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
 
     // Call sendToTelegram with userData and userAnswers
     const result = await sendToTelegram({
-      api_token: appConfigtext.TOKEN_TELEGRAM,
-      my_channel_name: appConfigtext.CHAT_ID_TELEGRAM,
+      api_token: cmAppConfig.tokenTelegram.value,
+      my_channel_name: cmAppConfig.chatIdTelegram.value,
       userData: userData,
       userAnswers: userAnswers,
       setOpenModalInit: () => { },
@@ -204,7 +203,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
   value={userData.name}
   placeholder="Ваше имя"
   onChange={handleInputChange}
-  className={`${textForm.data.is_fio_form ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
+  className={`${cmContactUs.isFioForm.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
   required
 />
 

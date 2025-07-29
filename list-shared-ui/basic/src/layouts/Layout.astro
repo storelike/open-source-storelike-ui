@@ -1,7 +1,7 @@
 ---
 import { SEO } from "astro-seo";
 import seoData from '../const/seo/seo-data-site.json'; 
-import colorTheme from "../const/hero/hero.json";
+import { cmAppConfig } from "../locale/cms-locale.json";
 import Navbar from "../components/navbar/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import YandexAnalytics from "../components/react-components/app-react/seo/yandex-analytics";
@@ -136,8 +136,8 @@ const makeTitle = title
       class="pt-16"
       id="bgTheme" 
       style={{
-        background: colorTheme.bgTheme,
-        color: colorTheme.textColorTheme,        
+        background: cmAppConfig.bgTheme.value,
+        color: cmAppConfig.textColorTheme.value,        
       }}
     >
       <slot />

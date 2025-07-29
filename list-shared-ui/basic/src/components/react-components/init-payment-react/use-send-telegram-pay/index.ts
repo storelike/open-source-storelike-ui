@@ -1,11 +1,11 @@
-import configApp from '../../../../const/app-config/app-config.json'
+import cmAppConfig from '../../../../locale/cms-locale.json';
 import type { DataPaidProductToSendTelegram } from '../types/DataPaidProductToSendTelegram.type';
 
 
 export const useSendTelegramPay = async (dataPayToSendTelegram: DataPaidProductToSendTelegram) => {
 
-  const api_token = configApp.TOKEN_TELEGRAM;
-  const my_channel_name = configApp.CHAT_ID_TELEGRAM;
+  const api_token = cmAppConfig.cmAppConfig.tokenTelegram.value;
+  const my_channel_name = cmAppConfig.cmAppConfig.chatIdTelegram.value;
 
 
   try {

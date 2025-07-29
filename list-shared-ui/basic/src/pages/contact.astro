@@ -3,7 +3,7 @@ import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
 import ContactForm from "../components/ContactForm.astro"
 import { Icon } from "astro-icon/components";
-import textContactUsPage from "../const/contact-us/contact-us.json";
+import { cmContactUs } from "../locale/cms-locale.json";
 import localeTextSite from "../locale/locale_text_site.json";
 
 ---
@@ -13,50 +13,50 @@ import localeTextSite from "../locale/locale_text_site.json";
  
     <div class="mt-10">
 			<p class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-			  {textContactUsPage.data.title}
+			  {cmContactUs.title.value}
 			</p>
 			<p class="text-lg mt-4 text-slate-600">
-			  {textContactUsPage.data.subtitle}
+			  {cmContactUs.subtitle.value}
 			</p>
 		  </div>
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">{textContactUsPage.data.formTitle} </h2>
+        <h2 class="font-medium text-2xl text-gray-800">{cmContactUs.formTitle.value} </h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          {textContactUsPage.data.formSubtitle}
+          {cmContactUs.formSubtitle.value}
         </p>
         <div class="mt-2">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>{textContactUsPage.data.address}</span>
+            <span>{cmContactUs.address.value}</span>
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href=`mailto:${textContactUsPage.data.email}`
-              >{textContactUsPage.data.email}</a
+              href=`mailto:${cmContactUs.email.value}`
+              >{cmContactUs.email.value}</a
             >
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href=`tel:${textContactUsPage.data.phone}`>{textContactUsPage.data.phone}</a
+              href=`tel:${cmContactUs.phone.value}`>{cmContactUs.phone.value}</a
             >
           </div>
 
-        {textContactUsPage.data.is_company_details &&   <div class="mt-3 text-sm max-w-md mx-auto bg-gray-100 p-3 rounded-lg shadow-md">
-            <h2 class=" font-bold text-gray-800 mb-2">{textContactUsPage.data.nameCompany}</h2>
-            <h3 class="font-bold text-gray-800 mb-2">{textContactUsPage.data.nameBankTitle}</h3>
+        {cmContactUs.isCompanyDetails.value &&   <div class="mt-3 text-sm max-w-md mx-auto bg-gray-100 p-3 rounded-lg shadow-md">
+            <h2 class=" font-bold text-gray-800 mb-2">{cmContactUs.nameCompany.value}</h2>
+            <h3 class="font-bold text-gray-800 mb-2">{cmContactUs.nameBankTitle.value}</h3>
             <ul class="text-gray-700">
-                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.innTitle}:</span> {textContactUsPage.data.inn}</li>
-                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.kppTitle}:</span> {textContactUsPage.data.kpp}</li>
-                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.paymentAccountTitle}:</span> {textContactUsPage.data.paymentAccount}</li>
-                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.bankTitle}</span> {textContactUsPage.data.nameBank}</li>
-                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.correspondentAccountTitle}:</span> {textContactUsPage.data.correspondentAccount}</li>
-                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.bikTitle}:</span> {textContactUsPage.data.bik}</li>
+                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.innTitle}:</span> {cmContactUs.inn.value}</li>
+                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.kppTitle}:</span> {cmContactUs.kpp.value}</li>
+                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.paymentAccountTitle}:</span> {cmContactUs.paymentAccount.value}</li>
+                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.bankTitle}</span> {cmContactUs.nameBank.value}</li>
+                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.correspondentAccountTitle}:</span> {cmContactUs.correspondentAccount.value}</li>
+                <li><span class="font-semibold">{localeTextSite.pages.contactUs.dataTitle.bikTitle}:</span> {cmContactUs.bik.value}</li>
             </ul>
         
-            <h2 class=" font-bold text-gray-800 mt-3 mb-4">{textContactUsPage.data.operatingMode}</h2>
+            <h2 class=" font-bold text-gray-800 mt-3 mb-4">{cmContactUs.operatingMode.value}</h2>
             <ul class="text-gray-700">
-                <li><span class="font-semibold">{textContactUsPage.data.operatingModeWorkDay}</li>
-                <li><span class="font-semibold">{textContactUsPage.data.operatingModeSaturDay}</li>
-                <li><span class="font-semibold">{textContactUsPage.data.operatingModeSunDay}</li>
+                <li><span class="font-semibold">{cmContactUs.operatingModeWorkDay.value}</li>
+                <li><span class="font-semibold">{cmContactUs.operatingModeSaturday.value}</li>
+                <li><span class="font-semibold">{cmContactUs.operatingModeSunday.value}</li>
             </ul>
         </div>  }     
           

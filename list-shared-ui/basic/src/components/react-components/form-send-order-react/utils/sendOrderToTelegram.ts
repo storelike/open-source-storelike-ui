@@ -1,5 +1,5 @@
 // utils/sendToTelegramCallToAction.ts
-import appConfig from '../../../../const/app-config/app-config.json';
+import cmAppConfig from '../../../../locale/cms-locale.json';
 
 interface UserDataSendTelegram {
   name: string;
@@ -33,7 +33,7 @@ const sendOrderToTelegram = async (sendTelegramAllData: UserDataSendTelegram): P
     Дополнительная информация: ${message}
   `;
 
-  const url = `https://api.telegram.org/bot${appConfig.TOKEN_TELEGRAM}/sendMessage`;
+  const url = `https://api.telegram.org/bot${cmAppConfig.cmAppConfig.tokenTelegram.value}/sendMessage`;
 
   try {
     const response = await fetch(url, {
@@ -42,7 +42,7 @@ const sendOrderToTelegram = async (sendTelegramAllData: UserDataSendTelegram): P
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        chat_id: appConfig.CHAT_ID_TELEGRAM,
+        chat_id: cmAppConfig.cmAppConfig.chatIdTelegram.value,
         text: messageToSend,
         parse_mode: 'HTML',
       }),

@@ -6,7 +6,7 @@ import SpinnerLoaderTextButton from '../../../components/react-components/spinne
 import localeTextSite from "../../../locale/locale_text_site.json";
 import YandexMetricaButton from '../../../components/react-components/app-react/seo/yandex-metrica-button';
 import seoData from '../../../const/seo/seo-data-site.json';
-import textForm from "../../../const/contact-us/contact-us.json";
+import cmContactUs from "../../../locale/cms-locale.json";
 
 interface UserDataSendTelegram {
   name: string;
@@ -32,10 +32,10 @@ const FormSendOrderReact: React.FC<OrderDataSendTelegram> = ({ orderDataSendTele
   const [phoneError, setPhoneError] = useState('');
 
   const [sendTelegramAllData, setSendTelegramAllData] = useState<UserDataSendTelegram>({
-    name: textForm.data.is_fio_form ? "":"NotName",
+    name: cmContactUs.cmContactUs.isFioForm.value ? "":"NotName",
     phone: '',
     email: '',
-    message: textForm.data.is_message_active ? "":"Интересует оформление заказа / подробности (форма продукты/услуги)",
+    message: cmContactUs.cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности (форма продукты/услуги)",
     delivery: '',
     orderDataSendTelegram,
   });
@@ -138,7 +138,7 @@ if (name === "phone") {
             value={sendTelegramAllData.name}
             placeholder={localeTextSite.components.reactComponents.formSendOrderReact.namePlaceholder}
             onChange={handleInputChange}
-            className={`${textForm.data.is_fio_form ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
+            className={`${cmContactUs.cmContactUs.isFioForm.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
             required
           />
          
@@ -191,7 +191,7 @@ if (name === "phone") {
             value={sendTelegramAllData.message}
             placeholder={localeTextSite.components.reactComponents.formSendOrderReact.messagePlaceholder}
             onChange={handleInputChange}
-            className={`${textForm.data.is_message_active ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
+            className={`${cmContactUs.cmContactUs.isMessageActive.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
             
             rows={4}
           />

@@ -1,1 +1,0 @@
-src/const/hero/hero.json

@@ -7,7 +7,7 @@ import SpinnerLoaderTextButton from '../../../../components/react-components/spi
 import YandexMetricaButton from '../../../../components/react-components/app-react/seo/yandex-metrica-button';
 import seoData from '../../../../const/seo/seo-data-site.json';
 import localeTextSite from "../../../../locale/locale_text_site.json";
-import textForm from "../../../../const/contact-us/contact-us.json";
+import cmContactUs from "../../../../locale/cms-locale.json";
 
 interface UserData {
   name: string;
@@ -24,10 +24,10 @@ interface ContactFormProps {
 
 const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) => {
   const [userData, setUserData] = useState<UserData>({
-    name: textForm.data.is_fio_form ? "":"NotName",
+    name: cmContactUs.cmContactUs.isFioForm.value ? "":"NotName",
     phone: '',
     email: '',
-    message: textForm.data.is_message_active ? "":"Интересует оформление заказа / подробности (форма связаться)",
+    message: cmContactUs.cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности (форма связаться)",
     externalData,
   });
 
@@ -119,7 +119,7 @@ const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) 
             value={userData.name}
             placeholder={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.namePlaceholder}
             onChange={handleInputChange}
-            className={`${textForm.data.is_fio_form ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
+            className={`${cmContactUs.cmContactUs.isFioForm.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
             required
           />
 
@@ -176,7 +176,7 @@ const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) 
             value={userData.message}
             placeholder={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.messagePlaceholder}
             onChange={handleInputChange}
-            className={`${textForm.data.is_message_active ? "":"hidden"} block text-gray-900 w-full p-2 mb-2 border rounded`}
+            className={`${cmContactUs.cmContactUs.isMessageActive.value ? "":"hidden"} block text-gray-900 w-full p-2 mb-2 border rounded`}
             required
             rows={4}
           />

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { FormEvent } from "react";
 import InputMask from "react-input-mask";
-import textForm from "../../../const/contact-us/contact-us.json";
+import cmContactUs from "../../../locale/cms-locale.json";
 import seoData from '../../../const/seo/seo-data-site.json';
 import sendTelegramFeedBack from "./utils/sendTelegramFeedBack";
 import YandexMetricaButton from "../app-react/seo/yandex-metrica-button";
@@ -26,12 +26,12 @@ export default function FeedbackForm() {
   const [showName, setShowName] = useState(false);
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [formValues, setFormValues] = useState({
-    name: textForm.data.is_fio_form ? "":"NotName",
+    name: cmContactUs.cmContactUs.isFioForm.value ? "":"NotName",
     contact: "",
-    message: textForm.data.is_message_active ? "":"Интересует оформление заказа / подробности",
+    message: cmContactUs.cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности",
   });
   const [formErrors, setFormErrors] = useState({
-    name: textForm.data.is_fio_form ? true : false,
+    name: cmContactUs.cmContactUs.isFioForm.value ? true : false,
     contact: false,
     message: false,
     terms: false,
@@ -40,7 +40,7 @@ export default function FeedbackForm() {
 
   // Проверка валидности формы при изменении значений полей
   useEffect(() => {
-    const isNameValid = textForm.data.is_fio_form
+    const isNameValid = cmContactUs.cmContactUs.isFioForm.value
       ? formValues.name.trim() !== ''
       : true;
     const isMessageValid = formValues.message.trim() !== '';
@@ -128,11 +128,11 @@ export default function FeedbackForm() {
         <input
           type="text"
           name="name"
-          placeholder={textForm.data.formPlaceholderName}
+          placeholder={cmContactUs.cmContactUs.formPlaceholderName.value}
           value={formValues.name}
           onChange={handleInputChange}
           
-          className={`${textForm.data.is_fio_form ? "":"hidden"} w-full px-4 py-3 border-2 rounded-md outline-none focus:ring-4 ${
+          className={`${cmContactUs.cmContactUs.isFioForm.value ? "":"hidden"} w-full px-4 py-3 border-2 rounded-md outline-none focus:ring-4 ${
             formErrors.name ? "border-red-400 ring-red-100" : "border-gray-300 focus:border-gray-600 ring-gray-100"
           }`}
         />
@@ -203,11 +203,11 @@ export default function FeedbackForm() {
         <textarea
           name="message"
           rows={4}
-          placeholder={textForm.data.formPlaceholderTexarea}
+          placeholder={cmContactUs.cmContactUs.formPlaceholderTextarea.value}
           value={formValues.message}
           onChange={handleInputChange}
           required
-          className={`${textForm.data.is_message_active ? "":"hidden"} w-full px-4 py-3 border-2 rounded-md outline-none focus:ring-4 ${
+          className={`${cmContactUs.cmContactUs.isMessageActive.value ? "":"hidden"} w-full px-4 py-3 border-2 rounded-md outline-none focus:ring-4 ${
             formErrors.message ? "border-red-400 ring-red-100" : "border-gray-300 focus:border-gray-600 ring-gray-100"
           }`}
         ></textarea>

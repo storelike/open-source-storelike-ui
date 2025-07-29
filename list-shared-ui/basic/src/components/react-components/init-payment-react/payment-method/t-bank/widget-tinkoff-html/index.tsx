@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import appConfig from '../../../../../../const/app-config/app-config.json';
+import cmAppConfig from '../../../../../../locale/cms-locale.json';
 import styles from './styles.module.css';
 import { useSendTelegramPay } from '../../../use-send-telegram-pay';
 import type { PaidProduct } from '../../../types/PaidProduct.types';
@@ -59,8 +59,8 @@ const WidgetTinkoffHtml: React.FC<{ paidProduct: PaidProduct }> = ({ paidProduct
           }
 
           TPF.receipt.value = JSON.stringify({
-            EmailCompany: appConfig.TINKOFF_EMAIL_COMPANY,
-            Taxation: appConfig.TINKOFF_TAXION_COMPANY,
+            EmailCompany: cmAppConfig.cmAppConfig.tinkoffEmailCompany.value,
+            Taxation: cmAppConfig.cmAppConfig.tinkoffTaxionCompany.value,
             FfdVersion: '1.2',
             Items: [
               {
@@ -112,7 +112,7 @@ const WidgetTinkoffHtml: React.FC<{ paidProduct: PaidProduct }> = ({ paidProduct
   return (
     <>
       <form className={styles.formContainer} name="payform-tinkoff" id="payform-tinkoff" ref={formRef}>
-        <input className={styles.inputRow} type="hidden" name="terminalkey" value={appConfig.TINKOFF_TERMINAL_KEY} />
+        <input className={styles.inputRow} type="hidden" name="terminalkey" value={cmAppConfig.cmAppConfig.tinkoffTerminalKey.value} />
         <input className={styles.inputRow} type="hidden" name="frame" value="false" />
         <input className={styles.inputRow} type="hidden" name="language" value="ru" />
         <input className={styles.inputRow} type="hidden" name="receipt" value="" />

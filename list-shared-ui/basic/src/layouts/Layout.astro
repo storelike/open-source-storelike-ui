@@ -7,6 +7,7 @@ import Footer from "../components/Footer.astro";
 import YandexAnalytics from "../components/react-components/app-react/seo/yandex-analytics";
 import localeTextSite from "../locale/locale_text_site.json";
 import "../stylesSite/global.css";
+import { CMSRootProvider } from "cms-context/CMSRootProvider";
 
 export interface Props {
   title: string;
@@ -63,6 +64,8 @@ const makeTitle = title
 
     <meta name="yandex-verification" content={yandexWebmaster} />
 
+    
+
     {/* Google Tag Manager */}
     {numberGoogleMetric && (
       <>
@@ -117,8 +120,10 @@ const makeTitle = title
  
   
   </style>
-  <Navbar />
+ 
   <body >
+    <CMSRootProvider client:load >
+    <Navbar />
     {/* Google Tag Manager (noscript) */}
     {numberGoogleMetric && (
       <noscript>
@@ -146,5 +151,28 @@ const makeTitle = title
 
     {numberYandexMetric && <YandexAnalytics client:idle />}
     
+  </CMSRootProvider>
+
+  <script>
+    // Этот скрипт выполняется только в браузере
+    // Он обновляет данные для Astro-компонентов
+    document.addEventListener('DOMContentLoaded', () => {
+      const cmsDataFromStorage = localStorage.getItem('cms_preview_data');
+      if (cmsDataFromStorage) {
+        const data = JSON.parse(cmsDataFromStorage);
+        
+        // Находим элементы Astro, которые нужно обновить
+        const themeContainer = document.getElementById('bgTheme');
+        if (themeContainer) {
+          themeContainer.style.background = data.cmAppConfig.bgTheme.value;
+          themeContainer.style.color = data.cmAppConfig.textColorTheme.value;
+        }
+        
+        // Можно обновить и другие элементы, например, navbar, footer
+        // Но лучше переписать их на React, чтобы не делать это вручную
+      }
+    });
+  </script>
   </body>  
+
 </html>

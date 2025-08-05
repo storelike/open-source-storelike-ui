@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import defaultCms from '../locale/cms-locale.json';
 import { ADMIN_ORIGIN } from './constants';
 
@@ -6,39 +6,47 @@ export const CMSContext = createContext(defaultCms);
 
 export const CMSProvider = ({ children }: { children: React.ReactNode }) => {
   const [cmsData, setCmsData] = useState(defaultCms);
-  const [ready, setReady] = useState(false);
-
-  // console.log("DAT contex====",cmsData.cmHero)
+  // console.warn('✅  CMS data with:', cmsData);
   useEffect(() => {
-    const previewToken = 'jhdfjkfjk3g789g';
-    const isPreview = new URLSearchParams(window.location.search).get('preview') === previewToken;
+    if (typeof window === 'undefined') return;
 
-    // if (!isPreview) return;
+    const params = new URLSearchParams(window.location.search);
+    const previewToken = params.get('preview');
+    const validPreviewToken = 'jhdfjkfjk3g789g';
+
+    // console.log('✅ previewToken:', previewToken);
+
+    if (previewToken !== validPreviewToken) {
+      console.warn('❌ Invalid preview token');
+      return;
+    }
 
     const handleMessage = (event: MessageEvent) => {
       const { origin, data: msg } = event;
-      console.log("data=== msg  ",msg)
 
-      if (origin !== ADMIN_ORIGIN) return;
+      if (origin !== ADMIN_ORIGIN) {
+        console.warn(`❌ Invalid origin: ${origin}`);
+        return;
+      }
 
-
-      if (msg?.type === 'updateData') {
-        setCmsData(prev => ({
-          ...(prev || {}),
-          ...(msg.data || {}),
-        }));
-        setReady(true);
+      if (msg?.type === 'updateDataCMS' && msg.data) {
+        console.log('✅ Updating CMS data with:', msg.data);
+        setCmsData((prevData) => {
+    
+          return {
+            ...prevData,
+            ...msg.data,
+          
+          };
+        });
       }
     };
 
     window.addEventListener('message', handleMessage);
 
-    // ✅ Сообщаем родителю, что iframe готов
     window.parent.postMessage({ type: 'previewReady' }, '*');
 
-    return () => {
-      window.removeEventListener('message', handleMessage);
-    };
+    return () => window.removeEventListener('message', handleMessage);
   }, []);
 
   return (

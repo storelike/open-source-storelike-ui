@@ -688,7 +688,7 @@
     
     "bgThemeStyleCm": { 
           "label": "Цвет фона Hero секции", 
-          "value":  "black",
+          "value":  "orange",
           "id": "idThemeHeroCm"
          },
 
@@ -699,7 +699,7 @@
     },
     "bgBtnOneStyleCm": {
       "label": "Цвет фона кнопки", 
-      "value": "orange",
+      "value": "red",
       "id": "idBtnOneHeroCm"
     },
     "colorBtnOneStyleCm": {

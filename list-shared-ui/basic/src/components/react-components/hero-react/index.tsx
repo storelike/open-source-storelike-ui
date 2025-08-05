@@ -7,6 +7,7 @@ import { useCmsText } from 'cms-context/useCMS';
 const HeroReact = () => {
  
 const { cmHero } = useCmsText();
+// console.warn('cmHero', cmHero)
 
   const renderButtons = () => (
     <div className="flex flex-col sm:flex-row gap-3">

@@ -1,13 +1,12 @@
 ---
 import { SEO } from "astro-seo";
 import seoData from '../const/seo/seo-data-site.json'; 
-import { cmAppConfig } from "../locale/cms-locale.json";
+import { cmAppConfig as defaultCmsConfig } from "../locale/cms-locale.json";
 import Navbar from "../components/navbar/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import YandexAnalytics from "../components/react-components/app-react/seo/yandex-analytics";
 import localeTextSite from "../locale/locale_text_site.json";
 import "../stylesSite/global.css";
-import { CMSRootProvider } from "cms-context/CMSRootProvider";
 
 export interface Props {
   title: string;
@@ -19,7 +18,7 @@ type TwitterCardType = "summary" | "summary_large_image" | "app" | "player";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-// Извлекаем данные из seoData
+// Данные SEO
 const {
   nameImgOpengraph,
   titleSiteDefault,
@@ -32,20 +31,11 @@ const {
   seoKeywords
 } = seoData;
 
-// Приведение значения numberGoogleMetric к числу
 const numberGoogleMetric = Number(rawGoogleMetric) || null;
-
-const resolvedImageWithDomain = new URL(
-  nameImgOpengraph,
-  Astro.site
-).toString();
+const resolvedImageWithDomain = new URL(nameImgOpengraph, Astro.site).toString();
 
 const { title, description } = Astro.props;
-
-const makeTitle = title
-  ? `${title} | ${titleSiteDefault}`
-  : titleSiteDefault;
-
+const makeTitle = title ? `${title} | ${titleSiteDefault}` : titleSiteDefault;
 ---
 
 <!DOCTYPE html>
@@ -54,31 +44,18 @@ const makeTitle = title
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-<link rel="preload" href="/fonts/Old-Soviet.otf" as="font" type="font/otf" crossorigin="anonymous">
-
-
-
+    <link rel="preload" href="/fonts/Old-Soviet.otf" as="font" type="font/otf" crossorigin="anonymous">
     <meta name="generator" content={Astro.generator} />
     <meta name="keywords" content={seoKeywords} />
-
     <meta name="yandex-verification" content={yandexWebmaster} />
 
-    
-
-    {/* Google Tag Manager */}
     {numberGoogleMetric && (
       <>
-        <script
-          type="text/partytown"
-          src={`https://www.googletagmanager.com/gtag/js?id=${numberGoogleMetric}`}
-        ></script>
+        <script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${numberGoogleMetric}`}></script>
         <script type="text/partytown">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
+            function gtag(){dataLayer.push(arguments);}
             gtag("js", new Date());
             gtag("config", "${numberGoogleMetric}");
           `}
@@ -86,7 +63,6 @@ const makeTitle = title
       </>
     )}
 
-    {/* Canonical URL */}
     <link rel="canonical" href={canonicalURL} />
 
     <SEO
@@ -113,18 +89,12 @@ const makeTitle = title
   </head>
 
   <style is:global>
-    img {
-      content-visibility: auto;
-    }
-
- 
-  
+    img { content-visibility: auto; }
   </style>
  
-  <body >
-    <CMSRootProvider client:load >
+  <body>
     <Navbar />
-    {/* Google Tag Manager (noscript) */}
+
     {numberGoogleMetric && (
       <noscript>
         <iframe
@@ -135,44 +105,34 @@ const makeTitle = title
         ></iframe>
       </noscript>
     )}
-    {/* End Google Tag Manager */}
-     
-    <div
-      class="pt-16"
-      id="bgTheme" 
-      style={{
-        background: cmAppConfig.bgTheme.value,
-        color: cmAppConfig.textColorTheme.value,        
-      }}
-    >
+
+    <div id="bgThemeWrapper" class="pt-16" style={{
+      background: defaultCmsConfig.bgTheme.value,
+      color: defaultCmsConfig.textColorTheme.value
+    }}>
       <slot />
       <Footer />
-    </div> 
+    </div>
 
     {numberYandexMetric && <YandexAnalytics client:idle />}
-    
-  </CMSRootProvider>
 
-  <script>
-    // Этот скрипт выполняется только в браузере
-    // Он обновляет данные для Astro-компонентов
-    document.addEventListener('DOMContentLoaded', () => {
-      const cmsDataFromStorage = localStorage.getItem('cms_preview_data');
-      if (cmsDataFromStorage) {
-        const data = JSON.parse(cmsDataFromStorage);
-        
-        // Находим элементы Astro, которые нужно обновить
-        const themeContainer = document.getElementById('bgTheme');
-        if (themeContainer) {
-          themeContainer.style.background = data.cmAppConfig.bgTheme.value;
-          themeContainer.style.color = data.cmAppConfig.textColorTheme.value;
-        }
-        
-        // Можно обновить и другие элементы, например, navbar, footer
-        // Но лучше переписать их на React, чтобы не делать это вручную
+    {/* Скрипт для режима админа */}
+    <script>
+      const isAdmin = new URLSearchParams(window.location.search).get('admin') === 'true';
+      if (isAdmin) {
+        fetch('https://5173-cs-201391041517-default.cs-europe-west1-onse.cloudshell.dev/api/get-cms-data', { credentials: 'include' })
+          .then(res => res.json())
+          .then(data => {
+            // console.log(data.cmAppConfig);
+            const wrapper = document.getElementById('bgThemeWrapper');
+            if (wrapper && data?.cmAppConfig) {
+              wrapper.style.background = data?.cmAppConfig.bgTheme.value;
+              wrapper.style.color = data?.cmAppConfig.textColorTheme.value;
+            }
+          })
+          .catch(err => console.error('Ошибка загрузки админских данных:', err));
       }
-    });
-  </script>
-  </body>  
-
+    </script>
+    
+  </body>
 </html>

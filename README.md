@@ -2,23 +2,10 @@
 # E-commerce & Web Templates – High Performance Focus ⚡
 
 - **CLIENT (BASE):** [Открыть](https://bbabv7itgrncm4gvhgot.containers.yandexcloud.net)  
-- **ADMIN:** [Открыть](https://bban9brl7081u3mtsdp8.containers.yandexcloud.net)
+- **ADMIN CLIENT:** [Открыть](https://bban9brl7081u3mtsdp8.containers.yandexcloud.net)
  - **Login:** `admin@storelike.ru`  
   - **Password:** `d%QlE@6XFZTMX~Kw$A`
 
-## Репозиторий
-- [Edit repository details](https://github.com/storelike/open-source-storelike-ui/edit)  
-- [Description](https://github.com/storelike/open-source-storelike-ui#description)  
-
-**Client basic**  
-
-**Website:** [https://bbabv7itgrncm4gvhgot.containers.yandexcloud.net](https://bbabv7itgrncm4gvhgot.containers.yandexcloud.net)  
-
-**Topics:** (separate with spaces)  
-
-**Include in the home page**  
-
-**Releases | Packages | Deployments**
 
 **Максимальная производительность, минималистичный дизайн.**
 

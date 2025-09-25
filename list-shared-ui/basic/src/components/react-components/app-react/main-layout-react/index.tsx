@@ -1,8 +1,7 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router';
 
 
-const MainLayoutReact: React.FC = () => {
+const MainLayoutReact = () => {
 
     return (
         <div>

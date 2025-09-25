@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import texteliveryRules from '../../../../const/flatpages/delivery-rules/delivery-rules.json';
+import { cmFlatpagesDeliveryRules } from "../../../../locale/cms-locale.json";
 import LoadingWrapper from '../content-flatpage';
 import localeTextSite from "../../../../locale/locale_text_site.json";
 
@@ -30,7 +30,7 @@ const DeliveryRulesReact: React.FC = () => {
 
   return (
     <div className="mt-12 flex flex-col items-center min-h-screen rounded-lg ">
-      <h1 className="pt-10 text-4xl font-bold text-gray-800">{texteliveryRules.title}</h1>
+      <h1 className="pt-10 text-4xl font-bold text-gray-800">{cmFlatpagesDeliveryRules.title.value}</h1>
       <div className="mt-4 p-5">
       <LoadingWrapper loading={loading}>
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />

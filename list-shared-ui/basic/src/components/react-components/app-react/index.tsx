@@ -1,38 +1,28 @@
 import React from 'react';
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router';
 
-import MainLayoutReact from '../../../components/react-components/app-react/main-layout-react';
-import ErrorPage404React from '../../../components/react-components/app-react/error-page-404-react';
+import MainLayoutReact from './main-layout-react';
+import ErrorPage404React from './error-page-404-react';
 
-import ThankYouPageReact from '../../../components/react-components/thank-you-react';
+import ThankYouPageReact from '../thank-you-react';
 import CallToActionPage from './call-to-action-page';
 
 
-const AppReact: React.FC = () => { 
+const AppReactRouter: React.FC = () => { 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<MainLayoutReact />} errorElement={<ErrorPage404React />}>  
+      <Route path="/" element={<MainLayoutReact />} >  
         <Route path="/thank-you" element={<ThankYouPageReact />} />
         <Route path="/call-to-action" element={<CallToActionPage />} />      
         {/* <Route path="*" element={<ErrorPage404React />} /> */}
       </Route>
-    ),
-    {
-      future: {       
-        v7_relativeSplatPath: true,
-        v7_fetcherPersist: true,
-        v7_normalizeFormMethod: true,
-        v7_partialHydration: true,
-        v7_skipActionErrorRevalidation: true,
-      }
-    }
+    )
+  
   );
 
 
-  return (<RouterProvider router={router} future={{
-      v7_startTransition: true,
-    }} />
+  return (<RouterProvider router={router}  />
   );
 };
 
-export default AppReact;
+export default AppReactRouter;

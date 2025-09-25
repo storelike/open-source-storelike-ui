@@ -1,13 +1,13 @@
 ---
-import PropsLogoNavbar from '../../const/navbar/logo.json'
+import { cmNavbarLogoConfig } from '../../locale/cms-locale.json'
 ---
 
 <a href="/" class="flex items-center lg:space-x-2">
   <img
-    src={PropsLogoNavbar.path}
-    alt={PropsLogoNavbar.alt}
-    width={PropsLogoNavbar.widthLogo}
-    height={PropsLogoNavbar.heightLogo}
+    src={cmNavbarLogoConfig.path.value}
+    alt={cmNavbarLogoConfig.alt.value}
+    width={cmNavbarLogoConfig.widthLogo.value}
+    height={cmNavbarLogoConfig.heightLogo.value}
   />
-  {PropsLogoNavbar.isTitle && <span class="font-bold text-[clamp(6px,4vw,18px)]">{PropsLogoNavbar.title}</span>}
+  {cmNavbarLogoConfig.isTitle.value && <span class="font-bold text-[clamp(6px,4vw,18px)]">{cmNavbarLogoConfig.title.value}</span>}
 </a>

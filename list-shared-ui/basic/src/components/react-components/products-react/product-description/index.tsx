@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import { AiOutlineClose } from 'react-icons/ai';
-import MarkdownText from '../../../../components/react-components/markdown-text';
+import MarkdownText from '../../markdown-text';
 import localeTextSite from "../../../../locale/locale_text_site.json";
 
 interface ProductDescriptionModalProps {

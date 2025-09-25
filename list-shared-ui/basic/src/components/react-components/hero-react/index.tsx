@@ -2,18 +2,18 @@ import React from 'react';
 import heroImage from '../../../assets/hero.webp';
 import HeroCustomReact from '../hero-custom-react';
 import MarkdownText from '../markdown-text';
-import { useCmsData } from 'cms-context/useCmsData';
+import { useCmsData } from 'cms-get-data/useCmsData';
 
 const HeroReact = () => {
   const { cmHero } = useCmsData();
-// console.warn(cmHero)
+// console.warn("cmHero============ ", cmHero)
   // Если данные ещё не загрузились — показываем пустышку или loader
   if (!cmHero) {
     return <div>Loading...</div> //null; // или <div>Loading...</div>
   }
 
   const renderButtons = () => (
-    <div className="flex flex-col sm:flex-row gap-3">
+    <div   className="flex flex-col sm:flex-row gap-3">
       {cmHero?.isActiveBtnOne?.value && (
         <a
           href={cmHero?.linkButtonOne?.value || '#'}
@@ -69,7 +69,10 @@ const HeroReact = () => {
 
   return (
     <section
-      style={{ color: cmHero.colorTextIsBackgroundImgStyleCm?.value }}
+      style={{ 
+        color: cmHero.colorThemeStyleCm.value,
+        background: cmHero?.bgThemeStyleCm.value ,
+      }}
       className="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24"
     >
       <div className="order-first lg:order-none">

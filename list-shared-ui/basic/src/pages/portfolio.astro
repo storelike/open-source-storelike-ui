@@ -2,12 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Container from '../components/Container.astro';
 import PortfolioReact from '../components/react-components/flatpages-react/portfolio';
-import localeTextSite from "../locale/locale_text_site.json";
+import {cmFlatpagesPortfolio} from "../locale/cms-locale.json";
 ---
 
 <Layout
-	title={localeTextSite.pages.portfolio.title}
-	description={localeTextSite.pages.portfolio.description}>
+	title={cmFlatpagesPortfolio.title_meta_tag.value}
+	description={cmFlatpagesPortfolio.description_meta_tag.value}>
 <Container>   
 	<PortfolioReact client:load />
 </Container>   

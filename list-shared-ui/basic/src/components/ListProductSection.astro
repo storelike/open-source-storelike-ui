@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import textProductsPage from '../const/products/products.json';
+import  { cmProducts } from '../locale/cms-locale.json';
 import ProductList from '../components/react-components/products-react/product-list';
 
 const productsColection = (await getCollection('products')).sort(
@@ -12,10 +12,10 @@ const productsColection = (await getCollection('products')).sort(
 <div class="flex flex-col">
   <div class="mt-10 text-left"> 
     <p class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-      {textProductsPage.title}
+      {cmProducts.title.value}
     </p>
     <p class="text-lg mt-4">
-      {textProductsPage.subtitle}
+      {cmProducts.subtitle.value}
     </p>
   </div>
 

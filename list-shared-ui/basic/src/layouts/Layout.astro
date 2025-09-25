@@ -1,12 +1,15 @@
 ---
 import { SEO } from "astro-seo";
-import seoData from '../const/seo/seo-data-site.json'; 
-import { cmAppConfig as defaultCmsConfig } from "../locale/cms-locale.json";
+import { cmAppConfig, cmSeo } from "../locale/cms-locale.json";
+import AppReactRouter from "../components/react-components/app-react";
 import Navbar from "../components/navbar/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import YandexAnalytics from "../components/react-components/app-react/seo/yandex-analytics";
 import localeTextSite from "../locale/locale_text_site.json";
 import "../stylesSite/global.css";
+import BurgerMenu from "../components/ui/BurgerMenu.astro";
+import { ADMIN_ORIGIN } from '../cms-get-data/constants';
+
+
 
 export interface Props {
   title: string;
@@ -18,7 +21,7 @@ type TwitterCardType = "summary" | "summary_large_image" | "app" | "player";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-// Данные SEO
+// Извлекаем данные из cmSeo
 const {
   nameImgOpengraph,
   titleSiteDefault,
@@ -29,13 +32,23 @@ const {
   numberYandexMetric,
   yandexWebmaster,
   seoKeywords
-} = seoData;
+} = cmSeo;
 
-const numberGoogleMetric = Number(rawGoogleMetric) || null;
-const resolvedImageWithDomain = new URL(nameImgOpengraph, Astro.site).toString();
+// Приведение значения numberGoogleMetric к числу
+const numberGoogleMetric = Number(rawGoogleMetric.value) || null;
+
+const resolvedImageWithDomain = new URL(
+  nameImgOpengraph.value,
+  Astro.site
+).toString();
 
 const { title, description } = Astro.props;
-const makeTitle = title ? `${title} | ${titleSiteDefault}` : titleSiteDefault;
+
+const makeTitle = title
+  ? `${title} | ${titleSiteDefault.value}`
+  : titleSiteDefault.value;
+
+
 ---
 
 <!DOCTYPE html>
@@ -44,18 +57,29 @@ const makeTitle = title ? `${title} | ${titleSiteDefault}` : titleSiteDefault;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" href="/fonts/Old-Soviet.otf" as="font" type="font/otf" crossorigin="anonymous">
-    <meta name="generator" content={Astro.generator} />
-    <meta name="keywords" content={seoKeywords} />
-    <meta name="yandex-verification" content={yandexWebmaster} />
 
+<link rel="preload" href="/fonts/Old-Soviet.otf" as="font" type="font/otf" crossorigin="anonymous">
+
+
+
+    <meta name="generator" content={Astro.generator} />
+    <meta name="keywords" content={seoKeywords.value} />
+
+    <meta name="yandex-verification" content={yandexWebmaster.value} />
+
+    {/* Google Tag Manager */}
     {numberGoogleMetric && (
       <>
-        <script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${numberGoogleMetric}`}></script>
+        <script
+          type="text/partytown"
+          src={`https://www.googletagmanager.com/gtag/js?id=${numberGoogleMetric}`}
+        ></script>
         <script type="text/partytown">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag() {
+              dataLayer.push(arguments);
+            }
             gtag("js", new Date());
             gtag("config", "${numberGoogleMetric}");
           `}
@@ -63,6 +87,7 @@ const makeTitle = title ? `${title} | ${titleSiteDefault}` : titleSiteDefault;
       </>
     )}
 
+    {/* Canonical URL */}
     <link rel="canonical" href={canonicalURL} />
 
     <SEO
@@ -70,31 +95,41 @@ const makeTitle = title ? `${title} | ${titleSiteDefault}` : titleSiteDefault;
       description={description}
       canonical={canonicalURL}
       twitter={{
-        creator: twitterCreator,
-        site: twitterSite,
-        card: twitterCard as TwitterCardType,
+        creator: twitterCreator.value,
+        site: twitterSite.value,
+        card: twitterCard.value as TwitterCardType,
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: titleSiteDefault,
+          title: titleSiteDefault.value,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: titleSiteDefault,
+          alt: titleSiteDefault.value,
         },
       }}
     />
   </head>
 
   <style is:global>
-    img { content-visibility: auto; }
+    img {
+      content-visibility: auto;
+    }
+
+  
   </style>
  
-  <body>
-    <Navbar />
-
+  <body >
+    <AppReactRouter client:only />
+    
+     <Navbar  />
+     	<div class=" z-50 fixed ">
+        <BurgerMenu  />
+      </div>
+     
+    {/* Google Tag Manager (noscript) */}
     {numberGoogleMetric && (
       <noscript>
         <iframe
@@ -105,34 +140,21 @@ const makeTitle = title ? `${title} | ${titleSiteDefault}` : titleSiteDefault;
         ></iframe>
       </noscript>
     )}
+    {/* End Google Tag Manager */}
+     
+    <div
+      class="pt-16"
+      id="bgThemeWrapper" 
+     
+      data-admin-origin={ADMIN_ORIGIN || ""}
+      style={{
+        background: cmAppConfig.bgTheme.value,
+        color: cmAppConfig.textColorTheme.value,        
+      }}
+    >
+  <slot />
+  <Footer />
+</div>
 
-    <div id="bgThemeWrapper" class="pt-16" style={{
-      background: defaultCmsConfig.bgTheme.value,
-      color: defaultCmsConfig.textColorTheme.value
-    }}>
-      <slot />
-      <Footer />
-    </div>
-
-    {numberYandexMetric && <YandexAnalytics client:idle />}
-
-    {/* Скрипт для режима админа */}
-    <script>
-      const isAdmin = new URLSearchParams(window.location.search).get('admin') === 'true';
-      if (isAdmin) {
-        fetch('https://5173-cs-201391041517-default.cs-europe-west1-onse.cloudshell.dev/api/get-cms-data', { credentials: 'include' })
-          .then(res => res.json())
-          .then(data => {
-            // console.log(data.cmAppConfig);
-            const wrapper = document.getElementById('bgThemeWrapper');
-            if (wrapper && data?.cmAppConfig) {
-              wrapper.style.background = data?.cmAppConfig.bgTheme.value;
-              wrapper.style.color = data?.cmAppConfig.textColorTheme.value;
-            }
-          })
-          .catch(err => console.error('Ошибка загрузки админских данных:', err));
-      }
-    </script>
-    
-  </body>
+  </body>  
 </html>

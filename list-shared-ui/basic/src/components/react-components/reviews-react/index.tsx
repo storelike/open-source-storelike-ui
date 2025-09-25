@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import reviewsData from '../../../const/reviews/reviews.json'; 
+import { cmReviews } from '../../../locale/cms-locale.json'; 
 import styles from './style.module.css'
 
 interface Review {
@@ -39,7 +39,7 @@ const ReviewReact: React.FC<Review> = ({ author, rating, comment }) => {
 
 const ReviewsReact: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const reviewsLength = reviewsData?.list.length || 0;
+  const reviewsLength = cmReviews?.list.length || 0;
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   // Функция для перехода к следующему отзыву
@@ -66,9 +66,9 @@ const ReviewsReact: React.FC = () => {
 
   return (
     <div className="max-w-full mx-auto p-6">
-      <h2 className="text-2xl font-semibold mb-4 text-center">{reviewsData?.title}</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-center">{cmReviews?.title.value}</h2>
       <div className={`flex overflow-x-scroll ${styles.scrollbarHide}`} ref={scrollRef}>
-        {reviewsData?.list.map((review) => (
+        {cmReviews?.list.map((review) => (
           <div
             key={review?.id}
             className="flex-shrink-0 w-64 md:w-80 px-2"

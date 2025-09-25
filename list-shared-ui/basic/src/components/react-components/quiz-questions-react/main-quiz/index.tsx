@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Quiz from '../../../../components/react-components/quiz-questions-react/Quiz'; // Предполагается, что Quiz — это компонент с опросом
+import Quiz from '../Quiz'; // Предполагается, что Quiz — это компонент с опросом
 import { FaQuestionCircle } from 'react-icons/fa'; // Используем иконку вопроса
-import GiftBox from '../../../../components/react-components/quiz-questions-react/main-quiz/gift-box';
+import GiftBox from './gift-box';
 
 const MainQuiz: React.FC = () => {
   const [showModalQuiz, setShowModalQuiz] = useState(false);

@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import quizDataText from '../../../const/quiz/quiz.json';
-import seoData from '../../../const/seo/seo-data-site.json';
+
 import { FaWindowClose } from 'react-icons/fa';
 import { sendToTelegram } from './utils/sendToTelegram';
-import { cmContactUs, cmAppConfig } from "../../../locale/cms-locale.json";
-import ModalQuiz from '../../../components/react-components/quiz-questions-react/modal-quiz';
+import ModalQuiz from './modal-quiz';
 import { FaPhone, FaTelegramPlane, FaEnvelope } from 'react-icons/fa';
-import ReactInputMask from 'react-input-mask';
+
 import YandexMetricaButton from '../app-react/seo/yandex-metrica-button';
+import PhoneInput from '../phone-input';
+import localeTextSite from '../../../locale/locale_text_site.json';
+import { cmContactUs, cmAppConfig, cmQuiz, cmSeo } from "../../../locale/cms-locale.json";
+
 
 interface QuizProps {
   setShowModalQuiz: (show: boolean) => void;
@@ -22,7 +24,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
   const [isFinished, setIsFinished] = useState(false);
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [userData, setUserData] = useState({
-    name: cmContactUs.isFioForm.value ? "":"NotName",
+    name: cmContactUs.isFioForm.value ? "" : "NotName",
     phone: '',
     email: '',
     terms: false,
@@ -30,6 +32,15 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
   });
   const [successMessage, setSuccessMessage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Используем данные из JSON
+  const quizDataText = {
+    title: cmQuiz.title.value,
+    subtitle: cmQuiz.subtitle.value,
+    modal_title: cmQuiz.modalTitle.value,
+    modal_subtitle: cmQuiz.modalSubtitle.value,
+    questions: cmQuiz.questions.value
+  };
 
   const handleAnswerSelection = (answer: string) => {
     setSelectedAnswer(answer);
@@ -42,7 +53,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
       return;
     }
     setError('');
-    
+
     // Save the current answer and move to the next question
     setUserAnswers([
       ...userAnswers,
@@ -145,7 +156,8 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
   return (
     <div className="fixed  top-12 m-4 inset-0 flex items-center justify-center bg-black bg-opacity-80 transition-opacity duration-300">
       <ModalQuiz open={isModalOpen} onClose={() => [setIsModalOpen(false), handleCloseQuiz()]} message={successMessage} />
-      <div className="relative w-[95%] max-w-md p-4 bg-gray-300 rounded-lg shadow-md transition-transform duration-300 transform max-h-[90vh] overflow-y-auto">        <button
+      <div className="relative w-[95%] max-w-md p-4 bg-gray-300 rounded-lg shadow-md transition-transform duration-300 transform max-h-[90vh] overflow-y-auto">        
+        <button
           className="absolute top-2 right-2 p-2 bg-red-500 text-white rounded-full hover:bg-red-600"
           onClick={handleCloseQuiz}
         >
@@ -198,57 +210,57 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
               </div>
 
           <input
-  type="text"
-  name="name"
-  value={userData.name}
-  placeholder="Ваше имя"
+            type="text"
+            name="name"
+            value={userData.name}
+            placeholder="Ваше имя"
+            onChange={handleInputChange}
+            className={`${cmContactUs.isFioForm.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
+            required
+          />
+
+          {(userData.contactMethod === 'phone' || userData.contactMethod === 'telegram') && (
+            
+            <PhoneInput
+  name="phone"
+  value={userData.phone}
+  placeholder={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.phonePlaceholder}
   onChange={handleInputChange}
-  className={`${cmContactUs.isFioForm.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
+  className={`block w-full p-2 mb-2 border rounded `}
   required
 />
+          )}
 
-{(userData.contactMethod === 'phone' || userData.contactMethod === 'telegram') && (
-  <ReactInputMask
-    mask="+7 (999) 999-99-99"
-    name="phone"
-    value={userData.phone}
-    placeholder="Ваш телефон"
-    onChange={handleInputChange}
-    className="block w-full p-2 mb-2 border rounded"
-    required
-  />
-)}
+          {userData.contactMethod === 'email' && (
+            <input
+              type="email"
+              name="email"
+              value={userData.email}
+              placeholder="Ваш email"
+              onChange={handleInputChange}
+              className="block w-full p-2 mb-2 border rounded"
+              required
+            />
+          )}
 
-{userData.contactMethod === 'email' && (
-  <input
-    type="email"
-    name="email"
-    value={userData.email}
-    placeholder="Ваш email"
-    onChange={handleInputChange}
-    className="block w-full p-2 mb-2 border rounded"
-    required
-  />
-)}
+          <div className="flex items-start gap-2">
+            <input
+              type="checkbox"
+              id="agreeToTerms"
+              checked={agreeToTerms}
+              onChange={() => setAgreeToTerms(!agreeToTerms)}
+              className="mt-1"
+            />
+            <label htmlFor="agreeToTerms" className="text-sm">
+              Я соглашаюсь с <a href="/privacy-policy" target="_blank" className="text-blue-600 underline">политикой конфиденциальности</a> и <a href="/user-agreement" target="_blank" className="text-blue-600 underline">пользовательским соглашением</a>.
+            </label>
+          </div>
 
-<div className="flex items-start gap-2">
-  <input
-    type="checkbox"
-    id="agreeToTerms"
-    checked={agreeToTerms}
-    onChange={() => setAgreeToTerms(!agreeToTerms)}
-    className="mt-1"
-  />
-  <label htmlFor="agreeToTerms" className="text-sm">
-    Я соглашаюсь с <a href="/privacy-policy" target="_blank" className="text-blue-600 underline">политикой конфиденциальности</a> и <a href="/user-agreement" target="_blank" className="text-blue-600 underline">пользовательским соглашением</a>.
-  </label>
-</div>
-
-             
+                         
               {error && <div className="text-red-500 mb-4">{error}</div>}
             </div>
             {agreeToTerms ? <YandexMetricaButton
-              yaGoalTitle={seoData.yaGoalTitleQuiz}
+              yaGoalTitle={cmSeo.yaGoalTitleQuiz.value}
               onClick={handleSubmit}                      
             >
             <button             

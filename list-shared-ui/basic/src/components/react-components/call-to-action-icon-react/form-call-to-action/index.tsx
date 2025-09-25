@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
-import InputMask from 'react-input-mask';
 import sendToTelegramCallToAction from '../utils/sendToTelegramCallToAction';
 import ModalCallToAction from '../modal-call-to-action';
-import SpinnerLoaderTextButton from '../../../../components/react-components/spinner-loader-text-button';
-import YandexMetricaButton from '../../../../components/react-components/app-react/seo/yandex-metrica-button';
-import seoData from '../../../../const/seo/seo-data-site.json';
+import SpinnerLoaderTextButton from '../../spinner-loader-text-button';
+import YandexMetricaButton from '../../app-react/seo/yandex-metrica-button';
+import PhoneInput from '../../phone-input'
+
 import localeTextSite from "../../../../locale/locale_text_site.json";
-import cmContactUs from "../../../../locale/cms-locale.json";
+import cmData from "../../../../locale/cms-locale.json";
 
 interface UserData {
   name: string;
@@ -24,10 +24,10 @@ interface ContactFormProps {
 
 const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) => {
   const [userData, setUserData] = useState<UserData>({
-    name: cmContactUs.cmContactUs.isFioForm.value ? "":"NotName",
+    name: cmData.cmContactUs.isFioForm.value ? "":"NotName",
     phone: '',
     email: '',
-    message: cmContactUs.cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности (форма связаться)",
+    message: cmData.cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности (форма связаться)",
     externalData,
   });
 
@@ -119,7 +119,7 @@ const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) 
             value={userData.name}
             placeholder={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.namePlaceholder}
             onChange={handleInputChange}
-            className={`${cmContactUs.cmContactUs.isFioForm.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
+            className={`${cmData.cmContactUs.isFioForm.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
             required
           />
 
@@ -141,17 +141,19 @@ const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) 
 </div>
 
 {contactMethod === 'phone' && (
-  <InputMask
-    mask={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.maskPlaceholder}
-    name="phone"
-    value={userData.phone}
-    placeholder={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.phonePlaceholder}
-    onChange={handleInputChange}
-    className={`block w-full p-2 mb-2 border rounded ${
-      formErrors.phone ? 'border-red-400 ring-red-100' : 'border-gray-300 focus:border-gray-600 ring-gray-100'
-    }`}
-    required
-  />
+
+  <PhoneInput
+  name="phone"
+  value={userData.phone}
+  placeholder={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.phonePlaceholder}
+  onChange={handleInputChange}
+  className={`block w-full p-2 mb-2 border rounded ${
+    formErrors.phone
+      ? "border-red-400 ring-red-100"
+      : "border-gray-300 focus:border-gray-600 ring-gray-100"
+  }`}
+  required
+/>
 )}
 
 {contactMethod === 'email' && (
@@ -165,8 +167,6 @@ const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) 
     required
   />
 )}
-
-
           
           
 
@@ -176,7 +176,7 @@ const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) 
             value={userData.message}
             placeholder={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.messagePlaceholder}
             onChange={handleInputChange}
-            className={`${cmContactUs.cmContactUs.isMessageActive.value ? "":"hidden"} block text-gray-900 w-full p-2 mb-2 border rounded`}
+            className={`${cmData.cmContactUs.isMessageActive.value ? "":"hidden"} block text-gray-900 w-full p-2 mb-2 border rounded`}
             required
             rows={4}
           />
@@ -198,7 +198,7 @@ const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) 
 </div>
 
           
-          <YandexMetricaButton yaGoalTitle={seoData.yaGoalTitleCallToAction}>
+          <YandexMetricaButton yaGoalTitle={cmData.cmSeo.yaGoalTitleCallToAction.value}>
   <button
     type="submit"
     disabled={!isFormValid}

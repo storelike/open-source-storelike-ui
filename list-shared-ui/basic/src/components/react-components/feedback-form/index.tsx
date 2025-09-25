@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import type { FormEvent } from "react";
-import InputMask from "react-input-mask";
-import cmContactUs from "../../../locale/cms-locale.json";
-import seoData from '../../../const/seo/seo-data-site.json';
+import {cmContactUs, cmSeo, cmNavbarBurgerMenuReact } from "../../../locale/cms-locale.json";
 import sendTelegramFeedBack from "./utils/sendTelegramFeedBack";
 import YandexMetricaButton from "../app-react/seo/yandex-metrica-button";
 import localeTextSite from "../../../locale/locale_text_site.json";
 
-import textBurgerMenu from '../../../const/navbar/burger-menu-react.json';
 import { LiaTelegram } from 'react-icons/lia';
 import { IoLogoWhatsapp } from 'react-icons/io';
 import { TfiEmail } from 'react-icons/tfi';
+
+import PhoneInput from '../phone-input';
+import { FiPhone } from "react-icons/fi";
+
 
 interface UserData {
   name: string;
@@ -26,12 +27,12 @@ export default function FeedbackForm() {
   const [showName, setShowName] = useState(false);
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [formValues, setFormValues] = useState({
-    name: cmContactUs.cmContactUs.isFioForm.value ? "":"NotName",
+    name: cmContactUs.isFioForm.value ? "":"NotName",
     contact: "",
-    message: cmContactUs.cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности",
+    message: cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности",
   });
   const [formErrors, setFormErrors] = useState({
-    name: cmContactUs.cmContactUs.isFioForm.value ? true : false,
+    name: cmContactUs.isFioForm.value ? true : false,
     contact: false,
     message: false,
     terms: false,
@@ -40,7 +41,7 @@ export default function FeedbackForm() {
 
   // Проверка валидности формы при изменении значений полей
   useEffect(() => {
-    const isNameValid = cmContactUs.cmContactUs.isFioForm.value
+    const isNameValid = cmContactUs.isFioForm.value
       ? formValues.name.trim() !== ''
       : true;
     const isMessageValid = formValues.message.trim() !== '';
@@ -128,11 +129,11 @@ export default function FeedbackForm() {
         <input
           type="text"
           name="name"
-          placeholder={cmContactUs.cmContactUs.formPlaceholderName.value}
+          placeholder={cmContactUs.formPlaceholderName.value}
           value={formValues.name}
           onChange={handleInputChange}
           
-          className={`${cmContactUs.cmContactUs.isFioForm.value ? "":"hidden"} w-full px-4 py-3 border-2 rounded-md outline-none focus:ring-4 ${
+          className={`${cmContactUs.isFioForm.value ? "":"hidden"} w-full px-4 py-3 border-2 rounded-md outline-none focus:ring-4 ${
             formErrors.name ? "border-red-400 ring-red-100" : "border-gray-300 focus:border-gray-600 ring-gray-100"
           }`}
         />
@@ -164,17 +165,17 @@ export default function FeedbackForm() {
         </div>
 
         {contactMethod === "phone" && (
-          <InputMask
-            mask={localeTextSite.components.reactComponents.feedbackForm.maskPlaceholder}
-            placeholder={localeTextSite.components.reactComponents.feedbackForm.contactMethodPlaceholder}
-            name="contact"
-            value={formValues.contact}
-            onChange={handleContactChange}
-            required
-            className={`w-full px-4 py-3 border-2 rounded-md outline-none focus:ring-4 ${
+          <PhoneInput
+  name="contact"
+  value={formValues.contact}
+  placeholder={localeTextSite.components.reactComponents.feedbackForm.contactMethodPlaceholder}
+  onChange={handleContactChange}
+  className={`w-full px-4 py-3 border-2 rounded-md outline-none focus:ring-4 ${
               formErrors.contact ? "border-red-400 ring-red-100" : "border-gray-300 focus:border-gray-600 ring-gray-100"
             }`}
-          />
+  required
+/>
+         
         )}
         {contactMethod === "email" && (
           <input
@@ -203,11 +204,11 @@ export default function FeedbackForm() {
         <textarea
           name="message"
           rows={4}
-          placeholder={cmContactUs.cmContactUs.formPlaceholderTextarea.value}
+          placeholder={cmContactUs.formPlaceholderTextarea.value}
           value={formValues.message}
           onChange={handleInputChange}
           required
-          className={`${cmContactUs.cmContactUs.isMessageActive.value ? "":"hidden"} w-full px-4 py-3 border-2 rounded-md outline-none focus:ring-4 ${
+          className={`${cmContactUs.isMessageActive.value ? "":"hidden"} w-full px-4 py-3 border-2 rounded-md outline-none focus:ring-4 ${
             formErrors.message ? "border-red-400 ring-red-100" : "border-gray-300 focus:border-gray-600 ring-gray-100"
           }`}
         ></textarea>
@@ -229,41 +230,80 @@ export default function FeedbackForm() {
 </div>
 {formErrors.terms && <p className="text-red-500 text-sm">Чтобы продолжить необходимо принять условия.</p>}
 
-{textBurgerMenu.BurgerMenu.email && (
-                <a
-                  href={`mailto:${textBurgerMenu.BurgerMenu.email.title}`}
-                  className="w-full text-center text-[#00FF00] transition-colors duration-300 hover:text-[#FF00FF] bg-gray-900 rounded-lg p-2 flex justify-center items-center space-x-2"
-                >
-                  <TfiEmail size={24} />
-                  <span>Email</span>
-                </a>
-              )}
-              {textBurgerMenu.BurgerMenu.telegram_number.title && (<a
-                href={`https://t.me/${textBurgerMenu.BurgerMenu.telegram_number.title}`}
-                className="w-full text-center text-[#00FF00] transition-colors duration-300 hover:text-[#FF00FF] bg-gray-900 rounded-lg p-2 flex justify-center items-center space-x-2"
-              >
-                <LiaTelegram size={24} />
-                <span>Telegram</span>
-              </a> )}
+{/* Контакты из cmNavbarBurgerMenuReact */}
+<div className="space-y-2">
+  {(cmNavbarBurgerMenuReact.links || [])
+    .filter((link) =>
+      ["phone", "telegram", "whatsapp", "vk", "email"].includes(link.type) &&
+      link.isActive
+    )
+    .map((link, index) => {
+      switch (link.type) {
+        case "phone":
+          return (
+            <a
+              key={index}
+              href={`tel:${link.path}`}
+              className="w-full text-center text-[#00FF00] transition-colors duration-300 hover:text-[#FF00FF] bg-gray-900 rounded-lg p-2 flex justify-center items-center space-x-2"
+            >
+              <FiPhone size={24} />
+              <span>{link.path}</span>
+            </a>
+          );
+        case "telegram":
+          return (
+            <a
+              key={index}
+              href={`https://t.me/${link.path}`}
+              className="w-full text-center text-[#00FF00] transition-colors duration-300 hover:text-[#FF00FF] bg-gray-900 rounded-lg p-2 flex justify-center items-center space-x-2"
+            >
+              <LiaTelegram size={24} />
+              <span>Telegram</span>
+            </a>
+          );
+        case "whatsapp":
+          return (
+            <a
+              key={index}
+              href={`https://wa.me/${link.path}`}
+              className="w-full text-center text-[#00FF00] transition-colors duration-300 hover:text-[#FF00FF] bg-gray-900 rounded-lg p-2 flex justify-center items-center space-x-2"
+            >
+              <IoLogoWhatsapp size={24} />
+              <span>WhatsApp</span>
+            </a>
+          );
+        case "vk":
+          return (
+            <a
+              key={index}
+              href={`https://vk.com/${link.path}`}
+              className="w-full text-center text-[#00FF00] transition-colors duration-300 hover:text-[#FF00FF] bg-gray-900 rounded-lg p-2 flex justify-center items-center space-x-2"
+            >
+              <img src={'/VKLogo.png'} width={24} height={24} alt="Logo VK" />
+              <span>ВКонтакте</span>
+            </a>
+          );
+        case "email":
+          return (
+            <a
+              key={index}
+              href={`mailto:${link.path}`}
+              className="w-full text-center text-[#00FF00] transition-colors duration-300 hover:text-[#FF00FF] bg-gray-900 rounded-lg p-2 flex justify-center items-center space-x-2"
+            >
+              <TfiEmail size={24} />
+              <span>Email</span>
+            </a>
+          );
+        default:
+          return null;
+      }
+    })}
+</div>
 
-              {textBurgerMenu.BurgerMenu.whatsapp_number.title &&  <a
-                href={`https://wa.me/${textBurgerMenu.BurgerMenu.whatsapp_number.title}`}
-                className="w-full text-center text-[#00FF00] transition-colors duration-300 hover:text-[#FF00FF] bg-gray-900 rounded-lg p-2 flex justify-center items-center space-x-2"
-              >
-                <IoLogoWhatsapp size={24} />
-                <span>WhatsApp</span>
-              </a>}
-              {textBurgerMenu.BurgerMenu.vk_link.title &&  <a
-                href={`https://vk.com/${textBurgerMenu.BurgerMenu.vk_link.title}`}
-                className="w-full text-center text-[#00FF00] transition-colors duration-300 hover:text-[#FF00FF] bg-gray-900 rounded-lg p-2 flex justify-center items-center space-x-2"
-              >
-                <img src={'/VKLogo.png'} width={24} height={24} alt="Logo VK" />
-                <span>ВКонтакте</span>
-              </a>}
 
 
       <YandexMetricaButton
-        yaGoalTitle={seoData.yaGoalTitleContactForm}
+        yaGoalTitle={cmSeo.yaGoalTitleContactForm.value}
         onClick={() => submit}
       >
         <button

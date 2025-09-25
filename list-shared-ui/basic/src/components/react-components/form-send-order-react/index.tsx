@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
-import InputMask from 'react-input-mask';
 import sendOrderToTelegram from './utils/sendOrderToTelegram';
-import SpinnerLoaderTextButton from '../../../components/react-components/spinner-loader-text-button';
+import SpinnerLoaderTextButton from '../spinner-loader-text-button';
 import localeTextSite from "../../../locale/locale_text_site.json";
-import YandexMetricaButton from '../../../components/react-components/app-react/seo/yandex-metrica-button';
-import seoData from '../../../const/seo/seo-data-site.json';
-import cmContactUs from "../../../locale/cms-locale.json";
+import YandexMetricaButton from '../app-react/seo/yandex-metrica-button';
+import {cmContactUs, cmSeo} from "../../../locale/cms-locale.json";
+import PhoneInput from '../phone-input';
 
 interface UserDataSendTelegram {
   name: string;
@@ -32,10 +31,10 @@ const FormSendOrderReact: React.FC<OrderDataSendTelegram> = ({ orderDataSendTele
   const [phoneError, setPhoneError] = useState('');
 
   const [sendTelegramAllData, setSendTelegramAllData] = useState<UserDataSendTelegram>({
-    name: cmContactUs.cmContactUs.isFioForm.value ? "":"NotName",
+    name: cmContactUs.isFioForm.value ? "":"NotName",
     phone: '',
     email: '',
-    message: cmContactUs.cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности (форма продукты/услуги)",
+    message: cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности (форма продукты/услуги)",
     delivery: '',
     orderDataSendTelegram,
   });
@@ -138,7 +137,7 @@ if (name === "phone") {
             value={sendTelegramAllData.name}
             placeholder={localeTextSite.components.reactComponents.formSendOrderReact.namePlaceholder}
             onChange={handleInputChange}
-            className={`${cmContactUs.cmContactUs.isFioForm.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
+            className={`${cmContactUs.isFioForm.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
             required
           />
          
@@ -160,17 +159,21 @@ if (name === "phone") {
 </div>
 
 {contactMethod === 'phone' && (<>
-  <InputMask
-    mask={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.maskPlaceholder}
-    name="phone"
-    value={sendTelegramAllData.phone}
-    placeholder={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.phonePlaceholder}
-    onChange={handleInputChange}
-    className={`block w-full p-2 mb-2 border rounded ${
+ 
+
+<PhoneInput
+  name="phone"
+  value={sendTelegramAllData.phone}
+  placeholder={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.phonePlaceholder}
+  onChange={handleInputChange}
+  className={`block w-full p-2 mb-2 border rounded ${
       phoneError ? 'border-red-400 ring-red-100' : 'border-gray-300 focus:border-gray-600 ring-gray-100'
     }`}
-    required
-  />
+  required
+/>
+
+
+
   {phoneError && <p className='text-red-500'>{phoneError}</p>}
 </>)}
 
@@ -191,7 +194,7 @@ if (name === "phone") {
             value={sendTelegramAllData.message}
             placeholder={localeTextSite.components.reactComponents.formSendOrderReact.messagePlaceholder}
             onChange={handleInputChange}
-            className={`${cmContactUs.cmContactUs.isMessageActive.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
+            className={`${cmContactUs.isMessageActive.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
             
             rows={4}
           />
@@ -221,7 +224,7 @@ if (name === "phone") {
   </label>
 </div>
 
-          <YandexMetricaButton yaGoalTitle={seoData.yaGoalTitleSendOrder}>
+          <YandexMetricaButton yaGoalTitle={cmSeo.yaGoalTitleSendOrder.value}>
          <button type="submit" className={`mt-2 w-full px-4 py-2 rounded-md ${isFormValid ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}`}> 
           
            <SpinnerLoaderTextButton loading={loadingSend} spinTitleText={localeTextSite.components.reactComponents.formSendOrderReact.btnSpinnerLoader} titleText={localeTextSite.components.reactComponents.formSendOrderReact.btnSend}/>

@@ -1,8 +1,8 @@
-import CalToActionForm from "../../../../components/react-components/call-to-action-icon-react/form-call-to-action";
-import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import CalToActionForm from "../../call-to-action-icon-react/form-call-to-action";
+import  { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router";
 
-const CallToActionPage: React.FC = () => {
+const CallToActionPage = () => {
     const [isFormOpen, setIsFormOpen] = useState(true);
     const navigate = useNavigate();
     const formRef = useRef<HTMLDivElement>(null); // Реф для формы

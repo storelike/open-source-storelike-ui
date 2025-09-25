@@ -1,22 +1,30 @@
-import React from 'react';
+import * as React from 'react';
 
 interface Link {
   path: string;
   label: string;
-  is_active: boolean;
-  badge?: boolean;
-  titleBadge?: string;
+  isActive: boolean;
+  badge: boolean;
+  titleBadge: string;
+}
+
+interface StyleProperty {
+  label: string;
+  value: string | boolean;
+}
+
+interface NavbarData {
+  labelSection: string;
+  bgNavbar: StyleProperty;
+  textColorNavbar: StyleProperty;
+  roundedNavbar: StyleProperty;
+  bgBurger: StyleProperty;
+  textColorBurger: StyleProperty;
+  links: Link[];
 }
 
 interface PhoneNavProps {
-  data: {
-    bgNavbar: string;
-    textColorNavbar: string;
-    roundedNavbar: boolean;
-    bgBurger: string;
-    textColorBurger: string;
-    links: Link[];
-  };
+  data: NavbarData;
 }
 
 const PhoneNav: React.FC<PhoneNavProps> = ({ data }) => {  

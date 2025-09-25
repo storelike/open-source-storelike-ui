@@ -1,2 +1,1 @@
-# new blank
-##
+# template-storelike-base

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import FadeInWrapper from '../../../../../components/react-components/quiz-questions-react/fadeIn-wrapper-quiz';
-import textGift from '../../../../../const/quiz/quiz.json'
+import FadeInWrapper from '../../fadeIn-wrapper-quiz';
+import { cmQuiz } from "../../../../../locale/cms-locale.json";
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 interface GiftBoxProps {
@@ -79,7 +79,7 @@ const GiftBox = ({ handleStartQuiz, handleCloseModal }: GiftBoxProps) => {
               <div className="relative p-6 bg-gray-100  border-2 border-[#00FF00]  rounded-lg hover:scale-105 transition duration-500">
                 <div className="flex items-center">
                   <span className="text-xl">🎁</span>
-                  <h3 className="my-2 ml-3 text-lg font-bold text-gray-800 ">{textGift.icon_title_gift_box}</h3>
+                  <h3 className="my-2 ml-3 text-lg font-bold text-gray-800 ">{cmQuiz.iconTitleGiftBox.value}</h3>
                 </div>
 
                 {/* Кнопка закрытия */}
@@ -91,13 +91,13 @@ const GiftBox = ({ handleStartQuiz, handleCloseModal }: GiftBoxProps) => {
                  <AiOutlineCloseCircle color='red' />
                 </button>
 
-                <h2 className="mt-5 text-gray-800">{textGift.icon_subtitle_gift_box}</h2>
+                <h2 className="mt-5 text-gray-800">{cmQuiz.iconSubtitleGiftBox.value}</h2>
                 <div>
                   <button
                     onClick={handleStartQuizWindow}
                     className="mt-2 p-2 bg-blue-500 text-white rounded-lg hover:bg-green-600"
                   >
-                    {textGift.icon_button_gift_box}
+                    {cmQuiz.iconButtonGiftBox.value}
                   </button>
                 </div>
               </div>
@@ -119,15 +119,15 @@ const GiftBox = ({ handleStartQuiz, handleCloseModal }: GiftBoxProps) => {
               <div className="relative p-6 bg-gray-100  border-2 border-[#00FF00]  rounded-lg hover:scale-105 transition duration-500">
                 <div className="flex items-center">
                   <span className="text-xl">🎁</span>
-                  <h3 className="my-2 ml-3 text-lg font-bold text-black" >{textGift.icon_title_gift_box}</h3>
+                  <h3 className="my-2 ml-3 text-lg font-bold text-black" >{cmQuiz.iconTitleGiftBox.value}</h3>
                 </div>
-                <h2 className="mt-5 text-black">{textGift.icon_subtitle_gift_box}</h2>
+                <h2 className="mt-5 text-black">{cmQuiz.iconSubtitleGiftBox.value}</h2>
                 <div>
                   <button
                     onClick={handleStartQuizWindow}
                     className="mt-2 p-2 bg-[#dedede] text-[#000000] rounded-lg hover:bg-green-600"
                   >
-                    {textGift.icon_button_gift_box}
+                    {cmQuiz.iconButtonGiftBox.value}
                   </button>
                 </div>
 

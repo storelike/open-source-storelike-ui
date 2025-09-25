@@ -2,12 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Container from '../components/Container.astro';
 import OfferAgreementReact from '../components/react-components/flatpages-react/offer-agreement';
-import localeTextSite from "../locale/locale_text_site.json";
+import { cmFlatpagesOfferAgreement } from '../locale/cms-locale.json';
 ---
 
 <Layout
-	title={localeTextSite.pages.offerAgreement.title}
-	description={localeTextSite.pages.offerAgreement.description}
+	title={cmFlatpagesOfferAgreement.title_meta_tag.value}
+	description={cmFlatpagesOfferAgreement.description_meta_tag.value}
 >
 <Container>   
 	<OfferAgreementReact client:load />

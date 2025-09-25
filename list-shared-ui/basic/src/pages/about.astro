@@ -2,12 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Container from '../components/Container.astro';
 import AboutReact from '../components/react-components/flatpages-react/about';
-import localeTextSite from "../locale/locale_text_site.json";
+import { cmFlatpagesAbout } from "../locale/cms-locale.json";
 ---
 
 <Layout
-	title={localeTextSite.pages.about.title}
-	description={localeTextSite.pages.about.description}
+	title={cmFlatpagesAbout?.title_meta_tag.value}
+	description={cmFlatpagesAbout?.description_meta_tag.value}
 >
 <Container>   
 	<AboutReact client:load />

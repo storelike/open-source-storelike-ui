@@ -4,8 +4,8 @@ import SendOrderLayout from '../../layouts/SendOrderLayout.astro';
 
 export async function getStaticPaths() {
 	const products = await getCollection('products');
-	return products.map((post) => ({
-		params: { slug: post.slug },
+	// @ts-ignore
+	return products.map((post) => ({		params: { slug: post.slug },
 		props: post,
 	}));
 }
@@ -14,7 +14,7 @@ type Props = CollectionEntry<'products'>;
 
 
 const post = Astro.props as Props;
-
+// @ts-ignore
 const { Content } = await post.render();
 ---
 

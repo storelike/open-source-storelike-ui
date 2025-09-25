@@ -2,14 +2,14 @@
 import Container from "../components/Container.astro";
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-import seoData from '../const/seo/seo-data-site.json'
+import { cmSeo } from "../locale/cms-locale.json";
 import Reviews from "../components/Reviews.astro";
 import FAQ from "../components/FAQ.astro";
 import ListProductSection from "../components/ListProductSection.astro";
 import Features from "../components/Features.astro";
 ---
 
-<Layout title={seoData.SITE_TITLE} description={seoData.SITE_DESCRIPTION}>
+<Layout title={cmSeo.siteTitle.value} description={cmSeo.siteDescription.value}>
   <Container>    
     <Hero />
     <Features />

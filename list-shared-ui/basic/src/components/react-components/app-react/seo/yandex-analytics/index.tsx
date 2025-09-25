@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
-import seoConfig from '../../../../../const/seo/seo-data-site.json';
-
-const YA_METRICA_ID = seoConfig.numberYandexMetric;
+import {cmSeo} from '../../../../../locale/cms-locale.json';
+const YA_METRICA_ID = cmSeo.numberYandexMetric.value;
 
 const YandexAnalytics: React.FC = () => {
+
+  if (window.self !== window.top) {
+  console.warn('Skipping Yandex.Metrika in iframe to avoid SecurityError');
+  return;
+} 
   useEffect(() => {
     if (!YA_METRICA_ID || YA_METRICA_ID === 0) return;
 
@@ -20,41 +24,32 @@ const YandexAnalytics: React.FC = () => {
       }
 
       // Подключение Яндекс.Метрики
-      (function (m, e, t, r, i, k, a) {
-        //@ts-ignore
-        m[i] =
-        //@ts-ignore
-          m[i] ||
-          function () {
-            //@ts-ignore
-            (m[i].a = m[i].a || []).push(arguments);
-          };
-          //@ts-ignore
-        m[i].l = 1 * new Date();
-        //@ts-ignore
-        k = e.createElement(t);
-        //@ts-ignore
-        a = e.getElementsByTagName(t)[0];
-        //@ts-ignore
-        k.async = true;
-        //@ts-ignore
-        k.src = r;
-        //@ts-ignore
-        a.parentNode.insertBefore(k, a);
-      })(
-        window,
-        document,
-        'script',
-        'https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js',
-        'ym'
-      );
+     try {
+  (function (m, e, t, r, i, k, a) {
+    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+    m[i].l = 1 * new Date();
+    k = e.createElement(t);
+    a = e.getElementsByTagName(t)[0];
+    k.async = true;
+    k.src = r;
+    a.parentNode.insertBefore(k, a);
+  })(window, document, 'script', 'https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js', 'ym');
+} catch (err) {
+  console.error('Failed to inject Yandex.Metrika script', err);
+}
 //@ts-ignore
-      window.ym(YA_METRICA_ID, 'init', {
+      
+
+      try {
+  window.ym(YA_METRICA_ID, 'init', {
         clickmap: true,
         trackLinks: true,
         accurateTrackBounce: true,
         webvisor: true,
       });
+} catch (err) {
+  console.error('Yandex.Metrika init failed', err);
+}
 
       loadedMetrica = true;
 

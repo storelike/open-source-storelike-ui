@@ -1,5 +1,5 @@
 import React, { type ReactNode, useRef } from 'react';
-import seoData from '../../../../../const/seo/seo-data-site.json';
+import cmData from '../../../../../locale/cms-locale.json';
 
 interface YandexMetricaButtonProps {
   
@@ -28,7 +28,7 @@ const YandexMetricaButton: React.FC<YandexMetricaButtonProps> = ({
     }
   };
 
-  const yaGoalNumber = seoData.numberYandexMetric;
+  const yaGoalNumber = cmData.cmSeo.numberYandexMetric.value;
 
   return (
     <div>

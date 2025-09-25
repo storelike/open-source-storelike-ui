@@ -1,12 +1,12 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import seoData from '@const/seo/seo-data-site.json';
+import { cmSeo } from '../locale/cms-locale.json';
 
 export async function GET(context) {
 	const posts = await getCollection('products');
 	return rss({
-		title: seoData.SITE_TITLE,
-		description: `RSS | ${seoData.SITE_DESCRIPTION}`,
+		title: cmSeo.siteTitle.value,
+		description: `RSS | ${cmSeo.siteDescription.value}`,
 		site: context.site,
 		items: posts.map((post) => ({
 			...post.data,

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import textOfferAgreementJson from '../../../../const/flatpages/offer-agreement/offer-agreement.json';
 import LoadingWrapper from '../content-flatpage';
 import localeTextSite from "../../../../locale/locale_text_site.json";
+import { cmFlatpagesOfferAgreement } from '../../../../locale/cms-locale.json';
 
 
 const OfferAgreementReact: React.FC = () => {
@@ -32,7 +32,7 @@ const OfferAgreementReact: React.FC = () => {
 
   return (
     <div className="mt-12 flex flex-col items-center min-h-screen rounded-lg ">
-      <h1 className="pt-10 text-4xl font-bold text-gray-800">{textOfferAgreementJson.title}</h1>
+      <h1 className="pt-10 text-4xl font-bold text-gray-800">{cmFlatpagesOfferAgreement.title.value}</h1>
       <div className="mt-4 p-5 w-full max-w-4xl">
     
       <LoadingWrapper loading={loading}>

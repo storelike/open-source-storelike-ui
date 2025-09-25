@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import textUserAgreement from '../../../../const/flatpages/user-agreement/user-agreement.json';
 import LoadingWrapper from '../content-flatpage';
 import localeTextSite from "../../../../locale/locale_text_site.json";
+import {cmFlatpagesUserAgreement} from "../../../../locale/cms-locale.json";
+
+
 
 
 const UserAgreementReact: React.FC = () => {
@@ -30,7 +32,7 @@ const UserAgreementReact: React.FC = () => {
 
   return (
     <div className="mt-12 flex flex-col items-center min-h-screen rounded-lg ">
-      <h1 className="pt-10 text-4xl font-bold text-gray-800">{textUserAgreement.title}</h1>
+      <h1 className="pt-10 text-4xl font-bold text-gray-800">{cmFlatpagesUserAgreement.title.value}</h1>
       <div className="mt-4 p-5">
         <LoadingWrapper loading={loading}>
           <div dangerouslySetInnerHTML={{ __html: htmlContent }} />

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import seoConfig from '../../../../../const/seo/seo-data-site.json'
+import {cmSeo} from '../../../../../locale/cms-locale.json';
 
 
-const GOOGLE_ANALYTICS_ID = seoConfig.numberGoogleMetric as any;
+const GOOGLE_ANALYTICS_ID = cmSeo.numberGoogleMetric.value as any;
 
 const GoogleAnalytics: React.FC = () => {
     useEffect(() => {

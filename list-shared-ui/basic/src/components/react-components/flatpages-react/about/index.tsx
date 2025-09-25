@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import textAbout from '../../../../const/navbar/burger-menu-react.json';
+import { cmFlatpagesAbout } from '../../../../locale/cms-locale.json';
 import LoadingWrapper from '../content-flatpage';
 import localeTextSite from "../../../../locale/locale_text_site.json";
 
@@ -28,7 +28,7 @@ const AboutReact: React.FC = () => {
 
   return (
     <div className="mt-12 flex flex-col items-center min-h-screen rounded-lg">
-      <h1 className="pt-10 text-4xl font-bold text-gray-800">{textAbout.BurgerMenu.about.title}</h1>
+      <h1 className="pt-10 text-4xl font-bold text-gray-800">{cmFlatpagesAbout.title.value}</h1>
       <LoadingWrapper loading={loading}>
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </LoadingWrapper>

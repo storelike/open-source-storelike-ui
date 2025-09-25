@@ -1,13 +1,14 @@
 ---
 import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
-import AppReact from "../components/react-components/app-react";
 import localeTextSite from "../locale/locale_text_site.json";
 ---
 
 <Layout
   title={localeTextSite.pages.thankYou.title}
   description={localeTextSite.pages.thankYou.description}>
+  <Container >
+    <p>Thank You</p>
   <Container />
-  <AppReact client:only />
+ 
 </Layout>

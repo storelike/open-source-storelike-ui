@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import localeTextSite from "@locale/locale_text_site.json";
+import localeTextSite from "../../locale/locale_text_site.json";
 
 export const POST: APIRoute = async ({ request }) => {
   try {

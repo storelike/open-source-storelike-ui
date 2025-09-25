@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import LoadingWrapper from '../../../components/react-components/flatpages-react/content-flatpage/';
+import LoadingWrapper from '../flatpages-react/content-flatpage';
 import localeTextSite from "../../../locale/locale_text_site.json";
 
 const HeroCustomReact: React.FC = () => {

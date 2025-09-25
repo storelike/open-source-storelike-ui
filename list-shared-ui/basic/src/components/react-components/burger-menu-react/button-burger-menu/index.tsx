@@ -1,6 +1,6 @@
 // BurgerMenuButton.tsx
 import React from 'react';
-import bgBurgerMenu from '../../../../const/navbar/navbar.json';
+import { cmNavbar } from '../../../../locale/cms-locale.json';
 import styles from './styles.module.css'; // Импортируем стили
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -25,7 +25,7 @@ interface BurgerMenuButtonProps {
 }
 
 const BurgerMenuButton: React.FC<BurgerMenuButtonProps> = ({ isOpen, toggleMenu }) => {
-  const textColor = bgBurgerMenu.textColorBurger; // Получаем цвет из JSON
+  const textColor = cmNavbar.textColorBurger.value; // Получаем цвет из JSON
   const hoverColor = darkenColor(textColor, 0.2); // Затемняем цвет на 20%
 
   const style = {
@@ -36,7 +36,7 @@ const BurgerMenuButton: React.FC<BurgerMenuButtonProps> = ({ isOpen, toggleMenu 
   return (
     <button
     id='btnBurger'
-      className={`${styles.burgerButton} bg-[${bgBurgerMenu.bgBurger}] rounded-lg hover:scale-110
+      className={`${styles.burgerButton} bg-[${cmNavbar.bgBurger.value}] rounded-lg hover:scale-110
 `}
       style={style}
       onClick={toggleMenu}

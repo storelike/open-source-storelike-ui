@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import textPrivacyPolicy from '../../../../const/flatpages/privacy-policy/privacy-policy.json';
 import LoadingWrapper from '../content-flatpage';
 import localeTextSite from "../../../../locale/locale_text_site.json";
+import {cmFlatpagesPrivacyPolicy} from "../../../../locale/cms-locale.json";
 
 
 const PrivacyPolicyReact: React.FC = () => {
@@ -30,7 +30,7 @@ const PrivacyPolicyReact: React.FC = () => {
 
   return (
     <div className="mt-12 flex flex-col items-center min-h-screen rounded-lg ">
-      <h1 className="pt-10 text-4xl font-bold ">{textPrivacyPolicy.title}</h1>
+      <h1 className="pt-10 text-4xl font-bold ">{cmFlatpagesPrivacyPolicy.title.value}</h1>
       <div className="mt-4 p-5">
         <LoadingWrapper loading={loading}>
           <div dangerouslySetInnerHTML={{ __html: htmlContent }} />

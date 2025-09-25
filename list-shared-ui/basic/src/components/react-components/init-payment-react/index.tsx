@@ -1,7 +1,9 @@
 // IninPaymentPage.tsx
 import React, { useState } from 'react';
 import styles from './styles.module.css';
-import ReactInputMask from 'react-input-mask';
+import PhoneInput from '../phone-input';
+import localeTextSite from '../../../locale/locale_text_site.json';
+
 import PaymentProcessModal from './payment-process-modal';
 
 interface OderDataPay {
@@ -113,15 +115,15 @@ const IninPaymentPage: React.FC<IninPaymentPageProps> = ({ product }) => {
             className={styles.inputField}
           />
         
-          <ReactInputMask
-            mask="+7 (999) 999-99-99"
-            name="phone"
-            value={payerData.phone}
-            placeholder="Ваш телефон"
-            onChange={handleInputChange}
-            className={styles.inputField}
-            required
-          />
+        
+            <PhoneInput
+  name="phone"
+  value={payerData.phone}
+  placeholder={localeTextSite.components.reactComponents.callToActionIconReact.formCallToAction.phonePlaceholder}
+  onChange={handleInputChange}
+  className={styles.inputField}
+  required
+/>
 
           {is_delivery && (
             <input

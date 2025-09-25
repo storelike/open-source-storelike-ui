@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './styles.module.css';
 import { TbLampOff, TbTruckDelivery } from 'react-icons/tb';
-import cardProductTheme from '../../../../const/products/products.json';
+import {cmProducts} from '../../../../locale/cms-locale.json';
 import type { Product } from '../ProductTypes';
-import MarkdownText from '../../../../components/react-components/markdown-text';
+import MarkdownText from '../../markdown-text';
 import localeTextSite from '../../../../locale/locale_text_site.json';
 
 interface ProductCardProps {
@@ -18,7 +18,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ productData, productSlug, onM
 
   return (
     <div
-      style={{ backgroundColor: cardProductTheme?.bgCard, color: cardProductTheme?.cardTextColor }}
+      style={{ backgroundColor: cmProducts?.bgCard.value, color: cmProducts?.cardTextColor.value }}
       className={styles.productCard}
     >
       {image?.src && (
@@ -26,7 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ productData, productSlug, onM
           <img
             src={`${image.src}?w=600&h=400&format=webp`}
             alt={title}
-            className={`${styles.productImage} ${cardProductTheme.isBlackAndWhitePhoto ? 'grayscale' : ''}`}
+            className={`${styles.productImage} ${cmProducts.isBlackAndWhitePhoto.value ? 'grayscale' : ''}`}
           />
         </div>
       )}
@@ -76,7 +76,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ productData, productSlug, onM
             <a href={`/send-order/${productSlug}`}>
               <button className={styles.payButton}>
                 <span className="orderText">
-                  {cardProductTheme?.text_button_to_order}
+                  {cmProducts?.textButtonToOrder.value}
                 </span>
               </button>
             </a>

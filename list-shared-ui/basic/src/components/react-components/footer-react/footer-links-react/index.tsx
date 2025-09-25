@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import linkList from '../../../../const/footer/footer.json';
+import { cmFooter } from '../../../../locale/cms-locale.json';
 
 // Интерфейс для ссылки
 interface Link {
   path: string;
   label: string;
-  is_active: boolean;
+  isActive: boolean;
 }
 
 const LinksListFooterReact: React.FC = () => {
@@ -14,7 +14,7 @@ const LinksListFooterReact: React.FC = () => {
 
   useEffect(() => {
     // Фильтруем только активные ссылки и берём не более 4
-    const activeLinks = (linkList.links as Link[]).filter(link => link.is_active);
+    const activeLinks = (cmFooter.links as Link[]).filter(link => link.isActive);
     setLinks(activeLinks);
   }, []);
 

@@ -6,9 +6,10 @@ import { Picture } from "astro:assets";
 import FormattedDate from '../../components/FormattedDate.astro';
 import Layout from '../../layouts/Layout.astro';
 import Container from '../../components/Container.astro';
-import textProductsPage from '../../const/products/products.json'
 import MarkdownText from '../../components/react-components/markdown-text';
 import localeTextSite from "../../locale/locale_text_site.json";
+import {cmProducts} from "../../locale/cms-locale.json";
+
 
 
 const products = (await getCollection('products'))
@@ -20,10 +21,10 @@ const products = (await getCollection('products'))
 	<Container>  
 		<div class="mt-10">
 			<p class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-			  {textProductsPage.title}
+			  {cmProducts.title.value}
 			</p>
 			<p class="text-lg mt-4 ">
-			 {textProductsPage.subtitle}
+			 {cmProducts.subtitle.value}
 			</p>
 		  </div>
 		
@@ -33,6 +34,7 @@ const products = (await getCollection('products'))
 			  {
 				products?.map((product, index) => (
 				  <li>
+					{/* @ts-ignore */}
 					<a href={`/products/${product?.slug}`}>
 					
 					  <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
@@ -44,7 +46,7 @@ const products = (await getCollection('products'))
 						  height={600}
 						  loading={index <= 2 ? "eager" : "lazy"}
 						  decoding={index <= 2 ? "sync" : "async"}
-						  class={`${textProductsPage.isBlackAndWhitePhoto ? 'object-cover filter grayscale rounded-lg' : 'rounded-lg'} w-full rounded-md object-cover object-center bg-white`}
+						  class={`${cmProducts.isBlackAndWhitePhoto.value ? 'object-cover filter grayscale rounded-lg' : 'rounded-lg'} w-full rounded-md object-cover object-center bg-white`}
 						/>
 						
 						<div>

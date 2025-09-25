@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import textPortfolio from '../../../../const/flatpages/portfolio/portfolio.json';
 import LoadingWrapper from '../content-flatpage';
 import localeTextSite from "../../../../locale/locale_text_site.json";
+import {cmFlatpagesPortfolio} from "../../../../locale/cms-locale.json";
+
 
 
 const PortfolioReact: React.FC = () => {
@@ -30,7 +31,7 @@ const PortfolioReact: React.FC = () => {
 
   return (
     <div className="mt-12 flex flex-col items-center min-h-screen rounded-lg ">
-      <h1 className="pt-10 text-4xl font-bold text-gray-800">{textPortfolio.title}</h1>
+      <h1 className="pt-10 text-4xl font-bold text-gray-800">{cmFlatpagesPortfolio.title.value}</h1>
       <div className="mt-4  w-full mb:p-5 max-w-4xl">
         <LoadingWrapper loading={loading}>
           <div dangerouslySetInnerHTML={{ __html: htmlContent }} />

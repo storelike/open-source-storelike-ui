@@ -1,20 +1,14 @@
 ---
 import Container from "../components/Container.astro";
-
 import Layout from "../layouts/Layout.astro";
-import seoData from '../const/seo/seo-data-site.json'
-import AppReact from "../components/react-components/app-react";
-import Hero from "../components/Hero.astro";
-import Features from "../components/Features.astro";
+import { cmSeo } from "../locale/cms-locale.json";
+
 
 ---
 
-<Layout title=`${seoData.SITE_TITLE}` description=`${seoData.SITE_DESCRIPTION}`>
+<Layout title=`${cmSeo.siteTitle.value}` description=`${cmSeo.siteDescription.value}`>
   <Container>
-    <Hero />
-    <Features />   
-    <div class="flex items-center justify-center">
-   <AppReact client:only />  
-</div> 
+  <p> CALL TO ACTION</p>
+
   </Container>
 </Layout>

@@ -7,8 +7,8 @@
   - **Password:** `d%QlE@6XFZTMX~Kw$A`
 
 ## Репозиторий
-- [Edit repository details](https://github.com/your-repo/edit)  
-- [Description](https://github.com/your-repo#description)  
+- [Edit repository details](https://github.com/storelike/open-source-storelike-ui/edit)  
+- [Description](https://github.com/storelike/open-source-storelike-ui#description)  
 
 **Client basic**  
 

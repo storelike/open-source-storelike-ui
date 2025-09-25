@@ -6,6 +6,20 @@
  - **Login:** `admin@storelike.ru`  
   - **Password:** `d%QlE@6XFZTMX~Kw$A`
 
+## Репозиторий
+- [Edit repository details](https://github.com/your-repo/edit)  
+- [Description](https://github.com/your-repo#description)  
+
+**Client basic**  
+
+**Website:** [https://bbabv7itgrncm4gvhgot.containers.yandexcloud.net](https://bbabv7itgrncm4gvhgot.containers.yandexcloud.net)  
+
+**Topics:** (separate with spaces)  
+
+**Include in the home page**  
+
+**Releases | Packages | Deployments**
+
 **Максимальная производительность, минималистичный дизайн.**
 
 Этот репозиторий представляет собой коллекцию высокооптимизированных шаблонов веб-сайтов и интернет-магазинов, разработанных с единственной целью: **Pagespeed 100%** на мобильных и настольных устройствах. Наши шаблоны готовы к немедленному запуску рекламных кампаний в Яндекс.Директ и Google Ads, а также полностью оптимизированы для SEO.

@@ -1,1 +1,0 @@
-src/const/footer/footer.json

@@ -1,8 +1,8 @@
 # ADS  
 # E-commerce & Web Templates – High Performance Focus ⚡
 
-- **CLIENT (BASE):** [Открыть](https://bbabv7itgrncm4gvhgot.containers.yandexcloud.net)  
-- **ADMIN CLIENT:** [Открыть](https://bban9brl7081u3mtsdp8.containers.yandexcloud.net)
+- **EXAMPLE CLIENT (BASE):** [Открыть](https://bbabv7itgrncm4gvhgot.containers.yandexcloud.net)  
+- **EXAMPLE ADMIN CLIENT:** [Открыть](https://bban9brl7081u3mtsdp8.containers.yandexcloud.net)
  - **Login:** `admin@storelike.ru`  
   - **Password:** `d%QlE@6XFZTMX~Kw$A`
 

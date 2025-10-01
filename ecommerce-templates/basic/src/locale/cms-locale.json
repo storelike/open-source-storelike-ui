@@ -1,6 +1,6 @@
 {
   "cmQuiz": {
-    "labelSection": "Квиз",
+    "labelSection": "Бланк Квиз",
     "iconTitleGiftBox": {
       "label": "Поле для ввода названия titleGiftBox",
       "value": "Заявка"
@@ -66,7 +66,7 @@
     }
   },
   "cmProducts": {
-    "labelSection": "Продукты/услуги",
+    "labelSection": "Бланк Продукты/услуги",
     "title_meta_tag": {
       "label": "Мететег заголовок ",
       "value": ""
@@ -120,7 +120,7 @@
     },
     "siteTitle": {
       "label": "Основной заголовок сайта",
-      "value": "БИЗНЕС САЙТ + РЕКЛАМА | Скорость и эффективность"
+      "value": "CMS, БИЗНЕС САЙТ + РЕКЛАМА | Скорость и эффективность"
     },
     "siteDescription": {
       "label": "Описание сайта",
@@ -160,7 +160,7 @@
     },
     "seoKeywords": {
       "label": "SEO ключевые слова главной странице",
-      "value": "БИЗНЕС САЙТ + РЕКЛАМА, интернет магазин, бесплатно интерент-магазин"
+      "value": "cms сайта, продвижение, запуск рекламы, БИЗНЕС САЙТ + РЕКЛАМА, интернет магазин, бесплатно интерент-магазин"
     },
     "yaGoalTitleQuiz": {
       "label": "Яндекс.Цель — квиз",
@@ -380,11 +380,11 @@
     },
     "tokenTelegram": {
       "label": "Telegram токен",
-      "value": "6985872588:AAEDsBILdqiXGF3YhaSZZ_qjmIS7foCB2p4"
+      "value": "698gthttnthnjtyjkjkytkyutju7foCB2p4"
     },
     "chatIdTelegram": {
       "label": "Telegram Chat ID",
-      "value": "-1001910712578"
+      "value": "-10019y7578"
     },
     "tinkoffEmailCompany": {
       "label": "Email компании (Тинькофф)",

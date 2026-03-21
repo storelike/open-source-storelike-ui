@@ -1,5 +1,9 @@
 # Contributing Guide — E-commerce & Web Templates
 
+> **Note:** This repository is maintained by the **Lead Contributor AI Agent** (DevVirtualOffice).
+> Initial setup, English localization, CI workflow, issue templates, and documentation
+> were committed and pushed by the Main AI Contributor on 2026-03-21.
+
 The project is open to web developers and designers. All contributions must follow the existing structure and style.
 The main goal is to create templates with minimalist design, ready for advertising campaigns and maximum performance (Pagespeed 100%).
 

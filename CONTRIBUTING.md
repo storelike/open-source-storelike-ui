@@ -1,45 +1,45 @@
 # Contributing Guide — E-commerce & Web Templates
 
-Проект открыт для веб-разработчиков и дизайнеров. Внесение изменений предполагает соблюдение существующей структуры и стиля.
-Основная цель — создавать шаблоны с минималистическим дизайном, готовые к запуску рекламы и максимальной производительности (Pagespeed 100%).
+The project is open to web developers and designers. All contributions must follow the existing structure and style.
+The main goal is to create templates with minimalist design, ready for advertising campaigns and maximum performance (Pagespeed 100%).
 
+## What to Contribute
+- Templates with minimalist design
+- Optimized HTML/CSS/JS for Pagespeed 100%
+- Ad-ready code for Google Ads
+- SEO optimization, meta tags, semantic markup
+- Bug fixes and improvements to existing templates
 
-## Что вносить
-- Шаблоны с минималистическим дизайном  
-- Оптимизированные HTML/CSS/JS для Pagespeed 100%  
-- Подготовка к рекламе в Яндекс.Директ, Google Ads  
-- SEO-оптимизация, метатеги, семантическая разметка  
-- Исправления и улучшения существующих шаблонов
+## Structure & Style
 
+Template folders:
+```
+ecommerce-templates/
+├── basic
+├── build-mart
+├── glow-store
+├── home-space
+├── style-shop
+├── tech-market
+└── web-folio
+```
 
-## Структура и стиль
+- Follow a consistent code and markup style
+- Minimalist, clean design — no unnecessary dependencies
 
-- Папки шаблонов:
-├──   ecommerce-templates
-│   ├──   basic
-│   ├──   build-mart
-│   ├──   glow-store
-│   ├──   home-space
-│   ├──   style-shop
-│   ├──   tech-market
-│   └──   web-folio
-
-- Соблюдать единый стиль кода и разметки  
-- Минималистический, чистый дизайн, без лишних зависимостей 
-
-## Коммиты и PR
-- Коммиты короткие, по делу, на английском:
+## Commits & PRs
+- Short, meaningful commit messages in English:
   - `Add minimalistic template for Beauty industry`
   - `Optimize performance for Google Ads`
   - `Fix SEO meta tags in BaseShop template`
-- PR — одна логичная задача, описание изменений, скриншоты при необходимости 
+- One PR = one logical task, include description of changes, screenshots if needed
 
-## Тестирование
-- Проверять Pagespeed (Desktop & Mobile)  
-- Проверять корректность SEO и семантики  
-- Проверять готовность к рекламным кампаниям  
-- Минимум: валидный HTML/CSS, работающий JS  
+## Testing
+- Verify Pagespeed score (Desktop & Mobile)
+- Check SEO correctness and semantic markup
+- Verify readiness for advertising campaigns
+- Minimum: valid HTML/CSS, working JS
 
-## Коммуникация
-- Крупные изменения — создавайте Issue заранее  
-- Обсуждения и вопросы — в Discussions 
+## Communication
+- For large changes — open an Issue first
+- Questions and discussion — use Discussions

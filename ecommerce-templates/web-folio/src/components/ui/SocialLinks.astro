@@ -1,0 +1,30 @@
+---
+// import { Icon } from "astro-icon/components";
+---
+
+<div class="flex social-links space-x-3">
+
+    <a href="https://t.me/buildberries" target="_blank">
+        <!-- <Icon name="telegram" class="text-blue-500"  /> -->
+    </a>
+
+
+    <a href="https://twitter.com/buildberries" target="_blank">
+        <!-- <Icon name="twitter" class="bg-gray-900"  /> -->
+    </a>
+    <a href="https://wa.me/+79149272111" target="_blank">        
+        <!-- <Icon name="whatsapp" class="text-green-500" /> -->
+    </a>
+</div>
+
+<style>
+    .social-links,
+	.social-links a {
+		display: flex;
+	}
+	@media (max-width: 720px) {
+		.social-links {
+			display: none;
+		}
+	}
+</style>

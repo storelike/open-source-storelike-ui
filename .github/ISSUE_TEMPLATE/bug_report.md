@@ -1,47 +1,47 @@
-#---
-name: 🐛 Сообщение об ошибке (Bug Report)
-about: Сообщить об ошибке в существующем шаблоне или функционале.
-title: "[BUG]: Краткое описание проблемы"
+---
+name: 🐛 Bug Report
+about: Report a bug in an existing template or feature.
+title: "[BUG]: Brief description of the problem"
 labels: bug, needs review
 assignees: ''
 ---
 
-### Ошибка в
+### Bug location
 
-- [ ] Шаблон: `ecommerce-templates/название-шаблона`
-- [ ] Документация (`docs/`)
-- [ ] Инструменты сборки/CI/CD
+- [ ] Template: `ecommerce-templates/template-name`
+- [ ] Documentation (`docs/`)
+- [ ] Build tools/CI/CD
 
-### Описание ошибки
+### Bug description
 
-Кратко и четко опишите, что не работает или работает неправильно.
+Clearly and briefly describe what is not working or is working incorrectly.
 
-### Как воспроизвести
+### Steps to reproduce
 
-Пошаговые инструкции, чтобы воспроизвести ошибку:
+Step-by-step instructions to reproduce the bug:
 
-1.  Перейти к `https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB`
-2.  Сделать `[Действие 1]`
-3.  Сделать `[Действие 2]`
-4.  Увидеть ошибку...
+1. Go to `...`
+2. Do `[Action 1]`
+3. Do `[Action 2]`
+4. See error...
 
-### Ожидаемое поведение
+### Expected behavior
 
-Опишите, что должно было произойти.
+Describe what should have happened.
 
-### Скриншоты и Видео (по возможности)
+### Screenshots & Video (if possible)
 
-Приложите скриншоты или короткое видео, чтобы показать проблему.
+Attach screenshots or a short video showing the problem.
 
-### Окружение
+### Environment
 
-Пожалуйста, предоставьте информацию о вашем окружении:
+Please provide information about your environment:
 
-- **Браузер:** [Например, Chrome 125, Firefox]
-- **ОС:** [Например, Windows 11, macOS Sonoma]
-- **Версия Node:** [Например, v22.3.0]
-- **Локальный или Продакшн:** [Local / Production]
+- **Browser:** [e.g. Chrome 125, Firefox]
+- **OS:** [e.g. Windows 11, macOS Sonoma]
+- **Node version:** [e.g. v22.3.0]
+- **Local or Production:** [Local / Production]
 
-### Дополнительная информация
+### Additional information
 
-Любая другая информация, которая может быть полезна (сообщения консоли, трассировка стека и т.д.).
+Any other information that may be useful (console messages, stack traces, etc.).

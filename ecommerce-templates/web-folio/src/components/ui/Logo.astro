@@ -1,0 +1,13 @@
+---
+import { cmNavbarLogoConfig } from '../../locale/cms-locale.json'
+---
+
+<a href="/" class="flex items-center lg:space-x-2">
+  <img
+    src={cmNavbarLogoConfig.path.value}
+    alt={cmNavbarLogoConfig.alt.value}
+    width={cmNavbarLogoConfig.widthLogo.value}
+    height={cmNavbarLogoConfig.heightLogo.value}
+  />
+  {cmNavbarLogoConfig.isTitle.value && <span class="font-bold text-[clamp(6px,4vw,18px)]">{cmNavbarLogoConfig.title.value}</span>}
+</a>

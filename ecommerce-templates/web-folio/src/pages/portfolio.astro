@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import PortfolioReact from '../components/react-components/flatpages-react/portfolio';
+import {cmFlatpagesPortfolio} from "../locale/cms-locale.json";
+---
+
+<Layout
+	title={cmFlatpagesPortfolio.title_meta_tag.value}
+	description={cmFlatpagesPortfolio.description_meta_tag.value}>
+<Container>   
+	<PortfolioReact client:load />
+</Container>   
+</Layout>

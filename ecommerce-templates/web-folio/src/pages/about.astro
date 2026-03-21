@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import AboutReact from '../components/react-components/flatpages-react/about';
+import { cmFlatpagesAbout } from "../locale/cms-locale.json";
+---
+
+<Layout
+	title={cmFlatpagesAbout?.title_meta_tag.value}
+	description={cmFlatpagesAbout?.description_meta_tag.value}
+>
+<Container>   
+	<AboutReact client:load />
+</Container>   
+</Layout>

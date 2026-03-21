@@ -1,0 +1,85 @@
+---
+import HeaderLink from "../../components/HeaderLink.astro";
+import Logo from "../../components/ui/Logo.astro";
+import { cmNavbar } from '../../locale/cms-locale.json';
+
+import CallToActionIcon from "../../components/react-components/call-to-action-icon-react";
+import MainQuiz from "../../components/react-components/quiz-questions-react/main-quiz";
+import PhoneNav from "../../components/react-components/phone-nav";
+
+---
+
+<header>
+	<nav
+	  id="navbar"
+	  class="fixed top-0 left-0 z-50 w-full"
+	  style={{
+		background: cmNavbar.bgNavbar.value,
+		color: cmNavbar.textColorNavbar.value,
+		borderRadius: cmNavbar.roundedNavbar.value ? '30px' : '0',
+		marginTop: cmNavbar.roundedNavbar.value ? '0.5rem' : '0',
+	  }}
+	>
+	  <div class="flex items-center justify-between min-h-[65px] px-4">
+		
+		<Logo />
+
+		<PhoneNav data={cmNavbar} client:load />
+
+		<div style="margin-right: 20px;" class="flex items-center space-x-4 ">
+		  {cmNavbar.links.map(
+			(item, index) =>
+			  item?.isActive && (
+				<HeaderLink
+				  key={index}
+				  href={item.path}
+				  class:list={"navbar-links"}
+				>
+				  {item.label}
+				  {item.badge && (
+					<span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full align-super">
+					  {item.titleBadge}
+					</span>
+				  )}
+				</HeaderLink>
+			  ),
+		  )}
+		</div>
+  
+		
+		
+	  </div>
+	  
+	</nav>
+
+	<div class="z-30 fixed top-1/2 right-5">
+		  <CallToActionIcon client:load />
+		</div>
+		<MainQuiz client:only />
+  
+	<style>
+	  header {
+		margin: 0;
+		padding: 0 1em;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	  }
+  
+	  nav a {
+		padding: 1em 0.5em;
+		color: var(--black);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	  }
+  
+	  nav a.active {
+		border-bottom-color: var(--accent);
+	  }
+  
+	  @media (max-width: 720px) {
+		.navbar-links {
+		  display: none;
+		}
+	  }
+	</style>
+  </header>
+  

@@ -1,23 +1,23 @@
 ---
-name: ✨ Запрос функции/улучшения (Feature Request)
-about: Предложить идею для улучшения проекта (не шаблон).
-title: "[FEAT]: Краткое описание улучшения"
+name: ✨ Feature / Enhancement Request
+about: Suggest an idea for improving the project (not a template).
+title: "[FEAT]: Brief description of the improvement"
 labels: feature
 assignees: ''
 ---
 
-### 🚀 Предлагаемая функция
+### 🚀 Proposed feature
 
-Четко и кратко опишите, какую функцию вы предлагаете.
+Clearly and briefly describe what feature you are proposing.
 
-### ❓ Почему это необходимо?
+### ❓ Why is this needed?
 
-Объясните, какую проблему решает эта функция или как она улучшит проект (например, "Ускорит локальную сборку", "Облегчит тестирование").
+Explain what problem this feature solves or how it improves the project (e.g. "Speeds up local builds", "Makes testing easier").
 
-### 💡 Предлагаемое решение
+### 💡 Proposed solution
 
-Если у вас есть идеи по реализации, опишите их.
+If you have implementation ideas, describe them here.
 
-### 📚 Связанные вопросы (Опционально)
+### 📚 Related issues (Optional)
 
-Есть ли похожие запросы или обсуждения, связанные с этой идеей?
+Are there similar requests or discussions related to this idea?

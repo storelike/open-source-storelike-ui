@@ -1,0 +1,13 @@
+cat > .dockerignore << EOF
+**/node_modules
+.git
+.gitignore
+.env
+.env.local
+.DS_Store
+*.log
+dist
+build
+.cache
+.astro
+EOF

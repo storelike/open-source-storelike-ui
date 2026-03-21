@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import PrivacyPolicyReact from '../components/react-components/flatpages-react/privacy-policy';
+import {cmFlatpagesPrivacyPolicy} from "../locale/cms-locale.json";
+---
+
+<Layout
+title={cmFlatpagesPrivacyPolicy.title_meta_tag.value}
+description={cmFlatpagesPrivacyPolicy.description_meta_tag.value}>
+<Container>   
+	<PrivacyPolicyReact client:load />
+</Container>   
+</Layout>

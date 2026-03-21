@@ -1,0 +1,115 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.imageWrapper {
+  aspect-ratio: 3 / 2;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  margin-top: 10px;
+}
+
+.productTitle {
+  font-size: 16px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  word-break: break-word;
+  text-align: center;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 8px 0;
+  flex-wrap: wrap;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  font-size: 14px;
+  color: #888;
+}
+
+.discountedPrice {
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
+}
+
+.productPrice {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.deliveryIcon {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.statusIcon {
+  margin: 8px auto;
+}
+
+.buttonsContainer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.moreButton,
+.payButton {
+  padding: 6px 10px;
+  font-size: 12px;
+  background-color: #0000FF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.moreButton:hover,
+.payButton:hover {
+  background-color: #0000cc;
+}
+
+.orderText {
+  font-weight: bold;
+  font-size: 12px;
+  color: #fff;
+}

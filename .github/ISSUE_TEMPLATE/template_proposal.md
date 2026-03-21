@@ -1,42 +1,42 @@
 ---
-name: 🎨 Предложение нового шаблона (Template Proposal)
-about: Предложить новый e-commerce или веб-шаблон, соответствующий стандарту Pagespeed 100%.
-title: "[TEMPLATE]: Название шаблона (для какой ниши)"
+name: 🎨 New Template Proposal
+about: Propose a new e-commerce or web template that meets the Pagespeed 100% standard.
+title: "[TEMPLATE]: Template name (for which niche)"
 labels: template, feature
 assignees: ''
 ---
 
-### 💡 Основная идея шаблона
+### 💡 Template concept
 
-Кратко опишите, что это за шаблон, для какой ниши (например, "Минималистичный магазин украшений", "Landing Page для IT-услуг").
+Briefly describe what this template is and for which niche (e.g. "Minimalist jewelry store", "Landing page for IT services").
 
-### 🎯 Требования к производительности и дизайну
+### 🎯 Performance & design requirements
 
-**Важно: Все шаблоны должны быть готовы к 100% Pagespeed.**
+**Important: All templates must be Pagespeed 100% ready.**
 
--   **Целевая ниша/индустрия:**
--   **Ключевая особенность дизайна:** (Например, "Фокус на типографике", "Только 2 цвета")
--   **Минималистический дизайн:** (Как вы планируете добиться минимализма?)
+- **Target niche/industry:**
+- **Key design feature:** (e.g. "Focus on typography", "Only 2 colors")
+- **Minimalist design:** (How do you plan to achieve minimalism?)
 
-### ⚙️ Используемые технологии
+### ⚙️ Technologies used
 
-Пожалуйста, укажите, какие технологии вы планируете использовать (избегайте лишних зависимостей):
+Please indicate which technologies you plan to use (avoid unnecessary dependencies):
 
--   [ ] **Astro Build** (Обязательно для сборки)
--   [ ] **React v19+** (Для интерактивных компонентов, если нужно)
--   [ ] **Vanilla JS/CSS** (Для максимальной скорости)
--   [ ] **Другое:** (Укажите)
+- [ ] **Astro Build** (Required for build)
+- [ ] **React v19+** (For interactive components if needed)
+- [ ] **Vanilla JS/CSS** (For maximum speed)
+- [ ] **Other:** (specify)
 
-### 📈 SEO и Реклама
+### 📈 SEO & Advertising
 
-Как этот шаблон будет оптимизирован для SEO и рекламы?
+How will this template be optimized for SEO and advertising?
 
--   **Семантика:** (Кратко, какие теги будут использованы: `<Product>`, `<Organization>`, т.д.)
--   **Готовность к Ads:** (Где будут располагаться скрипты аналитики?)
+- **Semantics:** (Briefly, which tags will be used: `<Product>`, `<Organization>`, etc.)
+- **Ads readiness:** (Where will analytics scripts be placed?)
 
-### 🔗 Предварительные макеты (Опционально)
+### 🔗 Preliminary mockups (Optional)
 
-Если есть, приложите ссылки на Figma/Sketch или наброски, чтобы показать внешний вид.
+If available, attach links to Figma/Sketch or sketches showing the visual design.
 
 ---
-**Напоминание:** Прежде чем начать разработку, пожалуйста, дождитесь одобрения этого предложения от мейнтейнеров.
+**Reminder:** Before starting development, please wait for approval from the maintainers.

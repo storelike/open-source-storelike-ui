@@ -1,0 +1,35 @@
+name: CI — Validate Templates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Lint & Build Check
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        template: [basic, build-mart, glow-store, home-space, style-shop, tech-market, web-folio]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: ecommerce-templates/${{ matrix.template }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ecommerce-templates/${{ matrix.template }}
+        run: npm ci
+
+      - name: Build template
+        working-directory: ecommerce-templates/${{ matrix.template }}
+        run: npm run build

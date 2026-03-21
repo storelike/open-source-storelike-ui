@@ -1,0 +1,14 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Layout.astro";
+import { cmSeo } from "../locale/cms-locale.json";
+
+
+---
+
+<Layout title=`${cmSeo.siteTitle.value}` description=`${cmSeo.siteDescription.value}`>
+  <Container>
+  <p> CALL TO ACTION</p>
+
+  </Container>
+</Layout>

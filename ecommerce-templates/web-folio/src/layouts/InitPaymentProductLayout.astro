@@ -1,0 +1,43 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "./Layout.astro";
+import IninPaymentReact from "../components/react-components/init-payment-react";
+import localeTextSite from "../locale/locale_text_site.json";
+
+interface AstroProps {
+  slug: string;
+  title: string;
+  price: number;
+  discount: number;
+  is_delivery: boolean;
+  image: {
+    src: string;
+    alt: string;
+  };
+}
+
+const props: AstroProps = Astro.props as AstroProps;
+const { slug, title, price, discount, image, is_delivery } = props;
+
+const orderDataPay:any = {
+  slug,
+  title,
+  price,
+  discount,
+  image,
+  is_delivery
+};
+---
+
+<Layout title={title} description="">
+  <Container>
+    <!-- Передаем orderDataPay как проп для компонента IninPaymentPage -->
+    <IninPaymentReact product={orderDataPay} client:load />
+
+    <div class="text-center mt-8">
+      <a href="/" class="bg-blue-500 px-5 py-3 rounded-md hover:bg-blue-700 transition">
+        ← {localeTextSite.globalSettings.btnToMain}
+      </a>
+    </div>
+  </Container>
+</Layout>

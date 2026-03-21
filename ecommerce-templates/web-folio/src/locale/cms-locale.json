@@ -1,0 +1,1178 @@
+{
+  "cmWebfolio": {
+    "labelSection": "Школьный альбом",
+    "key_yandex_disk": {
+      "label": "Ключ Яндекс.Диска для альбомов",
+      "value": {
+        "alg": "AES-256-GCM",
+        "salt": "x1SmUzYH+BvLmbpQ0/nAKg==",
+        "iv": "Y4rlkennHcGFQlOu",
+        "data": "wblScfogaOvMrVF40gAcYjtrjV9CCDLR9mh2vHochOQ6Ar7z0Vmc+1zpGqPmcR/ePiLkMjt6M5UJgWT0xfUV+058qA=="
+      }
+    },
+    "is_main_section": {
+      "label": "Активный на главной странице — Школьный альбом",
+      "value": true
+    },
+    "title_meta_tag": {
+      "label": "Мета-тег заголовка — альбомы",
+      "value": "Школьные и детские альбомы — Тайшет"
+    },
+    "description_meta_tag": {
+      "label": "Мета-тег описания — альбомы",
+      "value": "Школьные, детсадовские и выпускные альбомы от Сони Моллеровой в Тайшете. Профессиональная съёмка, тёплые эмоции и долговечные фотокниги."
+    },
+    "keywords_meta_tag": {
+      "label": "Мета-тег ключевые слова — альбомы",
+      "value": "школьный альбом, детский альбом, выпускной альбом, фотокнига, Соня"
+    },
+    "author_meta_tag": {
+      "label": "Мета-тег автор — альбомы",
+      "value": "Соня"
+    },
+    "title": {
+      "label": "Заголовок секции — альбомы",
+      "value": "Школьные и детские альбомы"
+    },
+    "subtitle": {
+      "label": "Подзаголовок секции — альбомы",
+      "value": "Память на всю жизнь: фотосъёмка классов и групп, выпускные альбомы и индивидуальные портреты."
+    }
+  },
+  "cmQuiz": {
+    "labelSection": "Квиз",
+    "iconTitleGiftBox": {
+      "label": "Название блока подарка (titleGiftBox)",
+      "value": "Заявка на альбом"
+    },
+    "iconSubtitleGiftBox": {
+      "label": "Подзаголовок блока подарка (subtitleGiftBox)",
+      "value": "Ответьте на 3 вопроса — получите персональную скидку на класс/группу."
+    },
+    "iconButtonGiftBox": {
+      "label": "Кнопка блока подарка (buttonGiftBox)",
+      "value": "Отправить"
+    },
+    "modalTitle": {
+      "label": "Заголовок окна после отправки",
+      "value": "Спасибо! Заявка получена"
+    },
+    "modalSubtitle": {
+      "label": "Подзаголовок окна после отправки",
+      "value": "Мы свяжемся с вами, чтобы уточнить детали съёмки и макет альбома."
+    },
+    "title": {
+      "label": "Заголовок квиза",
+      "value": "Всего 3 вопроса — и мы всё посчитаем"
+    },
+    "subtitle": {
+      "label": "Подзаголовок квиза",
+      "value": "По завершении — бонус или скидка для вашего класса/группы*"
+    },
+    "questions": {
+      "label": "Вопросы квиза",
+      "value": [
+        {
+          "question": "Для кого вы планируете альбом?",
+          "options": [
+            "Детский сад (группа)",
+            "1–4 класс",
+            "5–8 класс",
+            "9 или 11 класс (выпускной)",
+            "Индивидуальная фотосессия"
+          ]
+        },
+        {
+          "question": "Какой формат/стиль вам ближе?",
+          "options": [
+            "Классический 20×30, твёрдая обложка",
+            "Фотокнига Премиум (плотные листы)",
+            "Мини-альбом каждому + общий плакат",
+            "Портреты + общее фото класса/группы",
+            "Нужна консультация по вариантам"
+          ]
+        },
+        {
+          "question": "Когда планируете съёмку?",
+          "options": [
+            "В течение месяца",
+            "Через 1–2 месяца",
+            "К концу учебного года",
+            "Дата уточняется классом/группой",
+            "Другое"
+          ]
+        }
+      ]
+    }
+  },
+  "cmProducts": {
+    "labelSection": "Продукты/услуги",
+    "title_meta_tag": {
+      "label": "Мета-тег заголовок",
+      "value": "Фотоуслуги и пакеты — школьные альбомы"
+    },
+    "description_meta_tag": {
+      "label": "Мета-тег описание",
+      "value": "Пакеты съёмки для детских садов, школ и выпускных классов. Индивидуальные фотосессии, фотокниги и печать."
+    },
+    "keywords_meta_tag": {
+      "label": "Мета-тег ключевые слова",
+      "value": "школьные альбомы, выпускные альбомы, детская фотосъёмка, пакеты съёмки"
+    },
+    "author_meta_tag": {
+      "label": "Мета-тег автор",
+      "value": "Соня "
+    },
+    "bgCard": {
+      "label": "Цвет фона карточек",
+      "value": "#c8c9c0"
+    },
+    "cardTextColor": {
+      "label": "Цвет текста на карточках",
+      "value": "#000000"
+    },
+    "title": {
+      "label": "Заголовок секции",
+      "value": "Фотоуслуги и пакеты"
+    },
+    "subtitle": {
+      "label": "Подзаголовок секции",
+      "value": "Выберите готовый пакет или оставьте запрос на индивидуальную комплектацию: альбомы, фотокниги, печать для родителей."
+    },
+    "textButtonToOrder": {
+      "label": "Текст кнопки заказа",
+      "value": "Заказать съёмку"
+    },
+    "isBlackAndWhitePhoto": {
+      "label": "Отображать фото в ч/б стиле",
+      "value": true
+    }
+  },
+  "cmSeo": {
+    "labelSection": "Настройки SEO",
+    "lang": {
+      "label": "Язык сайта",
+      "value": "ru"
+    },
+    "siteHttps": {
+      "label": "Основной URL сайта",
+      "value": "https://www.storelike.ru"
+    },
+    "siteTitle": {
+      "label": "Основной заголовок сайта",
+      "value": "Соня  — школьные и детские альбомы | Тайшет"
+    },
+    "siteDescription": {
+      "label": "Описание сайта",
+      "value": "Профессиональная фотосъёмка для детских садов и школ: выпускные и классные альбомы, фотокниги и индивидуальные фотосессии в Тайшете."
+    },
+    "nameImgOpengraph": {
+      "label": "Изображение для Open Graph",
+      "value": "/opengraph.png"
+    },
+    "titleSiteDefault": {
+      "label": "Заголовок по умолчанию",
+      "value": "Соня "
+    },
+    "twitterCreator": {
+      "label": "Twitter: автор",
+      "value": "@buildberries"
+    },
+    "twitterSite": {
+      "label": "Twitter: сайт",
+      "value": "@buildberries"
+    },
+    "twitterCard": {
+      "label": "Тип карточки Twitter",
+      "value": "summary_large_image"
+    },
+    "numberYandexMetric": {
+      "label": "Номер Яндекс.Метрики",
+      "value": 98674688
+    },
+    "yandexWebmaster": {
+      "label": "Код подтверждения Яндекс.Вебмастер",
+      "value": "5d338e3ac57de073"
+    },
+    "numberGoogleMetric": {
+      "label": "Номер Google Tag Manager",
+      "value": "GTM-TV3S9FQS"
+    },
+    "seoKeywords": {
+      "label": "SEO ключевые слова главной",
+      "value": "школьные альбомы Тайшет, детская фотосъёмка, выпускные альбомы, фотограф Тайшет, Сння"
+    },
+    "yaGoalTitleQuiz": {
+      "label": "Яндекс.Цель — квиз",
+      "value": "quiz-form"
+    },
+    "yaGoalTitleCallToAction": {
+      "label": "Яндекс.Цель — призыв к действию",
+      "value": "call-to-action"
+    },
+    "yaGoalTitleContactForm": {
+      "label": "Яндекс.Цель — контактная форма",
+      "value": "main-contact-form"
+    },
+    "yaGoalTitleSendOrder": {
+      "label": "Яндекс.Цель — отправка заказа",
+      "value": "send-order-form"
+    }
+  },
+  "cmFeatures": {
+    "labelSection": "Преимущества",
+    "title": {
+      "label": "Заголовок преимуществ",
+      "value": "Тёплые истории класса в красивых альбомах"
+    },
+    "subtitle": {
+      "label": "Подзаголовок преимуществ",
+      "value": "Съёмка в детских садах и школах Тайшета. Помогаю классам и родителям получить стильные, долговечные и доступные альбомы без лишней суеты."
+    },
+    "items": {
+      "label": "Список преимуществ",
+      "value": [
+        {
+          "title": "Удобно для родкомитета",
+          "description": "Готовые пакеты и понятные сроки: забираем организацию на себя, отчёты и макеты — онлайн.",
+          "icon": "bx:bxs-briefcase"
+        },
+        {
+          "title": "Качественная печать",
+          "description": "Плотные листы, стойкие обложки и цветопередача, которая радует много лет.",
+          "icon": "bx:bxs-window-alt"
+        },
+        {
+          "title": "Индивидуальный подход",
+          "description": "Для каждого ребёнка — лучшие портреты; для класса — живые репортажные кадры.",
+          "icon": "bx:bxs-data"
+        },
+        {
+          "title": "Онлайн-согласования",
+          "description": "Макеты и правки — в удобных альбомах на облаке, быстро и прозрачно.",
+          "icon": "bx:bxs-bot"
+        },
+        {
+          "title": "Гарантия сроков",
+          "description": "Сдаём альбомы вовремя к утреннику или выпускному, без переносов.",
+          "icon": "bx:bxs-file-find"
+        },
+        {
+          "title": "Довольные родители",
+          "description": "Позитивные отзывы и повторные заказы классов — лучшая оценка моей работы.",
+          "icon": "bx:bxs-user"
+        }
+      ]
+    }
+  },
+  "cmContactUs": {
+    "labelSection": "Контакты",
+    "title_meta_tag": {
+      "label": "Мета-тег заголовок",
+      "value": "Контакты — Сння | Тайшет"
+    },
+    "description_meta_tag": {
+      "label": "Мета-тег описание",
+      "value": "Свяжитесь с фотографом Соней Моллеровой для съёмки школьных, детсадовских и выпускных альбомов в Тайшете."
+    },
+    "keywords_meta_tag": {
+      "label": "Мета-тег ключевые слова",
+      "value": "контакты фотограф Тайшет, школьные альбомы, Сння"
+    },
+    "author_meta_tag": {
+      "label": "Мета-тег автор",
+      "value": "Сння"
+    },
+    "title": {
+      "label": "Заголовок",
+      "value": "Контакты"
+    },
+    "subtitle": {
+      "label": "Подзаголовок",
+      "value": "Расскажите о вашем классе/группе — предложу лучшие варианты и рассчёт."
+    },
+    "formTitle": {
+      "label": "Заголовок формы",
+      "value": "Свяжитесь со мной"
+    },
+    "formSubtitle": {
+      "label": "Подзаголовок формы",
+      "value": "Укажите email или телефон, и я перезвоню. Можно сразу написать в Telegram/WhatsApp."
+    },
+    "formPlaceholderName": {
+      "label": "Поле: ФИО",
+      "value": "Ваше имя"
+    },
+    "formPlaceholderEmail": {
+      "label": "Поле: Email/Телефон",
+      "value": "Электронная почта или номер телефона"
+    },
+    "formPlaceholderTextarea": {
+      "label": "Поле: Сообщение",
+      "value": "Класс/группа, желаемые даты и формат альбома"
+    },
+    "address": {
+      "label": "Адрес",
+      "value": "г. Тайшет"
+    },
+    "phone": {
+      "label": "Телефон",
+      "value": "+7 (914) 927-21-11"
+    },
+    "email": {
+      "label": "Электронная почта",
+      "value": "team@x038it.ru"
+    },
+    "nameCompany": {
+      "label": "Название",
+      "value": "Фотограф Сння"
+    },
+    "nameBankTitle": {
+      "label": "Заголовок банковских реквизитов",
+      "value": "Банковские реквизиты"
+    },
+    "inn": {
+      "label": "ИНН",
+      "value": "3812115138"
+    },
+    "kpp": {
+      "label": "КПП",
+      "value": "381201001"
+    },
+    "paymentAccount": {
+      "label": "Расчетный счет",
+      "value": "40702810823350001981"
+    },
+    "nameBank": {
+      "label": "Название банка",
+      "value": "Банк: АО АЛЬФА-БАНК"
+    },
+    "correspondentAccount": {
+      "label": "Корреспондентский счет",
+      "value": "30101810600000000774"
+    },
+    "bik": {
+      "label": "БИК",
+      "value": "045004774"
+    },
+    "operatingMode": {
+      "label": "Режим работы",
+      "value": "График работы"
+    },
+    "operatingModeWorkDay": {
+      "label": "Рабочие дни",
+      "value": "Пн — Пт: 09:00 — 18:00"
+    },
+    "operatingModeSaturday": {
+      "label": "Суббота",
+      "value": "Сб: 10:00 — 16:00"
+    },
+    "operatingModeSunday": {
+      "label": "Воскресенье",
+      "value": "Вс: выходной"
+    },
+    "isCompanyDetails": {
+      "label": "Показать реквизиты",
+      "value": true
+    },
+    "isFioForm": {
+      "label": "Активировать поле ФИО",
+      "value": false
+    },
+    "isMessageActive": {
+      "label": "Активировать поле Сообщение",
+      "value": false
+    },
+    "isTelegram": {
+      "label": "Ссылка на Telegram",
+      "value": true
+    },
+    "isWhatsapp": {
+      "label": "Ссылка на WhatsApp",
+      "value": true
+    },
+    "isEmail": {
+      "label": "Ссылка на Email",
+      "value": false
+    },
+    "isVk": {
+      "label": "Ссылка на VKontakte",
+      "value": true
+    }
+  },
+  "cmAppConfig": {
+    "labelSection": "Настройки приложения",
+    "bgTheme": {
+      "label": "Фон сайта",
+  "value": "linear-gradient(135deg, rgba(250,245,255,1), rgba(235,215,255,0.95), rgba(220,180,255,0.9), rgba(210,160,255,0.9), rgba(240,230,255,1)); box-shadow: 0 0 80px rgba(190,120,255,0.6), 0 0 160px rgba(170,100,255,0.45), inset 0 0 50px rgba(230,210,255,0.6); border-radius: 12px; filter: brightness(1.3) contrast(1.1) saturate(1.3); padding: 18px; color: #2b005f;"
+    },
+    "textColorTheme": {
+      "label": "Цвет текста сайта",
+      "value": "black"
+    },
+    "passwordAdmin": {
+      "label": "Пароль администратора",
+      "value": "password38"
+    },
+    "emailAdmin": {
+      "label": "Email администратора",
+      "value": "admin@storelike.ru"
+    },
+    "tokenTelegram": {
+      "label": "Telegram токен",
+      "value": "6985872588:AAEDsBILdqiXGF3YhaSZZ_qjmIS7foCB2p4"
+    },
+    "chatIdTelegram": {
+      "label": "Telegram Chat ID",
+      "value": "-1001910712578"
+    },
+    "tinkoffEmailCompany": {
+      "label": "Email компании (Тинькофф)",
+      "value": "83952280298@mail.ru"
+    },
+    "tinkoffTaxionCompany": {
+      "label": "Система налогообложения (Тинькофф)",
+      "value": "usn_income_outcome"
+    },
+    "tinkoffTerminalKey": {
+      "label": "Терминальный ключ (Тинькофф)",
+      "value": "1728982674167"
+    },
+    "tinkoffSuccessUrl": {
+      "label": "URL успешной оплаты (Тинькофф)",
+      "value": "https://доменное имя/tinkoff-page-success"
+    },
+    "isPaymentButton": {
+      "label": "Показать кнопку оплаты",
+      "value": true
+    },
+    "buttonToOrder": {
+      "label": "Текст на кнопке заказа",
+      "value": "Заказать"
+    }
+  },
+  "cmFlatpagesAbout": {
+    "labelSection": "Страница О нас",
+    "title_meta_tag": {
+      "label": "Мета-тег заголовок",
+      "value": "О фотографе — Сння"
+    },
+    "description_meta_tag": {
+      "label": "Мета-тег описание",
+      "value": "Сння — фотограф из Тайшета. Специализация: школьные и детсадовские съёмки, выпускные альбомы и индивидуальные фотосессии."
+    },
+    "keywords_meta_tag": {
+      "label": "Мета-тег ключевые слова",
+      "value": "о фотографе, Сння, Тайшет"
+    },
+    "author_meta_tag": {
+      "label": "Мета-тег автор",
+      "value": "Сння"
+    },
+    "title": {
+      "label": "О нас",
+      "value": "О фотографе"
+    }
+  },
+  "cmFlatpagesUserAgreement": {
+    "labelSection": "Страницы ПС",
+    "title_meta_tag": {
+      "label": "Мета-тег заголовок",
+      "value": "Пользовательское соглашение"
+    },
+    "description_meta_tag": {
+      "label": "Мета-тег описание",
+      "value": "Условия использования сайта и оформления заказов на фотосъёмку и альбомы."
+    },
+    "keywords_meta_tag": {
+      "label": "Мета-тег ключевые слова",
+      "value": "пользовательское соглашение"
+    },
+    "author_meta_tag": {
+      "label": "Мета-тег автор",
+      "value": "Сння"
+    },
+    "title": {
+      "label": "Пользовательское соглашение",
+      "value": "Пользовательское соглашение"
+    }
+  },
+  "cmFlatpagesPrivacyPolicy": {
+    "labelSection": "Страница ПК",
+    "title_meta_tag": {
+      "label": "Мета-тег заголовок",
+      "value": "Политика конфиденциальности"
+    },
+    "description_meta_tag": {
+      "label": "Мета-тег описание",
+      "value": "Как обрабатываются и защищаются персональные данные родителей, учеников и посетителей сайта."
+    },
+    "keywords_meta_tag": {
+      "label": "Мета-тег ключевые слова",
+      "value": "политика конфиденциальности"
+    },
+    "author_meta_tag": {
+      "label": "Мета-тег автор",
+      "value": "Сння"
+    },
+    "title": {
+      "label": "Политика конфиденциальности",
+      "value": "Политика конфиденциальности"
+    }
+  },
+  "cmFlatpagesDeliveryRules": {
+    "labelSection": "Страница ПД",
+    "title_meta_tag": {
+      "label": "Мета-тег заголовок",
+      "value": "Правила доставки и выдачи"
+    },
+    "description_meta_tag": {
+      "label": "Мета-тег описание",
+      "value": "Сроки изготовления и выдачи школьных альбомов, способы получения и возвраты."
+    },
+    "keywords_meta_tag": {
+      "label": "Мета-тег ключевые слова",
+      "value": "доставка альбомов, сроки изготовления"
+    },
+    "author_meta_tag": {
+      "label": "Мета-тег автор",
+      "value": "Сння"
+    },
+    "title": {
+      "label": "Правила доставки",
+      "value": "Правила доставки и выдачи"
+    }
+  },
+  "cmFlatpagesPortfolio": {
+    "labelSection": "Страница НР",
+    "title_meta_tag": {
+      "label": "Мета-тег заголовок",
+      "value": "Наши работы — школьные и детские альбомы"
+    },
+    "description_meta_tag": {
+      "label": "Мета-тег описание",
+      "value": "Примеры съёмок для детских садов и школ, выпускные проекты и индивидуальные фотосессии."
+    },
+    "keywords_meta_tag": {
+      "label": "Мета-тег ключевые слова",
+      "value": "портфолио, школьные альбомы"
+    },
+    "author_meta_tag": {
+      "label": "Мета-тег автор",
+      "value": "Сння"
+    },
+    "title": {
+      "label": "Наши работы",
+      "value": "Портфолио"
+    }
+  },
+  "cmFlatpagesOfferAgreement": {
+    "labelSection": "Страница СО",
+    "title_meta_tag": {
+      "label": "Мета-тег заголовок",
+      "value": "Публичная оферта"
+    },
+    "description_meta_tag": {
+      "label": "Мета-тег описание",
+      "value": "Условия оказания фотоуслуг, изготовления и оплаты школьных альбомов."
+    },
+    "keywords_meta_tag": {
+      "label": "Мета-тег ключевые слова",
+      "value": "публичная оферта, фотоуслуги"
+    },
+    "author_meta_tag": {
+      "label": "Мета-тег автор",
+      "value": "Сння"
+    },
+    "title": {
+      "label": "Соглашение оферта",
+      "value": "Публичная оферта"
+    }
+  },
+  "cmFooter": {
+    "labelSection": "Футер",
+    "bgFooter": {
+      "label": "Фон футера",
+      "value": "#000000"
+    },
+    "isRoundedFooter": {
+      "label": "Скругление футера",
+      "value": false
+    },
+    "textColorFooter": {
+      "label": "Цвет текста в футере",
+      "value": "#ffffff"
+    },
+    "colorTextBoxLinkFooterPhone": {
+      "label": "Цвет текста ссылки 'Телефон'",
+      "value": "#000000"
+    },
+    "isRoundedBoxLinkFooterPhone": {
+      "label": "Скругление блока 'Телефон'",
+      "value": true
+    },
+    "bgBoxLinkFooterPhone": {
+      "label": "Фон блока 'Телефон'",
+      "value": "#c8ddc6"
+    },
+    "colorTextBoxLinkFooterTelegram": {
+      "label": "Цвет текста ссылки 'Telegram'",
+      "value": "#000000"
+    },
+    "isRoundedBoxLinkFooterTelegram": {
+      "label": "Скругление блока 'Telegram'",
+      "value": true
+    },
+    "bgBoxLinkFooterTelegram": {
+      "label": "Фон блока 'Telegram'",
+      "value": "#c8ddc6"
+    },
+    "colorTextBoxLinkFooterWhatsApp": {
+      "label": "Цвет текста ссылки 'WhatsApp'",
+      "value": "#000000"
+    },
+    "isRoundedBoxLinkFooterWhatsApp": {
+      "label": "Скругление блока 'WhatsApp'",
+      "value": true
+    },
+    "bgBoxLinkFooterWhatsApp": {
+      "label": "Фон блока 'WhatsApp'",
+      "value": "#c8ddc6"
+    },
+    "colorTextBoxLinkFooterEmail": {
+      "label": "Цвет текста ссылки 'Email'",
+      "value": "#000000"
+    },
+    "isRoundedBoxLinkFooterEmail": {
+      "label": "Скругление блока 'Email'",
+      "value": false
+    },
+    "bgBoxLinkFooterEmail": {
+      "label": "Фон блока 'Email'",
+      "value": "#c8ddc6"
+    },
+    "titleFooter": {
+      "label": "Заголовок футера",
+      "value": "Школьные и детские альбомы — Тайшет"
+    },
+    "links": [
+      {
+        "path": "/",
+        "label": "Главная",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/about",
+        "label": "О фотографе",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/products",
+        "label": "Услуги",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/#reviews",
+        "label": "Отзывы",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/contact-us",
+        "label": "Контакты",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/offer-agreement",
+        "label": "Оферта",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/privacy-policy",
+        "label": "Политика конфиденциальности",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/user-agreement",
+        "label": "Пользовательское соглашение",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/delivery-rules",
+        "label": "Правила доставки",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция"
+      }
+    ]
+  },
+  "cmHero": {
+    "labelSection": "Главный баннер (Hero)",
+
+    "isCustomHero": {
+      "label": "Использовать кастомный Hero-блок",
+      "value": false
+    },
+
+    "title": {
+      "label": "Заголовок Hero-секции",
+      "value": "Сохраняю улыбки и моменты детства в красивых школьных альбомах"
+    },
+    "subtitle": {
+      "label": "Подзаголовок Hero-секции",
+      "value": "Фотограф Сння, г. Тайшет — съёмка выпускных, школьных и индивидуальных фотосессий. Живые эмоции, яркие кадры, воспоминания на всю жизнь."
+    },
+
+    "colorThemeStyleCm": {
+      "label": "Основной цвет текста",
+      "value": "#ffffff"
+    },
+
+    "isActiveBtnOne": {
+      "label": "Показать кнопку №1",
+      "value": true
+    },
+    "buttonOne": {
+      "label": "Текст кнопки №1",
+      "value": "Посмотреть портфолио"
+    },
+    "linkButtonOne": {
+      "label": "Ссылка кнопки №1",
+      "value": "/portfolio"
+    },
+    "bgBtnOneStyleCm": {
+      "label": "Фон кнопки №1",
+      "value": "#f8b84e"
+    },
+    "colorBtnOneStyleCm": {
+      "label": "Цвет текста кнопки №1",
+      "value": "#000000"
+    },
+
+    "isActiveBtnTwo": {
+      "label": "Показать кнопку №2",
+      "value": true
+    },
+    "buttonTwo": {
+      "label": "Текст кнопки №2",
+      "value": "Записаться на съёмку"
+    },
+    "linkButtonTwo": {
+      "label": "Ссылка кнопки №2",
+      "value": "/contact"
+    },
+    "bgBtnTwoStyleCm": {
+      "label": "Фон кнопки №2",
+      "value": "transparent"
+    },
+    "colorBtnTwoStyleCm": {
+      "label": "Цвет текста и рамки кнопки №2",
+      "value": "#ffffff"
+    },
+
+    "mainBackground": {
+      "label": "Главное фоновое изображение (heroBg)",
+      "value": "/hero/hero-overlay.png"
+    },
+    "overlayBackground": {
+      "label": "Центральное фоновое изображение (overlayBg)",
+      "value": "/hero/hero.webp"
+    },
+
+    "mainBgBlur": {
+      "label": "Размытие главного фона (px)",
+      "value": 1.2
+    },
+    "mainBgBrightness": {
+      "label": "Яркость главного фона (0–1)",
+      "value": 0.55
+    },
+
+    "maskCenterSize": {
+      "label": "Размер прозрачного центра главного фона (%)",
+      "value": 38
+    },
+    "maskEdgeSize": {
+      "label": "Размер зоны перехода главного фона (%)",
+      "value": 80
+    },
+
+    "centerMaskInner": {
+      "label": "Видимая зона центрального фона (%)",
+      "value": 35
+    },
+    "centerMaskFade": {
+      "label": "Зона затухания центрального фона (%)",
+      "value": 85
+    },
+
+    "isGradientOverlay": {
+      "label": "Добавить затемнение поверх",
+      "value": true
+    },
+    "overlayOpacity": {
+      "label": "Интенсивность затемнения (0–1)",
+      "value": 0.35
+    },
+
+    "metaTitle": {
+      "label": "Мета-тег Title — Hero",
+      "value": "Фотограф Сння — школьные и детские альбомы, Тайшет"
+    },
+    "metaDescription": {
+      "label": "Мета-тег Description — Hero",
+      "value": "Создаю яркие, живые и душевные фотографии для выпускных и школьных альбомов. Тайшет, профессиональная фотосъёмка, индивидуальный подход."
+    },
+    "metaKeywords": {
+      "label": "Мета-тег Keywords — Hero",
+      "value": "фотограф, Тайшет, школьный альбом, детский альбом, фотосессия, выпускной"
+    }
+  },
+  "cmNavbar": {
+    "labelSection": "Навбар",
+    "bgNavbar": {
+      "label": "Фон навбара",
+      "value": "linear-gradient(135deg, #E5E4E2, #C0C0C0, #B0B0B0, #FFFFFF); box-shadow: 10px 0 20px rgba(255, 255, 255, 0.8), 0 0 20px rgba(224, 224, 224, 0.5); border-radius: 10px; filter: brightness(1.2) contrast(1.1); padding: 15px; color: #ccfaf5;"
+    },
+    "textColorNavbar": {
+      "label": "Цвет текста навбара",
+      "value": "#000000"
+    },
+    "roundedNavbar": {
+      "label": "Скругление навбара",
+      "value": true
+    },
+    "bgBurger": {
+      "label": "Фон иконки-бургера",
+      "value": "#ffffff"
+    },
+    "textColorBurger": {
+      "label": "Цвет иконки-бургера",
+      "value": "#000000"
+    },
+    "links": [
+      {
+        "path": "/",
+        "label": "Главная",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/webfolio",
+        "label": "Альбомы",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/about",
+        "label": "О фотографе",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/products",
+        "label": "Услуги",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/portfolio",
+        "label": "Портфолио",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/#reviews",
+        "label": "Отзывы",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/contact",
+        "label": "Контакты",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "/offer-agreement",
+        "label": "Оферта",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция"
+      },
+      {
+        "path": "tel:+79149272111",
+        "label": "+7 (914) 927 21 11",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция"
+      }
+    ]
+  },
+  "cmNavbarLogoConfig": {
+    "labelSection": "Логотип параметры",
+    "title": {
+      "label": "Текст логотипа",
+      "value": "Сння"
+    },
+    "isTitle": {
+      "label": "Отображать заголовок",
+      "value": true
+    },
+    "path": {
+      "label": "Путь к логотипу",
+      "value": "/logo.svg"
+    },
+    "alt": {
+      "label": "Альтернативный текст",
+      "value": "Тайшет — Сння"
+    },
+    "widthLogo": {
+      "label": "Ширина логотипа",
+      "value": "82px"
+    },
+    "heightLogo": {
+      "label": "Высота логотипа",
+      "value": "82px"
+    }
+  },
+  "cmNavbarBurgerMenuReact": {
+    "labelSection": "Бергерменю",
+    "mainBurger": {
+      "label": "Основной бургер",
+      "value": "Сння | Тайшет"
+    },
+    "mainBurgerSubtitle": {
+      "label": "Подзаголовок основного бургера",
+      "value": "Школьные, детсадовские и выпускные альбомы. Индивидуальные фотосессии."
+    },
+    "links": [
+      {
+        "path": "/",
+        "label": "Главная страница",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "link"
+      },
+      {
+        "label": "О фотографе",
+        "title": "О фотографе",
+        "isActive": true,
+        "path": "/about",
+        "type": "link"
+      },
+      {
+        "path": "/products",
+        "label": "Услуги",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "link"
+      },
+      {
+        "path": "/portfolio",
+        "label": "Портфолио",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "link"
+      },
+      {
+        "path": "/offer-agreement",
+        "label": "Публичная оферта",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "link"
+      },
+      {
+        "path": "/privacy-policy",
+        "label": "Политика конфиденциальности",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "link"
+      },
+      {
+        "path": "/user-agreement",
+        "label": "Пользовательское соглашение",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "link"
+      },
+      {
+        "path": "/contact",
+        "label": "Контакты",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "link"
+      },
+      {
+        "path": "/delivery-rules",
+        "label": "Правила доставки",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "link"
+      },
+      {
+        "path": "+79149272111",
+        "label": "Номер телефона",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "phone"
+      },
+      {
+        "path": "ETStudio38Bot",
+        "label": "Номер Telegram",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "telegram"
+      },
+      {
+        "path": "+79149272111",
+        "label": "Номер WhatsApp",
+        "isActive": true,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "whatsapp"
+      },
+      {
+        "path": "buildberries",
+        "label": "ВКонтакте",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "vk"
+      },
+      {
+        "path": "team@x038it.ru",
+        "label": "Электронная почта",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "email"
+      },
+      {
+        "link": "/signin",
+        "label": "Кнопка входа",
+        "isActive": false,
+        "badge": false,
+        "titleBadge": "Акция",
+        "type": "login"
+      }
+    ]
+  },
+  "cmReviews": {
+    "labelSection": "Отзывы",
+    "title": {
+      "label": "Заголовок",
+      "value": "Отзывы"
+    },
+    "list": [
+      {
+        "id": 1,
+        "author": "Екатерина, родкомитет 4Б",
+        "rating": 5,
+        "comment": "Соня очень внимательная к детям и деталям. Альбомы пришли вовремя, качество — супер!",
+        "img": "/siom.jpg"
+      },
+      {
+        "id": 2,
+        "author": "Анна, воспитатель детсада",
+        "rating": 5,
+        "comment": "Дети чувствовали себя свободно, фотографии живые и тёплые. Родители довольны.",
+        "img": "/siom.jpg"
+      },
+      {
+        "id": 3,
+        "author": "Олег, 11 класс",
+        "rating": 4,
+        "comment": "Классные портреты и общие кадры. Пару разворотов поправили быстро, спасибо!",
+        "img": "/siom.jpg"
+      },
+      {
+        "id": 4,
+        "author": "Марина, мама первоклассника",
+        "rating": 5,
+        "comment": "Сын впервые так радовался своим фото. Фотокнига плотная, цвета яркие.",
+        "img": "/siom.jpg"
+      },
+      {
+        "id": 5,
+        "author": "Ксения, организатор выпускного",
+        "rating": 5,
+        "comment": "Сроки и договорённости соблюдены. Советую для выпускных проектов!",
+        "img": "/siom.jpg"
+      }
+    ]
+  },
+  "cmFaq": {
+    "labelSection": "Вопросы и ответы",
+    "bgFaq": {
+      "label": "Цвет фона FAQ",
+      "value": "#d68d66"
+    },
+    "textColorFaq": {
+      "label": "Цвет текста FAQ",
+      "value": "#000000"
+    },
+    "isRounded": {
+      "label": "Скругленные углы у FAQ",
+      "value": true
+    },
+    "faqTitle": {
+      "label": "Заголовок FAQ",
+      "value": "Часто задаваемые вопросы"
+    },
+    "faqs": [
+      {
+        "question": "Как проходит съёмка в школе или детском саду?",
+        "answer": "Договариваемся с классным руководителем/воспитателем, снимаем портреты и репортаж. Все согласования и выбор фотографий доступны онлайн."
+      },
+      {
+        "question": "Сколько времени занимает изготовление альбомов?",
+        "answer": "Обычно 2–4 недели после утверждения макета. К праздникам и выпускным планируем заранее."
+      },
+      {
+        "question": "Можно ли внести правки в макет?",
+        "answer": "Да, вы получаете предварительный макет и можете внести разумные правки перед печатью."
+      },
+      {
+        "question": "Как оформить заказ на класс?",
+        "answer": "Оставьте заявку через сайт или напишите в мессенджер. Я предложу пакеты, рассчитаю стоимость и согласую даты."
+      },
+      {
+        "question": "Делаете ли индивидуальные фотосессии?",
+        "answer": "Да, провожу индивидуальные и семейные съёмки. Подберём локацию и стиль под ваш запрос."
+      }
+    ]
+  }
+}

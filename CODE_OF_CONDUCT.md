@@ -1,28 +1,28 @@
-# Кодекс поведения (Code of Conduct)
+# Code of Conduct
 
-Мы стремимся создать дружелюбное и открытое сообщество. Все участники, контрибьюторы и мейнтейнеры нашего проекта должны соблюдать этот кодекс поведения.
+We are committed to building a friendly and open community. All participants, contributors, and maintainers of this project must follow this code of conduct.
 
-### Наши стандарты
+### Our Standards
 
-Примеры поведения, которое способствует созданию позитивной среды:
+Examples of behavior that contributes to a positive environment:
 
-* Проявление **эмпатии и доброты** по отношению к другим людям.
-* Уважительное отношение к различным точкам зрения и опыту.
-* Конструктивная критика и профессиональный подход к работе.
-* Сосредоточение на том, что лучше для сообщества и проекта.
+* Showing **empathy and kindness** toward others.
+* Respecting differing viewpoints and experiences.
+* Giving and accepting constructive feedback professionally.
+* Focusing on what is best for the community and the project.
 
-### Недопустимое поведение
+### Unacceptable Behavior
 
-Примеры неприемлемого поведения включают:
+Examples of unacceptable behavior include:
 
-* Использование оскорбительных, уничижительных или дискриминирующих формулировок.
-* Любые формы сексуальных домогательств.
-* Троллинг, оскорбительные или подстрекающие комментарии.
-* Публичное или личное преследование.
-* Публикация личной информации других лиц без их явного разрешения.
+* The use of offensive, derogatory, or discriminatory language.
+* Any form of sexual harassment.
+* Trolling, insulting, or inflammatory comments.
+* Public or private harassment.
+* Publishing others' private information without explicit permission.
 
-### Ответственность и обеспечение соблюдения
+### Enforcement
 
-Мейнтейнеры проекта несут ответственность за разъяснение стандартов приемлемого поведения и будут принимать соответствующие и справедливые корректирующие меры в ответ на любое неприемлемое поведение.
+Project maintainers are responsible for clarifying standards of acceptable behavior and will take appropriate and fair corrective action in response to any unacceptable behavior.
 
-**Если вы столкнулись с неприемлемым поведением**, пожалуйста, немедленно сообщите об этом по адресу [email мейнтейнера или администратора].
+**If you encounter unacceptable behavior**, please report it immediately to the maintainers via email or by opening a private issue.

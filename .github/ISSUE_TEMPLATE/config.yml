@@ -1,7 +1,6 @@
 # .github/ISSUE_TEMPLATE/config.yml
 blank_issues_enabled: false
 contact_links:
-  - name: 💬 Задать вопрос в Discussions
+  - name: 💬 Ask a question in Discussions
     url: https://github.com/storelike/open-source-storelike-ui/discussions
-    about: Пожалуйста, используйте Discussions для общих вопросов, не связанных с ошибками или новыми функциями.
-
+    about: Please use Discussions for general questions not related to bugs or new features.

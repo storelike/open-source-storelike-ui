@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import DeliveryRulesReact from '../components/react-components/flatpages-react/delivery-rules';
+import { cmFlatpagesDeliveryRules } from "../locale/cms-locale.json";
+---
+
+<Layout
+	title={cmFlatpagesDeliveryRules.title_meta_tag.value}
+	description={cmFlatpagesDeliveryRules.description_meta_tag.value}
+>
+<Container>   
+	<DeliveryRulesReact client:load />
+</Container>   
+</Layout>

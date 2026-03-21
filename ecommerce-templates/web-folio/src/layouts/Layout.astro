@@ -1,0 +1,165 @@
+---
+import { SEO } from "astro-seo";
+import { cmAppConfig, cmSeo } from "../locale/cms-locale.json";
+import AppReactRouter from "../components/react-components/app-react";
+import Navbar from "../components/navbar/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import YandexAnalytics from "../components/react-components/app-react/seo/yandex-analytics";
+import localeTextSite from "../locale/locale_text_site.json";
+import "../stylesSite/global.css";
+import BurgerMenu from "../components/ui/BurgerMenu.astro";
+import { ADMIN_ORIGIN } from '../cms-get-data/constants';
+
+
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+type TwitterCardType = "summary" | "summary_large_image" | "app" | "player";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+// Извлекаем данные из cmSeo
+const {
+  nameImgOpengraph,
+  titleSiteDefault,
+  twitterCreator,
+  twitterSite,
+  twitterCard,
+  numberGoogleMetric: rawGoogleMetric,
+  numberYandexMetric,
+  yandexWebmaster,
+  seoKeywords
+} = cmSeo;
+
+// Приведение значения numberGoogleMetric к числу
+const numberGoogleMetric = Number(rawGoogleMetric.value) || null;
+
+const resolvedImageWithDomain = new URL(
+  nameImgOpengraph.value,
+  Astro.site
+).toString();
+
+const { title, description } = Astro.props;
+
+const makeTitle = title
+  ? `${title} | ${titleSiteDefault.value}`
+  : titleSiteDefault.value;
+
+
+---
+
+<!DOCTYPE html>
+<html lang={localeTextSite.globalSettings.locale || "ru"}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    
+
+<link rel="preload" href="/fonts/Old-Soviet.otf" as="font" type="font/otf" crossorigin="anonymous">
+
+
+
+    <meta name="generator" content={Astro.generator} />
+    <meta name="keywords" content={seoKeywords.value} />
+
+    <meta name="yandex-verification" content={yandexWebmaster.value} />
+
+    {/* Google Tag Manager */}
+    {numberGoogleMetric && (
+      <>
+        <script
+          type="text/partytown"
+          src={`https://www.googletagmanager.com/gtag/js?id=${numberGoogleMetric}`}
+        ></script>
+        <script type="text/partytown">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "${numberGoogleMetric}");
+          `}
+        </script>
+      </>
+    )}
+
+    {/* Canonical URL */}
+    <link rel="canonical" href={canonicalURL} />
+
+    <SEO
+      title={makeTitle}
+      description={description}
+      canonical={canonicalURL}
+      twitter={{
+        creator: twitterCreator.value,
+        site: twitterSite.value,
+        card: twitterCard.value as TwitterCardType,
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: titleSiteDefault.value,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: titleSiteDefault.value,
+        },
+      }}
+    />
+  </head>
+
+  <style is:global>
+    img {
+      content-visibility: auto;
+    }
+
+ 
+  
+  </style>
+ 
+  <body >
+    <AppReactRouter client:only />
+    
+     <Navbar  />
+     	<div class=" z-50 fixed ">
+        <BurgerMenu  />
+      </div>
+     
+    {/* Google Tag Manager (noscript) */}
+    {numberGoogleMetric && (
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${numberGoogleMetric}`}
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        ></iframe>
+      </noscript>
+    )}
+    {/* End Google Tag Manager */}
+     
+    <div
+      class="pt-16"
+      id="bgThemeWrapper" 
+     
+      data-admin-origin={ADMIN_ORIGIN || ""}
+      style={{
+        background: cmAppConfig.bgTheme.value,
+        color: cmAppConfig.textColorTheme.value,        
+      }}
+    >
+  <slot />
+  <Footer />
+</div>
+
+    {numberYandexMetric.value && <YandexAnalytics client:only />}
+ 
+  </body>  
+</html>

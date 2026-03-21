@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import {cmWebfolio} from "../locale/cms-locale.json";
+import WebFolioReact from 'components/react-components/webfolio-react';
+---
+
+<Layout
+	title={cmWebfolio.title_meta_tag.value}
+	description={cmWebfolio.description_meta_tag.value}>
+<Container>   
+	 <WebFolioReact client:load />
+</Container>   
+</Layout>

@@ -1,0 +1,10 @@
+/* Reviews.module.css */
+.scrollbarHide {
+    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .scrollbarHide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari и Opera */
+  }
+  

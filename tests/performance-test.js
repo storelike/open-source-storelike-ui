@@ -3,9 +3,9 @@ import lighthouse from 'lighthouse';
 import * as chromeLauncher from 'chrome-launcher';
 
 /**
- * Проверяет URL с использованием Lighthouse
- * @param {string} url URL для проверки
- * @param {string} mode 'desktop' или 'mobile'
+ * Run Lighthouse audit on a URL
+ * @param {string} url URL to audit
+ * @param {string} mode 'desktop' or 'mobile'
  */
 async function runLighthouse(url, mode = 'mobile') {
   const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
@@ -13,8 +13,11 @@ async function runLighthouse(url, mode = 'mobile') {
     logLevel: 'info',
     output: 'json',
     port: chrome.port,
-    formFactor: mode, // Используем mode для проверки
-    screenEmulation: (mode === 'mobile') ? { mobile: true, width: 360, height: 640 } : { mobile: false, width: 1350, height: 940 },
+    formFactor: mode,
+    screenEmulation:
+      mode === 'mobile'
+        ? { mobile: true, width: 360, height: 640 }
+        : { mobile: false, width: 1350, height: 940 },
   };
 
   const runnerResult = await lighthouse(url, options);
@@ -22,26 +25,26 @@ async function runLighthouse(url, mode = 'mobile') {
   await chrome.kill();
 
   const score = runnerResult.lhr.categories.performance.score * 100;
-  console.log(`✅ Тест ${mode} для ${url} завершен. Оценка: ${score.toFixed(0)}`);
-  
+  console.log(`✅ ${mode} test for ${url} completed. Score: ${score.toFixed(0)}`);
+
   if (score < 100) {
-    console.error(`🚨 Сбой теста: Оценка производительности ${mode} ниже 100.`);
-    console.error('Подробный отчет можно найти в результатах Lighthouse.');
+    console.error(`🚨 Test failed: ${mode} performance score is below 100.`);
+    console.error('See Lighthouse report for details.');
     process.exit(1);
   }
 }
 
-// Замените на URL вашего локального сервера, запущенного на этапе "npm run build" и "npm run start"
-const BASE_URL = 'http://localhost:4321'; // Стандартный порт Astro dev/preview
+// Replace with your local server URL after running "npm run build" and "npm run preview"
+const BASE_URL = 'http://localhost:4321'; // Default Astro dev/preview port
 
 (async () => {
   try {
-    console.log('--- Запуск тестов производительности ---');
+    console.log('--- Running performance tests ---');
     await runLighthouse(BASE_URL + '/ecommerce-templates/basic/', 'mobile');
     await runLighthouse(BASE_URL + '/ecommerce-templates/basic/', 'desktop');
-    console.log('--- Все тесты производительности успешно пройдены! (100%) ---');
+    console.log('--- All performance tests passed! (100%) ---');
   } catch (e) {
-    console.error('Тест производительности не удался:', e.message);
+    console.error('Performance test failed:', e.message);
     process.exit(1);
   }
 })();

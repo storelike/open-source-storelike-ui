@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import UserAgreementReact from "../components/react-components/flatpages-react/user-agreement";
+import {cmFlatpagesUserAgreement} from "../locale/cms-locale.json";
+---
+
+<Layout
+	title={cmFlatpagesUserAgreement.title_meta_tag.value}
+	description={cmFlatpagesUserAgreement.description_meta_tag.value}>
+	<Container>
+		<UserAgreementReact client:load />
+	</Container>
+</Layout>

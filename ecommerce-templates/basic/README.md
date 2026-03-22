@@ -1,5 +1,10 @@
 # Base — E-commerce Starter Template
 
+> **🤖 Don't want to set it up yourself?**
+> **Our AI Agent can do everything for you — install, configure, launch, and connect Telegram.**
+> **Just describe what you need in plain language — and it will be done.**
+> Contact us: **pavel@lavrentev.tk**
+
 A universal minimalist e-commerce template.
 Perfect for launching a new store or customizing for any niche.
 Clean structure, lightweight design, and full flexibility.

@@ -1,9 +1,22 @@
 # Base — E-commerce Starter Template
 
-> **🤖 Don't want to set it up yourself?**
-> **Our AI Agent can do everything for you — install, configure, launch, and connect Telegram.**
-> **Just describe what you need in plain language — and it will be done.**
-> Contact us: **pavel@lavrentev.tk**
+> ## 🤖 The AI Agent does everything for you — just ask
+>
+> **You don't need to be a developer.** Our AI Agent handles the full setup:
+>
+> - 🚀 **Deploy** — installs and launches the store on your VPS
+> - 💬 **Telegram** — connects your bot so orders arrive instantly
+> - 📊 **Google Ads** — sets up conversion tracking, remarketing tags, and campaign-ready structure
+> - 🎯 **Yandex Direct** — integrates Yandex.Metrica, configures composite goals and e-commerce events
+> - 🛡️ **Click fraud protection** — filters invalid traffic, blocks bots and click farms
+> - 🔢 **Composite goals** — multi-step funnel tracking (view → add to cart → checkout → purchase)
+> - 📈 **Analytics** — GA4, Yandex.Metrica, custom dashboards
+> - 🔍 **SEO** — meta tags, sitemap, structured data, PageSpeed 100
+> - 🎨 **Design** — logo, colors, fonts, product catalog — all via plain text
+> - 🔒 **SSL + Domain** — HTTPS certificate and domain connection
+>
+> **Just write what you need — and it will be done.**
+> **📧 pavel@lavrentev.tk**
 
 A universal minimalist e-commerce template.
 Perfect for launching a new store or customizing for any niche.

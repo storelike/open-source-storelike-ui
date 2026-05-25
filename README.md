@@ -28,27 +28,50 @@ The project uses modern tools to ensure maximum speed:
 
 ### 🚀 Getting Started
 
-You need **Node.js 22+** and **npm/yarn** for local development.
+The platform is modular — each template and each module is installed independently. You need **Node.js 22+** and **Docker** for local development.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/storelike/open-source-storelike-ui.git
-   cd open-source-storelike-ui
+   git clone https://github.com/storelike/aikit.git
+   cd aikit
    ```
-2. **Install dependencies:**
+
+2. **Run a template** (e.g. `basic`):
    ```bash
+   cd ecommerce-templates/basic
    npm install
-   # or yarn install
+   npm run dev          # dev server at http://localhost:4321
    ```
-3. **Start development server:**
+
+3. **Build for production:**
    ```bash
-   npm run dev
-   # or yarn dev
+   npm run build        # astro check + astro build
+   npm run preview      # preview production build
    ```
 
-### 📦 Template Structure
+4. **Deploy with Docker:**
+   ```bash
+   docker build -t storelike/basic .
+   docker run -d -p 8080:8080 --env-file .env storelike/basic
+   ```
 
-All templates are in the `ecommerce-templates/` folder. To view or modify a specific template (e.g. `glow-store`), navigate to its directory.
+5. **Generate full platform compose** (all modules):
+   ```bash
+   cd ../..             # back to repo root
+   npm install          # install root dependencies
+   node core/runtime/dist/index.js generate .
+   # produces deploy/compose/docker-compose.yml
+   ```
+
+### 📦 Project Structure
+
+**Templates** live in `ecommerce-templates/` — each is a standalone Astro project with its own `package.json` and `Dockerfile`. Pick a template, install, and run.
+
+**Modules** live at the repo root — `publicagent/`, `owneragent/`, `store-sqlite/`, `llm-anthropic/`, `gateway/`, `transport-telegram/`, `auth-totp/`, `voice/`, etc. Each module has a `module.yml` manifest. Install only what you need.
+
+**Core** (`core/`) contains contracts (Zod schemas), runtime (module scanner, dependency resolver, compose generator), and security (editable-checker, secrets guard).
+
+**Docs** (`docs/`) — [SECURITY.md](docs/SECURITY.md), [THREAT-MODEL.md](docs/THREAT-MODEL.md), [AI-EDIT-SAFETY.md](docs/AI-EDIT-SAFETY.md), [MODULE-AUTHORING.md](docs/MODULE-AUTHORING.md), [TEMPLATE-AUTHORING.md](docs/TEMPLATE-AUTHORING.md).
 
 ### 🤝 Contributing
 

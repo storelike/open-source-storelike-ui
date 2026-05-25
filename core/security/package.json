@@ -1,0 +1,19 @@
+{
+  "name": "@aikit/security",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@aikit/contracts": "file:../contracts",
+    "js-yaml": "^4.1.0",
+    "micromatch": "^4.0.8"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/micromatch": "^4.0.9"
+  }
+}

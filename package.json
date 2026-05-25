@@ -1,0 +1,22 @@
+{
+  "name": "aikit",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc -b core",
+    "test": "vitest run",
+    "generate:compose": "node core/runtime/dist/index.js generate"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.3",
+    "vitest": "^3.2.1"
+  },
+  "dependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/micromatch": "^4.0.10",
+    "js-yaml": "^4.1.1",
+    "micromatch": "^4.0.8"
+  }
+}

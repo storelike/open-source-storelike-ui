@@ -1,0 +1,16 @@
+name: observability-loki
+version: 1.0.0
+description: Log aggregation via Grafana Loki
+category: observability
+provides: [observability]
+requires: []
+port: 3100
+healthcheck:
+  path: /ready
+  port: 3100
+env: {}
+compose:
+  image: grafana/loki:3.0.0
+  volumes:
+    - loki-data:/loki
+  networks: [aikit]

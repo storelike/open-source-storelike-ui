@@ -1,20 +1,14 @@
 # E-commerce & Web Templates – High Performance Focus ⚡
 ## Online Store (Storefront)
 
-![Online Store (Storefront)](images/online-showcase.png)
+![Online Store (Storefront)](images/online-showcase.jpeg)
+![Online Store (Storefront)](images/cms-online-showcase.jpeg)
 
-## CMS for Online Store
+**Maximum performance, minimalist design. AI-editable via config files.**
 
-![CMS for Online Store](images/CMS-online%20showcase.png)
+Storelike AIKit is a modular platform of highly optimized e-commerce templates built with a single goal: **Pagespeed 100%** on both mobile and desktop. Templates are configured by editing `cms-locale.json` — no separate admin panel needed. An AI agent can apply changes via text or voice commands through Telegram.
 
-- **EXAMPLE CLIENT (BASE):** [Open](https://bbabv7itgrncm4gvhgot.containers.yandexcloud.net)
-- **EXAMPLE ADMIN CLIENT:** [Open](https://bban9brl7081u3mtsdp8.containers.yandexcloud.net)
-  - **Login:** `admin@storelike.ru`
-  - **Password:** `d%QlE@6XFZTMX~Kw$A`
-
-**Maximum performance, minimalist design.**
-
-This repository is a collection of highly optimized website and e-commerce templates built with a single goal: **Pagespeed 100%** on both mobile and desktop. Our templates are ready for immediate ad campaigns on Google Ads and fully optimized for SEO.
+Our templates are ready for immediate ad campaigns on Google Ads and fully optimized for SEO.
 
 ### ✨ Key Features
 

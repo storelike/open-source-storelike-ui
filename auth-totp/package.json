@@ -1,0 +1,19 @@
+{
+  "name": "auth-totp",
+  "version": "1.0.0",
+  "description": "TOTP 2FA with JWT session tokens",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "fastify": "^5.3.3",
+    "otpauth": "^9.4.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.9",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "owneragent",
+  "version": "1.0.0",
+  "description": "Owner agent with template-editing tools and SKILL.md enforcement",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "fastify": "^5.3.3",
+    "js-yaml": "^4.1.0",
+    "micromatch": "^4.0.8",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@types/node": "^22.15.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/micromatch": "^4.0.9"
+  }
+}

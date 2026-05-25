@@ -1,0 +1,16 @@
+name: basic
+version: 1.0.0
+description: Universal e-commerce starter template with product catalog, payments, and order notifications
+requires:
+  - store
+  - llm
+  - gateway
+optional:
+  - transport-telegram
+  - voice
+  - observability
+  - backup
+cms_locale_path: src/locale/cms-locale.json
+products_path: src/content/products
+public_path: public
+port: 8080

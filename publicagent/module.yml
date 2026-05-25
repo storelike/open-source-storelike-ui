@@ -1,0 +1,22 @@
+name: publicagent
+version: 1.0.0
+description: Public-facing chatbot with read-only store access and output filtering
+category: agent
+provides: [publicagent]
+requires: [llm, store]
+port: 3010
+healthcheck:
+  path: /health
+  port: 3010
+env:
+  LLM_URL:
+    required: false
+    description: "URL of llm module (default: http://llm-anthropic:3002)"
+    secret: false
+  STORE_URL:
+    required: false
+    description: "URL of store module (default: http://store-sqlite:3001)"
+    secret: false
+compose:
+  build: ./publicagent
+  networks: [aikit]

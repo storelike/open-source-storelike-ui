@@ -1,0 +1,18 @@
+{
+  "name": "store-sqlite",
+  "version": "1.0.0",
+  "description": "SQLite-backed HTTP API for FAQ, product catalog cache, and audit logs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "fastify": "^5.3.3",
+    "better-sqlite3": "^11.9.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.14",
+    "typescript": "^5.8.3"
+  }
+}

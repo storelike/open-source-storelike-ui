@@ -1,0 +1,38 @@
+name: transport-telegram
+version: 1.0.0
+description: Telegram bot transport for text and voice messages
+category: transport
+provides: [transport-telegram]
+requires: [auth, store, llm]
+port: 3004
+healthcheck:
+  path: /health
+  port: 3004
+env:
+  TELEGRAM_BOT_TOKEN:
+    required: true
+    description: Telegram bot token from BotFather
+    secret: true
+  OWNER_CHAT_ID:
+    required: true
+    description: Telegram chat ID of the store owner
+    secret: false
+  PUBLICAGENT_URL:
+    required: false
+    description: "URL of publicagent (default: http://publicagent:3010)"
+    secret: false
+  OWNERAGENT_URL:
+    required: false
+    description: "URL of owneragent (default: http://owneragent:3011)"
+    secret: false
+  AUTH_URL:
+    required: false
+    description: "URL of auth-totp (default: http://auth-totp:3003)"
+    secret: false
+  VOICE_URL:
+    required: false
+    description: "URL of voice module (default: http://voice:3005)"
+    secret: false
+compose:
+  build: ./transport-telegram
+  networks: [aikit]

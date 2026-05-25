@@ -1,0 +1,20 @@
+name: store-sqlite
+version: 1.0.0
+description: SQLite-backed HTTP API for FAQ, product catalog cache, and audit logs
+category: store
+provides: [store]
+requires: []
+port: 3001
+healthcheck:
+  path: /health
+  port: 3001
+env:
+  DB_PATH:
+    required: false
+    description: Filesystem path to SQLite database file (default /data/store.db)
+    secret: false
+compose:
+  build: ./store-sqlite
+  volumes:
+    - store-sqlite-data:/data
+  networks: [aikit]

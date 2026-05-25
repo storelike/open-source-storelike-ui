@@ -20,6 +20,10 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env.*
+
+# generated compose
+deploy/compose/docker-compose.yml
 
 # macOS-specific files
 .DS_Store

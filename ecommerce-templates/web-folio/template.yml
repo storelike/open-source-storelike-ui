@@ -1,0 +1,16 @@
+name: web-folio
+version: 1.0.0
+description: Portfolio and agency template with photo gallery, product catalog, and Yandex Disk integration
+requires:
+  - store
+  - llm
+  - gateway
+optional:
+  - transport-telegram
+  - voice
+  - observability
+  - backup
+cms_locale_path: src/locale/cms-locale.json
+products_path: src/content/products
+public_path: public
+port: 8080

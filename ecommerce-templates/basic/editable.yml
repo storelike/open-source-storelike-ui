@@ -1,0 +1,30 @@
+allow:
+  - "src/locale/cms-locale.json"
+  - "src/locale/locale_text_site.json"
+  - "src/content/products/*.md"
+  - "public/fragment*.html"
+  - "public/images-product/**"
+  - "public/images-site/**"
+
+deny:
+  - "**/*.ts"
+  - "**/*.tsx"
+  - "**/*.astro"
+  - "**/*.mjs"
+  - "**/*.js"
+  - "package.json"
+  - "package-lock.json"
+  - "tsconfig.json"
+  - "Dockerfile"
+  - ".dockerignore"
+  - ".env*"
+  - "node_modules/**"
+  - "dist/**"
+  - ".astro/**"
+  - "src/layouts/**"
+  - "src/pages/**"
+  - "src/components/**"
+  - "src/cms-get-data/**"
+
+max_file_size_kb: 512
+require_backup: true

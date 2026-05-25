@@ -1,0 +1,33 @@
+name: backup-local
+version: 1.0.0
+description: Scheduled local backups of template files and SQLite database
+category: backup
+provides: [backup]
+requires: [store]
+port: 3006
+healthcheck:
+  path: /health
+  port: 3006
+env:
+  BACKUP_INTERVAL_CRON:
+    required: false
+    description: "Cron expression for backup schedule (default: 0 2 * * *)"
+    secret: false
+  BACKUP_RETAIN_DAYS:
+    required: false
+    description: "Days to retain old backups (default: 7)"
+    secret: false
+  TEMPLATES_BASE_PATH:
+    required: true
+    description: Absolute path to ecommerce-templates/ directory
+    secret: false
+  STORE_URL:
+    required: false
+    description: "URL of store module (default: http://store-sqlite:3001)"
+    secret: false
+compose:
+  build: ./backup-local
+  volumes:
+    - backup-data:/backups
+    - "${TEMPLATES_PATH:-.}/ecommerce-templates:/templates:ro"
+  networks: [aikit]

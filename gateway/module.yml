@@ -1,0 +1,26 @@
+name: gateway
+version: 1.0.0
+description: TLS termination and HTTP routing via Caddy
+category: gateway
+provides: [gateway]
+requires: []
+port: 443
+healthcheck:
+  path: /health
+  port: 80
+env:
+  DOMAIN:
+    required: true
+    description: Public domain name for automatic TLS
+    secret: false
+  TEMPLATE_UPSTREAM:
+    required: false
+    description: "Template server upstream (default: basic:8080)"
+    secret: false
+compose:
+  image: caddy:2-alpine
+  volumes:
+    - ./gateway/Caddyfile:/etc/caddy/Caddyfile
+    - caddy-data:/data
+    - caddy-config:/config
+  networks: [aikit]

@@ -1,0 +1,26 @@
+name: auth-totp
+version: 1.0.0
+description: TOTP 2FA with JWT session tokens
+category: auth
+provides: [auth]
+requires: []
+port: 3003
+healthcheck:
+  path: /health
+  port: 3003
+env:
+  TOTP_SECRET:
+    required: true
+    description: Base32-encoded TOTP secret
+    secret: true
+  SESSION_SECRET:
+    required: true
+    description: Secret for signing JWT session tokens
+    secret: true
+  SESSION_TTL_SECONDS:
+    required: false
+    description: "Token TTL in seconds (default: 3600)"
+    secret: false
+compose:
+  build: ./auth-totp
+  networks: [aikit]

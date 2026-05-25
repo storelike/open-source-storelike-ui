@@ -1,0 +1,54 @@
+#cloud-config
+
+package_update: true
+package_upgrade: true
+
+packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+  - ufw
+  - unattended-upgrades
+
+runcmd:
+  # Install Docker
+  - curl -fsSL https://get.docker.com | sh
+  - systemctl enable docker
+  - systemctl start docker
+  - usermod -aG docker ubuntu
+
+  # Install Docker Compose plugin
+  - apt-get install -y docker-compose-plugin
+
+  # Configure UFW
+  - ufw default deny incoming
+  - ufw default allow outgoing
+  - ufw allow 22/tcp
+  - ufw allow 80/tcp
+  - ufw allow 443/tcp
+  - ufw --force enable
+
+  # Enable unattended upgrades
+  - dpkg-reconfigure -plow unattended-upgrades
+
+  # Clone and deploy
+  - su - ubuntu -c "git clone https://github.com/storelike/aikit.git /home/ubuntu/aikit"
+  - |
+    cat > /home/ubuntu/aikit/.env << 'ENVEOF'
+    DOMAIN=${domain}
+    ANTHROPIC_API_KEY=${anthropic_api_key}
+    TELEGRAM_BOT_TOKEN=${telegram_bot_token}
+    OWNER_CHAT_ID=${owner_chat_id}
+    TOTP_SECRET=${totp_secret}
+    SESSION_SECRET=${session_secret}
+    OPENAI_API_KEY=
+    LLM_MODEL=claude-sonnet-4-20250514
+    TEMPLATES_PATH=/home/ubuntu/aikit
+    ENVEOF
+  - chown ubuntu:ubuntu /home/ubuntu/aikit/.env
+
+  # Build and start
+  - su - ubuntu -c "cd /home/ubuntu/aikit && node core/runtime/dist/index.js generate"
+  - su - ubuntu -c "cd /home/ubuntu/aikit/deploy/compose && docker compose --env-file /home/ubuntu/aikit/.env up -d"

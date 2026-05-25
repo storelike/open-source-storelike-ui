@@ -1,0 +1,17 @@
+{$DOMAIN:localhost} {
+    handle /api/public/* {
+        reverse_proxy publicagent:3010
+    }
+
+    handle /api/owner/* {
+        reverse_proxy owneragent:3011
+    }
+
+    handle /webhook/telegram {
+        reverse_proxy transport-telegram:3004
+    }
+
+    handle {
+        reverse_proxy {$TEMPLATE_UPSTREAM:basic:8080}
+    }
+}

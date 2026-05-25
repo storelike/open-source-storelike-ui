@@ -1,0 +1,22 @@
+name: llm-anthropic
+version: 1.0.0
+description: Anthropic Claude SDK wrapper exposing HTTP chat API
+category: llm
+provides: [llm]
+requires: []
+port: 3002
+healthcheck:
+  path: /health
+  port: 3002
+env:
+  ANTHROPIC_API_KEY:
+    required: true
+    description: Anthropic API key
+    secret: true
+  LLM_MODEL:
+    required: false
+    description: "Model ID (default: claude-sonnet-4-20250514)"
+    secret: false
+compose:
+  build: ./llm-anthropic
+  networks: [aikit]

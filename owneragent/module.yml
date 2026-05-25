@@ -1,0 +1,32 @@
+name: owneragent
+version: 1.0.0
+description: Owner agent with template-editing tools and SKILL.md enforcement
+category: agent
+provides: [owneragent]
+requires: [llm, store, auth]
+port: 3011
+healthcheck:
+  path: /health
+  port: 3011
+env:
+  LLM_URL:
+    required: false
+    description: "URL of llm module (default: http://llm-anthropic:3002)"
+    secret: false
+  STORE_URL:
+    required: false
+    description: "URL of store module (default: http://store-sqlite:3001)"
+    secret: false
+  AUTH_URL:
+    required: false
+    description: "URL of auth module (default: http://auth-totp:3003)"
+    secret: false
+  TEMPLATES_BASE_PATH:
+    required: true
+    description: Absolute path to ecommerce-templates/ directory on the host
+    secret: false
+compose:
+  build: ./owneragent
+  volumes:
+    - "${TEMPLATES_PATH:-.}/ecommerce-templates:/templates"
+  networks: [aikit]

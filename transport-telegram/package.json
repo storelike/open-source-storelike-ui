@@ -1,0 +1,20 @@
+{
+  "name": "transport-telegram",
+  "version": "1.0.0",
+  "description": "Telegram bot transport for text and voice messages",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "grammy": "^1.35.0",
+    "fastify": "^5.3.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@types/node": "^22.15.21"
+  }
+}

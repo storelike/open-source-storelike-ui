@@ -46,6 +46,11 @@ export function generateCompose(
 
     if (mod.port) {
       service.ports = [`${mod.port}:${mod.port}`];
+      // A TLS gateway on 443 also needs port 80 published so Caddy can answer
+      // the ACME HTTP-01 challenge and serve the HTTP->HTTPS redirect on a VPS.
+      if (mod.category === 'gateway' && mod.port === 443) {
+        service.ports.unshift('80:80');
+      }
     }
 
     if (Object.keys(mod.env).length > 0) {
@@ -59,7 +64,10 @@ export function generateCompose(
       service.volumes = mod.compose.volumes;
       for (const vol of mod.compose.volumes) {
         const volName = vol.split(':')[0];
-        if (!volName.startsWith('/') && !volName.startsWith('.')) {
+        // Only register top-level named volumes. Bind mounts (absolute/relative
+        // paths or env-var sources like ${TEMPLATES_PATH:-.}/...) must be skipped,
+        // otherwise the generator emits an invalid volume key that breaks compose.
+        if (/^[a-zA-Z0-9][a-zA-Z0-9_-]*$/.test(volName)) {
           volumes[volName] = { driver: 'local' };
         }
       }

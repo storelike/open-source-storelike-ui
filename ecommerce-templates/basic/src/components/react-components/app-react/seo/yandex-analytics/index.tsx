@@ -1,57 +1,61 @@
-import React, { useEffect } from 'react';
-import {cmSeo} from '../../../../../locale/cms-locale.json';
+// src/components/react-components/app-react/seo/yandex-analytics/index.tsx
+import { useEffect } from 'react';
+import { cmSeo } from '../../../../../locale/cms-locale.json';
+
 const YA_METRICA_ID = cmSeo.numberYandexMetric.value;
 
-const YandexAnalytics: React.FC = () => {
+declare global {
+  interface Window {
+    ym?: (...args: any[]) => void;
+  }
+}
 
-  if (window.self !== window.top) {
-  console.warn('Skipping Yandex.Metrika in iframe to avoid SecurityError');
-  return;
-} 
+const YandexAnalytics: React.FC = () => {
   useEffect(() => {
     if (!YA_METRICA_ID || YA_METRICA_ID === 0) return;
+    if (window.self !== window.top) {
+      console.warn('Skipping Yandex.Metrika in iframe to avoid SecurityError');
+      return;
+    }
 
-    let loadedMetrica = false;
+    let loaded = false;
     let timerId: NodeJS.Timeout | null = null;
 
-    const loadMetrica = (e?: Event) => {
-      if (loadedMetrica) return;
-
-      if (e && e.type) {
-        console.log(`Event triggered: ${e.type}`);
-      } else {
-        console.log('Fallback: DOMContentLoaded');
-      }
-
-      // Подключение Яндекс.Метрики
-     try {
-  (function (m, e, t, r, i, k, a) {
-    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
-    m[i].l = 1 * new Date();
-    k = e.createElement(t);
-    a = e.getElementsByTagName(t)[0];
-    k.async = true;
-    k.src = r;
-    a.parentNode.insertBefore(k, a);
-  })(window, document, 'script', 'https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js', 'ym');
-} catch (err) {
-  console.error('Failed to inject Yandex.Metrika script', err);
-}
-//@ts-ignore
-      
-
+    const insertScript = () => {
       try {
-  window.ym(YA_METRICA_ID, 'init', {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-        webvisor: true,
-      });
-} catch (err) {
-  console.error('Yandex.Metrika init failed', err);
-}
+        const k = document.createElement('script');
+        const a = document.getElementsByTagName('script')[0];
+        if (a?.parentNode) {
+          k.async = true;
+          k.src = 'https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js';
+          a.parentNode.insertBefore(k, a);
+        }
+      } catch (err) {
+        console.error('Failed to inject Yandex.Metrika script', err);
+      }
+    };
 
-      loadedMetrica = true;
+    const initMetrica = () => {
+      try {
+        window.ym?.(YA_METRICA_ID, 'init', {
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: true,
+        });
+      } catch (err) {
+        console.error('Yandex.Metrika init failed', err);
+      }
+    };
+
+    const loadMetrica = (e?: Event) => {
+      if (loaded) return;
+      if (e?.type) console.log(`Event triggered: ${e.type}`);
+      else console.log('Fallback: DOMContentLoaded');
+
+      insertScript();
+      initMetrica();
+      loaded = true;
 
       if (timerId) clearTimeout(timerId);
       removeEventListeners();

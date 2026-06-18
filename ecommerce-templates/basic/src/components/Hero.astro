@@ -1,7 +1,59 @@
 ---
-import HeroReact from "./react-components/hero-react";
+import HeroVisual from "./HeroVisual.astro";
+import { cmHero } from "../locale/cms-locale.json";
 
+const title = cmHero?.title?.value ?? "";
+const subtitle = cmHero?.subtitle?.value ?? "";
+const btnOne = {
+  active: cmHero?.isActiveBtnOne?.value,
+  label: cmHero?.buttonOne?.value,
+  href: cmHero?.linkButtonOne?.value || "#",
+};
+const btnTwo = {
+  active: cmHero?.isActiveBtnTwo?.value,
+  label: cmHero?.buttonTwo?.value,
+  href: cmHero?.linkButtonTwo?.value || "#",
+};
 ---
 
-<HeroReact client:load  />
- 
+<section class="border-b border-border">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
+    <div>
+      <p class="font-mono text-eyebrow uppercase tracking-[0.2em] text-muted">
+        AI site builder
+      </p>
+      <h1 class="mt-6 text-4xl text-text sm:text-5xl lg:text-display">
+        {title}
+      </h1>
+      <p class="mt-6 max-w-xl text-lg leading-relaxed text-secondary">
+        {subtitle}
+      </p>
+      <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+        {
+          btnOne.active && (
+            <a
+              href={btnOne.href}
+              class="inline-flex items-center justify-center rounded-sm bg-accent px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+            >
+              {btnOne.label}
+            </a>
+          )
+        }
+        {
+          btnTwo.active && (
+            <a
+              href={btnTwo.href}
+              class="inline-flex items-center justify-center rounded-sm border border-border-strong px-5 py-3 text-sm font-medium text-text transition-colors hover:bg-surface"
+            >
+              {btnTwo.label}
+            </a>
+          )
+        }
+      </div>
+    </div>
+
+    <div class="lg:pl-8">
+      <HeroVisual />
+    </div>
+  </div>
+</section>

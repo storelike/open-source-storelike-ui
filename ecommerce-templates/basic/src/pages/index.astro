@@ -5,15 +5,13 @@ import Layout from "../layouts/Layout.astro";
 import { cmSeo } from "../locale/cms-locale.json";
 import Reviews from "../components/Reviews.astro";
 import FAQ from "../components/FAQ.astro";
-import ListProductSection from "../components/ListProductSection.astro";
 import Features from "../components/Features.astro";
 ---
 
 <Layout title={cmSeo.siteTitle.value} description={cmSeo.siteDescription.value}>
-  <Container>    
-    <Hero />
+  <Hero />
+  <Container>
     <Features />
-    <ListProductSection />
     <Reviews />
     <FAQ />
   </Container>

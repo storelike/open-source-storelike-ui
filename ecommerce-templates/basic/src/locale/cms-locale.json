@@ -363,12 +363,12 @@
   "cmAppConfig": {
     "labelSection": "Настройки приложения",
     "bgTheme": {
-      "label": "Фон сайта",
-      "value": "gray"
+      "label": "Site background",
+      "value": "#0b0b0f"
     },
     "textColorTheme": {
-      "label": "Цвет текста сайта",
-      "value": "black"
+      "label": "Site text color",
+      "value": "#f4f4f6"
     },
     "passwordAdmin": {
       "label": "Пароль администратора",
@@ -734,21 +734,21 @@
       "id": "idBtnTwoHeroCm"
     },
     "title": {
-      "label": "Заголовок",
-      "value": "Помогаем бизнесу. \n\n \n\n Запустим САЙТ + БОТ + РЕКЛАМА + ИИ Ассистент."
+      "label": "Title",
+      "value": "Tell the agent. Get a business site."
     },
     "subtitle": {
-      "label": "Подзаголовок",
-      "value": "✔️ Мгновенный старт** (Автоворонка продаж под ключ)\nЗапустите бизнес с готовым сайтом и рекламой."
+      "label": "Subtitle",
+      "value": "Describe your business in chat or by voice — the AI agent builds, fills, and ships a fast, ad-ready site for you."
     },
     "buttonOne": {
-      "label": "Текст кнопки 1",
-      "value": "Получить",
+      "label": "Button 1 text",
+      "value": "Start with the agent",
       "id": "btnOneHeroCm"
     },
     "buttonTwo": {
-      "label": "Текст кнопки 2",
-      "value": "Заявка"
+      "label": "Button 2 text",
+      "value": "See how it works"
     },
     "isActiveBtnOne": {
       "label": "Активность кнопки 1",

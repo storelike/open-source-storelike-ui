@@ -1,0 +1,69 @@
+---
+/* Decorative hero visual: an AI agent core that assembles site modules around it.
+   Pure inline SVG, token-driven colors, no raster image, no real gradients. */
+const CX = 300;
+const CY = 230;
+const W = 96;
+const H = 58;
+
+const modules = [
+  { x: 70, y: 50, accent: false },
+  { x: 404, y: 44, accent: true },
+  { x: 40, y: 196, accent: false },
+  { x: 432, y: 182, accent: false },
+  { x: 96, y: 338, accent: true },
+  { x: 396, y: 346, accent: false },
+].map((m) => ({ ...m, cx: m.x + W / 2, cy: m.y + H / 2 }));
+---
+
+<svg
+  class="h-auto w-full"
+  viewBox="0 0 600 460"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  role="presentation"
+>
+  <!-- assembling field -->
+  <g class="stroke-border" stroke-width="1">
+    <circle cx={CX} cy={CY} r="118" opacity="0.6" />
+    <circle cx={CX} cy={CY} r="178" opacity="0.35" />
+  </g>
+
+  <!-- connection lines: the agent core wires every module together -->
+  <g class="stroke-border-strong" stroke-width="1.5">
+    {modules.map((m) => <line x1={CX} y1={CY} x2={m.cx} y2={m.cy} />)}
+  </g>
+
+  <!-- modules being assembled -->
+  {
+    modules.map((m) => (
+      <g>
+        <rect
+          x={m.x}
+          y={m.y}
+          width={W}
+          height={H}
+          rx="8"
+          class={`fill-surface ${m.accent ? "stroke-accent" : "stroke-border-strong"}`}
+          stroke-width="1.5"
+        />
+        <rect x={m.x + 12} y={m.y + 12} width="26" height="6" rx="3" class="fill-secondary" opacity="0.45" />
+        <g class="stroke-secondary" stroke-width="1.5" stroke-linecap="round" opacity="0.3">
+          <line x1={m.x + 12} y1={m.y + 30} x2={m.x + W - 14} y2={m.y + 30} />
+          <line x1={m.x + 12} y1={m.y + 42} x2={m.x + W - 30} y2={m.y + 42} />
+        </g>
+      </g>
+    ))
+  }
+
+  <!-- agent core -->
+  <circle cx={CX} cy={CY} r="42" class="fill-accent" opacity="0.08" />
+  <circle cx={CX} cy={CY} r="40" class="fill-surface-2 stroke-accent" stroke-width="1.5" />
+  <g class="stroke-accent" stroke-width="2.5" stroke-linecap="round">
+    <line x1={CX} y1={CY - 17} x2={CX} y2={CY + 17} />
+    <line x1={CX - 17} y1={CY} x2={CX + 17} y2={CY} />
+    <line x1={CX - 12} y1={CY - 12} x2={CX + 12} y2={CY + 12} />
+    <line x1={CX + 12} y1={CY - 12} x2={CX - 12} y2={CY + 12} />
+  </g>
+</svg>

@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'astro/types';
 // import { string } from 'astro:schema';
 
-// Определяем Props с использованием HTMLAttributes<'a'>
+// Define Props using HTMLAttributes<'a'>
 type Props = Omit<HTMLAttributes<'a'>, 'key'> & {
   href: string; 
   key?: number | string;

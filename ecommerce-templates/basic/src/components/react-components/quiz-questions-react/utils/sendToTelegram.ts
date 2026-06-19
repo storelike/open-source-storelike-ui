@@ -1,4 +1,4 @@
-// Типы данных для параметров
+// Type definitions for the parameters
 interface UserData {
   name: string;
   email: string;
@@ -23,7 +23,7 @@ interface SendToTelegramProps {
   onClose: () => void;
 }
 
-// Функция для отправки сообщения в Telegram
+// Function that sends a message to Telegram
 export async function sendToTelegram({
   api_token,
   my_channel_name,
@@ -36,7 +36,7 @@ export async function sendToTelegram({
   onClose,
 }: SendToTelegramProps): Promise<{ success: boolean; message: string }> {
   try {
-    // Формируем тело сообщения
+    // Build the message body
     const emailBody = `
       User Name: ${userData.name}\n
       User Email: ${userData.email}\n
@@ -46,10 +46,10 @@ export async function sendToTelegram({
       ${userAnswers.map((answer) => `${answer.question}: ${answer.answer}`).join('\n')}
     `;
 
-    // Формируем URL для запроса к Telegram API
+    // Build the Telegram API request URL
     const url = `https://api.telegram.org/bot${api_token}/sendMessage`;
 
-    // Выполняем запрос через fetch
+    // Perform the request via fetch
     const response = await fetch(url, {
       method: 'POST',
       headers: {
@@ -57,35 +57,35 @@ export async function sendToTelegram({
       },
       body: JSON.stringify({
         chat_id: my_channel_name,
-        text: `Сообщение от Сайта:\n${emailBody}`,
+        text: `Message from the site:\n${emailBody}`,
         parse_mode: 'HTML',
       }),
     });
 
     if (!response.ok) {
-      throw new Error('Ошибка при отправке сообщения в Telegram');
+      throw new Error('Failed to send the message to Telegram');
     }
 
-    // Уведомляем об успешной отправке
-    console.log('Сообщение успешно отправлено!');
+    // Log successful delivery
+    console.log('Message sent successfully!');
 
-    // Показываем модальное окно с сообщением об успешной отправке
+    // Show the success modal
     setOpenModalInit(true);
 
-    // Очищаем поля после успешной отправки
+    // Clear the fields after a successful send
     setPhone('');
     setName('');
     setEmail('');
 
-    // Закрываем модальное окно через 2 секунды
+    // Close the modal after 2 seconds
     setTimeout(() => {
-      setOpenModalInit(false); // Закрытие модального окна
-      onClose(); // Закрытие через функцию, если требуется
+      setOpenModalInit(false); // Close the modal
+      onClose(); // Close via the callback if needed
     }, 2000);
 
-    return { success: true, message: 'Сообщение успешно отправлено в Telegram.' };
+    return { success: true, message: 'Message sent to Telegram successfully.' };
   } catch (error) {
-    console.error('Ошибка при отправке сообщения в Telegram:', error);
-    return { success: false, message: 'Ошибка при отправке данных в Telegram.' };
+    console.error('Failed to send the message to Telegram:', error);
+    return { success: false, message: 'Failed to send data to Telegram.' };
   }
 }

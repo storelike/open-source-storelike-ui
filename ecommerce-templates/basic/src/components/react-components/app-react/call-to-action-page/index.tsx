@@ -5,17 +5,17 @@ import { useNavigate } from "react-router";
 const CallToActionPage = () => {
     const [isFormOpen, setIsFormOpen] = useState(true);
     const navigate = useNavigate();
-    const formRef = useRef<HTMLDivElement>(null); // Реф для формы
+    const formRef = useRef<HTMLDivElement>(null); // Ref for the form
 
     useEffect(() => {
-        // Прокрутка к форме, когда страница загружается
+        // Scroll to the form when the page loads
         if (formRef.current) {
             formRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     }, [isFormOpen]);
 
     const handleClose = (formData: { name: string; phone: string; email: string; message: string }) => {
-        // Проверяем, заполнены ли поля
+        // Check whether the fields are filled in
         const isFormEmpty = !formData.name?.trim() || 
         !formData.phone?.trim() || 
         !formData.email?.trim() || 
@@ -26,18 +26,18 @@ const CallToActionPage = () => {
         setIsFormOpen(false);
 
         if (isFormEmpty) {
-            // Если форма пустая, перенаправляем на главную
+            // If the form is empty, redirect to the home page
             window.location.href = '/'
         } else {
-            // Если форма заполнена, перенаправляем на страницу "Спасибо"
-            navigate("/thank-you-page", { state: { formData } }); // Передаем данные через состояние
+            // If the form is filled in, redirect to the "Thank you" page
+            navigate("/thank-you-page", { state: { formData } }); // Pass the data via router state
         }
     };
 
     return (
         <div className="flex items-center justify-center min-h-screen relative">
             {isFormOpen && (
-                <div ref={formRef} className="w-full h-full max-w-md"> {/* Присваиваем реф */}
+                <div ref={formRef} className="w-full h-full max-w-md"> {/* Assign the ref */}
                     <CalToActionForm onClose={handleClose} />
                 </div>
             )}

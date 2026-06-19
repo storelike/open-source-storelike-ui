@@ -27,7 +27,7 @@ const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) 
     name: cmData.cmContactUs.isFioForm.value ? "":"NotName",
     phone: '',
     email: '',
-    message: cmData.cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности (форма связаться)",
+    message: cmData.cmContactUs.isMessageActive.value ? "":"Interested in placing an order / more details (contact form)",
     externalData,
   });
 
@@ -49,9 +49,9 @@ const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) 
   };
 
   const validatePhone = (phone: string) => {
-    // Убираем все символы, кроме цифр
+    // Strip everything except digits
     const digitsOnly = phone.replace(/\D/g, '');
-    return digitsOnly.length === 11; // Ожидаем 10 цифр
+    return digitsOnly.length === 11; // Expect 11 digits
   };
 
   const validateEmail = (email: string) => {
@@ -129,7 +129,7 @@ const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) 
     onClick={() => setContactMethod('phone')}
     className={`px-2 py-1 rounded border ${contactMethod === 'phone' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
   >
-    Телефон
+    Phone
   </button>
   <button
     type="button"
@@ -190,10 +190,10 @@ const CalToActionForm: React.FC<ContactFormProps> = ({ externalData, onClose }) 
     className="mt-1"
   />
   <label htmlFor="agreeToTerms" className="text-sm">
-    Я соглашаюсь с{' '}
-    <a href="/privacy-policy" target="_blank" className="text-blue-600 underline">политикой конфиденциальности</a>{' '}
-    и{' '}
-    <a href="/user-agreement" target="_blank" className="text-blue-600 underline">пользовательским соглашением</a>.
+    I agree to the{' '}
+    <a href="/privacy-policy" target="_blank" className="text-blue-600 underline">privacy policy</a>{' '}
+    and the{' '}
+    <a href="/user-agreement" target="_blank" className="text-blue-600 underline">terms of use</a>.
   </label>
 </div>
 

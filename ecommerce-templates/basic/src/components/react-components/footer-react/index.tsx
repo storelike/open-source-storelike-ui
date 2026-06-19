@@ -37,7 +37,7 @@ const FooterReact: React.FC = () => {
                             src="/logo.svg"
                             width={cmNavbarLogoConfig.widthLogo.value} 
                             height={cmNavbarLogoConfig.heightLogo.value}     
-                            alt="Главная страница" 
+                            alt="Home"
                         />
                     </a>
                 </div>

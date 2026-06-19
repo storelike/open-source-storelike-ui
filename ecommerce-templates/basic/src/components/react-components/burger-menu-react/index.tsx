@@ -6,7 +6,7 @@ import { TfiEmail } from "react-icons/tfi";
 import BurgerMenuButton from "./button-burger-menu";
 import { cmNavbar, cmNavbarBurgerMenuReact } from "../../../locale/cms-locale.json";
 
-// интерфейс для одной ссылки
+// interface for a single link
 interface BurgerLink {
   path?: string;
   link?: string;
@@ -16,7 +16,7 @@ interface BurgerLink {
   type: "link" | "phone" | "telegram" | "whatsapp" | "vk" | "email" | "login";
 }
 
-// нормализация ссылки (path vs link)
+// normalize the link (path vs link)
 const getHref = (link: BurgerLink): string => {
   if (link.type === "login" && link.link) return link.link;
   return link.path ?? "#";
@@ -86,7 +86,7 @@ const BurgerMenuReact: React.FC = () => {
             className="w-full text-center text-[#00FF00] hover:text-[#FF00FF] bg-gray-900 rounded-lg p-2 flex justify-center items-center space-x-2"
           >
             <img src="/VKLogo.png" width={24} height={24} alt="VK" />
-            <span>ВКонтакте</span>
+            <span>VK</span>
           </a>
         );
 
@@ -114,7 +114,7 @@ const BurgerMenuReact: React.FC = () => {
           </a>
         );
 
-      default: // обычная навигационная ссылка
+      default: // regular navigation link
         return (
           <a
             key={index}
@@ -150,7 +150,7 @@ const BurgerMenuReact: React.FC = () => {
               {cmNavbarBurgerMenuReact.mainBurgerSubtitle.value}
             </p>
 
-            {/* ссылки */}
+            {/* links */}
             <div className="flex flex-col items-center space-y-2 w-full">
               {(cmNavbarBurgerMenuReact.links as BurgerLink[])
                 .filter((link) => link.isActive)

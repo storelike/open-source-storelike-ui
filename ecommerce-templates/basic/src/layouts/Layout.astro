@@ -21,7 +21,7 @@ type TwitterCardType = "summary" | "summary_large_image" | "app" | "player";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-// Извлекаем данные из cmSeo
+// Extract the data from cmSeo
 const {
   nameImgOpengraph,
   titleSiteDefault,
@@ -34,7 +34,7 @@ const {
   seoKeywords
 } = cmSeo;
 
-// Приведение значения numberGoogleMetric к числу
+// Convert numberGoogleMetric to a number
 const numberGoogleMetric = Number(rawGoogleMetric.value) || null;
 
 const resolvedImageWithDomain = new URL(

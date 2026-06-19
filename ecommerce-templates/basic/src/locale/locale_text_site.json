@@ -1,144 +1,144 @@
 {
     "globalSettings": {
-        "locale": "ru",
+        "locale": "en",
         "iconCurrency": "₽",
-        "btnToMain": "На главную",
-        "btnBack": "Назад"
+        "btnToMain": "Back to home",
+        "btnBack": "Back"
     },
     "components": {
         "reactComponents": {
             "callToActionIconReact": {
                 "indexCallToActionIconReact": {
-                    "ariaLabel": "Открыть форму обратной связи"
+                    "ariaLabel": "Open the contact form"
                 },
                 "formCallToAction": {
-                    "errorMessage": "Ошибка при отправке сообщения. Попробуйте еще раз.",
-                    "errorMessagePhone": "Введите корректный номер телефона (11 цифр).",
-                    "errorMessageEmail": "Введите корректный номер Email).",
-                    "errorMessageDefault": "Ошибка при отправке сообщения. Попробуйте еще раз.",
-                    "title": "Связаться с нами",
-                    "namePlaceholder": "Ваше имя",
+                    "errorMessage": "Failed to send the message. Please try again.",
+                    "errorMessagePhone": "Enter a valid phone number (11 digits).",
+                    "errorMessageEmail": "Enter a valid email address.",
+                    "errorMessageDefault": "Failed to send the message. Please try again.",
+                    "title": "Contact us",
+                    "namePlaceholder": "Your name",
                     "maskPlaceholder": "+7 (999) 999-99-99",
-                    "phonePlaceholder": "Ваш телефон",
-                    "emailPlaceholder": "Ваш email",
-                    "messagePlaceholder": "Ваше сообщение",
-                    "btnSend": "Отправить",
-                    "btnSpinnerLoader": "Идет отправка..."
+                    "phonePlaceholder": "Your phone",
+                    "emailPlaceholder": "Your email",
+                    "messagePlaceholder": "Your message",
+                    "btnSend": "Send",
+                    "btnSpinnerLoader": "Sending..."
                 },
                 "modalCallToAction": {
-                    "btnClose": "Закрыть"
+                    "btnClose": "Close"
                 }
             },
             "feedbackForm": {
-                    "errorRequiredFields": "Заполните все поля корректно.",
-                    "errorDefaultSendForm": "Ошибка при отправке формы.",
-                    "errorSendForm" : "Ошибка отправки. Попробуйте позже.", 
-                    "successDefaultSendMessage": "Сообщение успешно отправлено!",
-                    "errorFormName": "Введите ваше имя.",
-                    "labelPhone" : "Телефон",
-                    "labelEmail" : "Электронная почта",
+                    "errorRequiredFields": "Please fill in all fields correctly.",
+                    "errorDefaultSendForm": "Failed to submit the form.",
+                    "errorSendForm" : "Sending failed. Please try again later.",
+                    "successDefaultSendMessage": "Message sent successfully!",
+                    "errorFormName": "Enter your name.",
+                    "labelPhone" : "Phone",
+                    "labelEmail" : "Email",
                     "maskPlaceholder": "+7 (999) 999-9999",
-                    "contactMethodPlaceholder" : "Введите телефон",
-                    "emailPlaceholder" : "Введите электронную почту",
-                    "errorFormPhone" : "Введите корректный телефон (11 цифр).",
-                    "errorFormEmail" : "Введите корректный адрес электронной почты.",
-                    "errorFormMessage" : "Введите сообщение.",
-                    "btnSend": "Отправить",
-                    "btnSpinnerLoader": "Идет отправка..."
+                    "contactMethodPlaceholder" : "Enter your phone",
+                    "emailPlaceholder" : "Enter your email",
+                    "errorFormPhone" : "Enter a valid phone number (11 digits).",
+                    "errorFormEmail" : "Enter a valid email address.",
+                    "errorFormMessage" : "Enter a message.",
+                    "btnSend": "Send",
+                    "btnSpinnerLoader": "Sending..."
                 },
             "flatpagesReact" : {
-                "errorLoadForm": "Ошибка при загрузке HTML-файла:"
+                "errorLoadForm": "Failed to load the HTML file:"
             },
             "formSendOrderReact" : {
-                "deliveryEmptyMsg" : "Доставка не указана",
-                "errorMessage" : "Ошибка при отправке сообщения. Попробуйте еще раз.",
-                "errorDefaultMessage" : "Ошибка: ",
-                "title" : "Связаться с нами",
-                "namePlaceholder": "Ваше имя",
+                "deliveryEmptyMsg" : "Delivery not specified",
+                "errorMessage" : "Failed to send the message. Please try again.",
+                "errorDefaultMessage" : "Error: ",
+                "title" : "Contact us",
+                "namePlaceholder": "Your name",
                 "maskPlaceholder": "+7 (999) 999-99-99",
-                "phonePlaceholder": "Ваш телефон",
-                "emailPlaceholder": "Ваш email",
-                "messagePlaceholder": "Дополнительная информация по заказу",
-                "deliveryPlaceholder" : "Укажите адрес доставки",
-                "btnSend": "Отправить",
-                "btnSpinnerLoader": "Идет отправка..."
+                "phonePlaceholder": "Your phone",
+                "emailPlaceholder": "Your email",
+                "messagePlaceholder": "Additional order details",
+                "deliveryPlaceholder" : "Enter the delivery address",
+                "btnSend": "Send",
+                "btnSpinnerLoader": "Sending..."
             },
             "productCard" : {
-                "btnDetails": "Подробнее",
-                "btnPay": "Оплатить"
+                "btnDetails": "Details",
+                "btnPay": "Pay"
             },
             "productDescription" : {
-                "btnDetails": "Еще больше подробностей..."
+                "btnDetails": "Even more details..."
             },
             "quizQuestionsReact" : {
                 "modalQuiz" : {
-                    "ariaLabel": "Закрыть",
-                    "btnClose": "Закрыть"
+                    "ariaLabel": "Close",
+                    "btnClose": "Close"
                 },
                 "quiz" : {
-                    "errorSelectedAnswer": "Пожалуйста, выберите ответ перед продолжением.",
-                    "errorsFields": "Пожалуйста, заполните ваше ФИО, телефон и email",
-                    "successMessage" : "Ваши ответы успешно отправлены!",
-                    "title" : "Связаться с нами",
-                    "namePlaceholder": "Ваше имя",
+                    "errorSelectedAnswer": "Please choose an answer before continuing.",
+                    "errorsFields": "Please fill in your name, phone and email",
+                    "successMessage" : "Your answers were sent successfully!",
+                    "title" : "Contact us",
+                    "namePlaceholder": "Your name",
                     "maskPlaceholder": "+7 (999) 999-99-99",
-                    "phonePlaceholder": "Ваш телефон",
-                    "emailPlaceholder": "Ваш email",
-                    "messagePlaceholder": "Дополнительная информация по заказу",
-                    "additionallyMsgPlaceholder": "Введите дополнительную информация", 
-                    "deliveryPlaceholder" : "Укажите адрес доставки",
-                    "btnSend": "Отправить ответы",
-                    "btnSpinnerLoader": "Идет отправка...",
-                    "labelCommunicationMethod": "Предпочтительный способ связи",
-                    "previousQuestion" : "Назад",
-                    "nextQuestion" : "Далее"
-                }               
+                    "phonePlaceholder": "Your phone",
+                    "emailPlaceholder": "Your email",
+                    "messagePlaceholder": "Additional order details",
+                    "additionallyMsgPlaceholder": "Enter additional information",
+                    "deliveryPlaceholder" : "Enter the delivery address",
+                    "btnSend": "Submit answers",
+                    "btnSpinnerLoader": "Sending...",
+                    "labelCommunicationMethod": "Preferred contact method",
+                    "previousQuestion" : "Back",
+                    "nextQuestion" : "Next"
+                }
             },
             "thankYouReact" : {
-                "title": "Спасибо за вашу заявку!",
-                "subtitle" : "С вами свяжутся в ближайшее время по данным, которые вы указали:",
-                "labelEmail" : "Электронная почта",
-                "labelPhone" : "Телефон",
-                "textMessage" : "Ваше сообщение отправлено:"
+                "title": "Thank you for your request!",
+                "subtitle" : "We'll get in touch with you shortly using the details you provided:",
+                "labelEmail" : "Email",
+                "labelPhone" : "Phone",
+                "textMessage" : "Your message was sent:"
             }
         }
     },
     "pages": {
         "api": {
             "feedback": {
-                "requiredFieldsMsg": "Заполните все обязательные поля.",
-                "successMsgSend": "Ваше сообщение успешно отправлено!",
-                "errorMsgSend": "Ошибка при обработке запроса."
+                "requiredFieldsMsg": "Please fill in all required fields.",
+                "successMsgSend": "Your message was sent successfully!",
+                "errorMsgSend": "An error occurred while processing the request."
             }
         },
         "products": {
-            "moreDetail": "Подробнее...",
+            "moreDetail": "Details...",
             "iconPrice": "₽"
         },
         "page404": {
             "title": "404 Not Found",
             "description": "Page not found",
-            "text": "Того, что вы искали, не существует",
+            "text": "What you were looking for doesn't exist",
             "button": {
-                "text": "На главную",
+                "text": "Back to home",
                 "href": "/"
             }
         },
         "contactUs": {
-            "title": "Контакты",
-            "description": "Содержит информацию о способах связи с компанией, включая адрес, телефон, электронную почту и форму обратной связи, а также карту с расположением офиса.",
+            "title": "Contact",
+            "description": "Contains information about how to reach the company, including address, phone, email and a contact form, as well as a map with the office location.",
             "dataTitle": {
-                "innTitle": "ИНН",
-                "kppTitle": "КПП",
-                "paymentAccountTitle": "Расчетный счет",
-                "bankTitle": "Банк",
-                "correspondentAccountTitle": "Корреспондентский счет",
-                "bikTitle": "БИК"
+                "innTitle": "TIN",
+                "kppTitle": "KPP",
+                "paymentAccountTitle": "Bank account",
+                "bankTitle": "Bank",
+                "correspondentAccountTitle": "Correspondent account",
+                "bikTitle": "BIC"
             }
-        },      
+        },
         "thankYou": {
             "title": "Thank You",
-            "description": "Страница, благодарящая пользователя за действие (например, покупку, подписку или отправку формы), с подтверждением успешного выполнения и возможными дальнейшими инструкциями."
+            "description": "A page that thanks the user for an action (for example, a purchase, subscription or form submission), confirming it was completed successfully and offering possible next steps."
         }
     }
 }

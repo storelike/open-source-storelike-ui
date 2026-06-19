@@ -39,18 +39,18 @@ interface BurgerMenuData {
 }
 
 const FooterBoxLinks: React.FC = () => {
-  // Приведение типов
+  // Type cast
   const footerData = cmFooter as unknown as FooterData;
   const burgerMenuData = cmNavbarBurgerMenuReact as unknown as BurgerMenuData;
 
-  // Находим контактные данные в бургер-меню
-  const phoneLink = burgerMenuData.links.find(link => link.label === "Номер телефона");
-  const telegramLink = burgerMenuData.links.find(link => link.label === "Номер Telegram");
-  const whatsappLink = burgerMenuData.links.find(link => link.label === "Номер WhatsApp");
-  const vkLink = burgerMenuData.links.find(link => link.label === "ВКонтакте");
-  const emailLink = burgerMenuData.links.find(link => link.label === "Электронная почта");
+  // Find the contact entries in the burger menu
+  const phoneLink = burgerMenuData.links.find(link => link.label === "Phone number");
+  const telegramLink = burgerMenuData.links.find(link => link.label === "Telegram");
+  const whatsappLink = burgerMenuData.links.find(link => link.label === "WhatsApp");
+  const vkLink = burgerMenuData.links.find(link => link.label === "VK");
+  const emailLink = burgerMenuData.links.find(link => link.label === "Email");
 
-  // Извлекаем значения из StyleProperty объектов
+  // Extract the values from the StyleProperty objects
   const phoneColor = footerData.colorTextBoxLinkFooterPhone?.value as string || '#000000';
   const phoneRounded = footerData.isRoundedBoxLinkFooterPhone?.value as boolean || false;
   const phoneBg = footerData.bgBoxLinkFooterPhone?.value as string || '#c8ddc6';
@@ -67,7 +67,7 @@ const FooterBoxLinks: React.FC = () => {
   const emailRounded = footerData.isRoundedBoxLinkFooterEmail?.value as boolean || false;
   const emailBg = footerData.bgBoxLinkFooterEmail?.value as string || '#c8ddc6';
 
-  // Общий базовый стиль для всех ссылок
+  // Shared base style for all links
   const baseLinkStyle = `
     w-full text-center transition-colors duration-300
     p-2 flex justify-center items-center space-x-2
@@ -127,7 +127,7 @@ const FooterBoxLinks: React.FC = () => {
           }}
         >
           <img src={'/VKLogo.png'} width={24} height={24} alt="Logo VK" />
-          <span>ВКонтакте</span>
+          <span>VK</span>
         </a>
       )}
 

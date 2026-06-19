@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Quiz from '../Quiz'; // Предполагается, что Quiz — это компонент с опросом
-import { FaQuestionCircle } from 'react-icons/fa'; // Используем иконку вопроса
+import Quiz from '../Quiz'; // Quiz is the survey component
+import { FaQuestionCircle } from 'react-icons/fa'; // Question-mark icon
 import GiftBox from './gift-box';
 
 const MainQuiz: React.FC = () => {
@@ -13,27 +13,27 @@ const MainQuiz: React.FC = () => {
   };
 
   const handleCloseModal = () => {
-    setMinimized(true); // Сворачиваем в иконку
+    setMinimized(true); // Collapse back into the icon
   };
 
   const handleQuizComplete = () => {
     setShowModalQuiz(false);
-    setMinimized(true); // Иконка появляется снова после закрытия опроса
+    setMinimized(true); // Icon reappears after the quiz is closed
   };
 
   return (
     <div className='fixed bottom-4 right-4' style={{ zIndex: 16 }}>
-      {/* Иконка на экране, когда модалка свернута */}
+      {/* On-screen icon when the modal is collapsed */}
       {minimized && (
         <div onClick={handleStartQuiz} className="cursor-pointer">
           <FaQuestionCircle size={40} color="blue" />
         </div>
       )}
 
-      {/* Модальное окно с опросом */}
+      {/* Gift-box promo modal */}
       <GiftBox handleStartQuiz={handleStartQuiz} handleCloseModal={handleCloseModal} />
-      
-      {/* Компонент с опросом */}
+
+      {/* Quiz component */}
       {showModalQuiz && (
         <div className="fixed  inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg">

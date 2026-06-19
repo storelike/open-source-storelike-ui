@@ -7,7 +7,7 @@ type CmsData = typeof defaultCms;
 const fetcher = (url: string) => fetch(url, { credentials: 'include' }).then(res => res.json());
 
 export function useCmsData() {
-  // Определяем режим администратора из URL
+  // Determine admin mode from the URL
   const isAdminMode = typeof window !== 'undefined'
     ? new URLSearchParams(window.location.search).get('admin') === 'true'
     : false;
@@ -17,7 +17,7 @@ export function useCmsData() {
     fetcher,
     {
       fallbackData: defaultCms,
-      onError: (err: any) => console.error('Ошибка загрузки CMS-данных:', err),
+      onError: (err: any) => console.error('Failed to load CMS data:', err),
       revalidateOnFocus: false,
     }
   );

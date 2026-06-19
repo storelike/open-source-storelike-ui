@@ -23,14 +23,14 @@ const sendOrderToTelegram = async (sendTelegramAllData: UserDataSendTelegram): P
   const { name, phone, email, message, orderDataSendTelegram, delivery } = sendTelegramAllData;
 
   const messageToSend = `
-    Новый ЗАКАЗ:
-    Имя: ${name}
-    Телефон: ${phone}
+    New ORDER:
+    Name: ${name}
+    Phone: ${phone}
     Email: ${email}
-    Продукт: ${orderDataSendTelegram.title}
-    Цена со скидкой: ${orderDataSendTelegram.discountedPrice}
-    Данные по доставке: ${delivery}
-    Дополнительная информация: ${message}
+    Product: ${orderDataSendTelegram.title}
+    Discounted price: ${orderDataSendTelegram.discountedPrice}
+    Delivery details: ${delivery}
+    Additional information: ${message}
   `;
 
   const url = `https://api.telegram.org/bot${cmAppConfig.cmAppConfig.tokenTelegram.value}/sendMessage`;
@@ -49,13 +49,13 @@ const sendOrderToTelegram = async (sendTelegramAllData: UserDataSendTelegram): P
     });
 
     if (!response.ok) {
-      throw new Error('Ошибка при отправке данных в Telegram');
+      throw new Error('Failed to send data to Telegram');
     }
 
-    return { success: true, message: 'Сообщение успешно отправлено в Telegram.' };
+    return { success: true, message: 'Message sent to Telegram successfully.' };
   } catch (error) {
-    console.error('Ошибка при отправке данных в Telegram:', error);
-    return { success: false, message: 'Ошибка при отправке данных в Telegram.' };
+    console.error('Failed to send data to Telegram:', error);
+    return { success: false, message: 'Failed to send data to Telegram.' };
   }
 };
 

@@ -34,7 +34,7 @@ const FormSendOrderReact: React.FC<OrderDataSendTelegram> = ({ orderDataSendTele
     name: cmContactUs.isFioForm.value ? "":"NotName",
     phone: '',
     email: '',
-    message: cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности (форма продукты/услуги)",
+    message: cmContactUs.isMessageActive.value ? "":"Interested in placing an order / more details (products/services form)",
     delivery: '',
     orderDataSendTelegram,
   });
@@ -52,7 +52,7 @@ const FormSendOrderReact: React.FC<OrderDataSendTelegram> = ({ orderDataSendTele
 if (name === "phone") {
   const digitsOnly = value.replace(/\D/g, ''); // Remove non-digit characters
   if (digitsOnly.length !== 11) {
-    setPhoneError("Номер телефона должен содержать 11 цифр."); // Example error message
+    setPhoneError("The phone number must contain 11 digits."); // Example error message
   } else {
     setPhoneError('');
   }
@@ -147,7 +147,7 @@ if (name === "phone") {
     onClick={() => setContactMethod('phone')}
     className={`px-2 py-1 rounded border ${contactMethod === 'phone' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
   >
-    Телефон
+    Phone
   </button>
   <button
     type="button"
@@ -217,10 +217,10 @@ if (name === "phone") {
     className="mt-1"
   />
   <label htmlFor="agreeToTerms" className="text-sm">
-    Я соглашаюсь с{' '}
-    <a href="/privacy-policy" target="_blank" className="text-blue-600 underline">политикой конфиденциальности</a>{' '}
-    и{' '}
-    <a href="/user-agreement" target="_blank" className="text-blue-600 underline">пользовательским соглашением</a>.
+    I agree to the{' '}
+    <a href="/privacy-policy" target="_blank" className="text-blue-600 underline">privacy policy</a>{' '}
+    and the{' '}
+    <a href="/user-agreement" target="_blank" className="text-blue-600 underline">terms of use</a>.
   </label>
 </div>
 

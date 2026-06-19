@@ -12,7 +12,7 @@ const TinkoffPaymentComponent: React.FC<{ paidProduct: PaidProduct }> = ({ paidP
   // const productPaymentTinkoff: any = {
   //   Amount: Number(paidProduct?.price),
   //   Name: paidProduct?.title,
-  //   Description: `Оплата ${paidProduct.order_id} - ${paidProduct?.title}`,
+  //   Description: `Payment ${paidProduct.order_id} - ${paidProduct?.title}`,
   //   OrderId: paidProduct.order_id,
   //   // SuccessURL:"https://x038it.ru/api/v1/success-tinkoff",
   //   DATA: {
@@ -28,7 +28,7 @@ const TinkoffPaymentComponent: React.FC<{ paidProduct: PaidProduct }> = ({ paidP
   //     "Taxation": configApp.TINKOFF_TAXION_COMPANY,
   //     "Items": [
   //       {
-  //         "Name": paidProduct?.title || "Оплата",
+  //         "Name": paidProduct?.title || "Payment",
   //         "Price": `${Number(paidProduct?.price)}`,
   //         "Quantity": paidProduct.quantity,
   //         "Amount": `${Number(paidProduct?.amount)}`,

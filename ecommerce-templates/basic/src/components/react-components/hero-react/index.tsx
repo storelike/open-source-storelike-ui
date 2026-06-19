@@ -7,9 +7,9 @@ import { useCmsData } from 'cms-get-data/useCmsData';
 const HeroReact = () => {
   const { cmHero } = useCmsData();
 // console.warn("cmHero============ ", cmHero)
-  // Если данные ещё не загрузились — показываем пустышку или loader
+  // Data not loaded yet — show a loader
   if (!cmHero) {
-    return <div>Loading...</div> //null; // или <div>Loading...</div>
+    return <div>Loading...</div>
   }
 
   const renderButtons = () => (
@@ -25,7 +25,7 @@ const HeroReact = () => {
             color: cmHero.colorBtnOneStyleCm?.value || '#fff',
           }}
         >
-          <span className="text-blue-300">[Иконка 1]</span>
+          <span className="text-blue-300">[Icon 1]</span>
           {cmHero?.buttonOne?.value}
         </a>
       )}
@@ -41,7 +41,7 @@ const HeroReact = () => {
             borderColor: cmHero.colorBtnTwoStyleCm?.value || '#000',
           }}
         >
-          <span className="text-orange-300">[Иконка 2]</span>
+          <span className="text-orange-300">[Icon 2]</span>
           {cmHero?.buttonTwo?.value}
         </a>
       )}

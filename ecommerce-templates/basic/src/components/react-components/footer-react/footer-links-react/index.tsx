@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { cmFooter } from '../../../../locale/cms-locale.json';
 
-// Интерфейс для ссылки
+// Interface for a link
 interface Link {
   path: string;
   label: string;
@@ -9,11 +9,11 @@ interface Link {
 }
 
 const LinksListFooterReact: React.FC = () => {
-  // Определяем состояние для хранения ссылок
+  // State that holds the links
   const [links, setLinks] = useState<Link[]>([]);
 
   useEffect(() => {
-    // Фильтруем только активные ссылки и берём не более 4
+    // Keep only the active links, up to 4
     const activeLinks = (cmFooter.links as Link[]).filter(link => link.isActive);
     setLinks(activeLinks);
   }, []);

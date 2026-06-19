@@ -3,9 +3,9 @@ import cmData from '../../../../../locale/cms-locale.json';
 
 interface YandexMetricaButtonProps {
   
-  yaGoalTitle: string; // Цель (например, 'quiz-form')
-  onClick?: () => void; // Дополнительный обработчик клика
-  children: ReactNode; // Кнопка внутри компонента
+  yaGoalTitle: string; // Goal (e.g. 'quiz-form')
+  onClick?: () => void; // Optional extra click handler
+  children: ReactNode; // Button inside the component
 }
 
 const YandexMetricaButton: React.FC<YandexMetricaButtonProps> = ({
@@ -17,12 +17,12 @@ const YandexMetricaButton: React.FC<YandexMetricaButtonProps> = ({
   const hiddenInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleClick = () => {
-    // Нажать на скрытое поле для отправки события в Яндекс.Метрику
+    // Click the hidden input to fire the Yandex.Metrica event
     if (hiddenInputRef.current) {
       hiddenInputRef.current.click();
     }
 
-    // Выполнить дополнительное действие
+    // Run the optional extra action
     if (onClick) {
       onClick();
     }
@@ -32,13 +32,13 @@ const YandexMetricaButton: React.FC<YandexMetricaButtonProps> = ({
 
   return (
     <div>
-      {/* Скрытое поле для вызова метрики */}
+      {/* Hidden input that triggers the metric */}
       <input
         type="button"
         ref={hiddenInputRef}
         style={{ display: 'none' }}
         onClick={() => {
-          // Отправка цели в Яндекс.Метрику
+          // Send the goal to Yandex.Metrica
           //@ts-ignore
           if (window.ym && typeof window.ym === 'function') {
              //@ts-ignore
@@ -49,7 +49,7 @@ const YandexMetricaButton: React.FC<YandexMetricaButtonProps> = ({
           }
         }}
       />
-      {/* Кнопка, обёрнутая в компонент */}
+      {/* The wrapped button */}
       <div onClick={handleClick} role="button" tabIndex={0}>
         {children}
       </div>

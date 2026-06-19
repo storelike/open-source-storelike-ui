@@ -29,7 +29,7 @@ interface PaymentProcessModalProps {
 }
 
 const PaymentProcessModal: React.FC<PaymentProcessModalProps> = ({ isOpen, onClose, payData }) => {
-  if (!isOpen) return null; // Если модальное окно не открыто, ничего не рендерим
+  if (!isOpen) return null; // Render nothing when the modal is closed
 
   const { product, payerData, orderId } = payData;
   const discountedPrice = product.discount > 0 ? product.price - (product.price * product.discount) / 100 : product.price;
@@ -56,15 +56,15 @@ const PaymentProcessModal: React.FC<PaymentProcessModalProps> = ({ isOpen, onClo
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <h2>Оплата</h2>
+        <h2>Payment</h2>
         <div className={styles.productInfo}>
           <img src={product.image.src} alt={product.image.alt} className={styles.productImage} />
           
           {product.discount > 0 ? (
             <p className='text-lg font-bold'>
-              Цена:<span className={styles.originalPrice}>{product.price.toFixed(2)} ₽</span>
+              Price:<span className={styles.originalPrice}>{product.price.toFixed(2)} ₽</span>
               <br/>
-             Со скидкой:  <span className={styles.discountedPrice}>{discountedPrice.toFixed(2)} ₽</span>
+             Discounted:  <span className={styles.discountedPrice}>{discountedPrice.toFixed(2)} ₽</span>
             </p>
           ) : (
             <p className={styles.price}>{product.price.toFixed(2)} ₽</p>
@@ -79,7 +79,7 @@ const PaymentProcessModal: React.FC<PaymentProcessModalProps> = ({ isOpen, onClo
 
         <div className={styles.modalActions}>
          
-          <button onClick={onClose} className={styles.cancelButton}>Отмена</button>
+          <button onClick={onClose} className={styles.cancelButton}>Cancel</button>
         </div>
       </div>
     </div>

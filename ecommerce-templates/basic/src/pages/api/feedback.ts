@@ -14,7 +14,7 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Обработка данных формы (например, отправка письма или сохранение в базе данных)
+    // Process the form data (e.g. send an email or save to a database)
 
     return new Response(
       JSON.stringify({

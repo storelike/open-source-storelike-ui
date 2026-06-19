@@ -30,7 +30,7 @@ const FAQReact = () => {
         const data = await import('../../../locale/cms-locale.json');
         setFaqData(data.cmFaq as unknown as FaqData);
       } catch (error) {
-        console.error('Ошибка загрузки данных FAQ:', error);
+        console.error('Failed to load FAQ data:', error);
       } finally {
         setLoading(false);
       }
@@ -50,36 +50,39 @@ const FAQReact = () => {
   }
 
   if (!faqData) {
-    return <div>Данные FAQ не загружены</div>;
+    return <div>FAQ data could not be loaded</div>;
   }
 
   const faqItems: FaqItem[] = faqData.faqs || [];
 
-  // Значения по умолчанию
+  // Default values
   const backgroundColor = faqData.bgFaq?.value as string || '#ffffff';
   const textColor = faqData.textColorFaq?.value as string || '#000000';
   const isRounded = faqData.isRounded?.value as boolean || false;
   const faqTitle = faqData.faqTitle?.value || 'FAQ';
 
   return (
-    <section className=''>
-      <div 
-        className="max-w-screen-md p-5 mx-auto"
+    <section className="py-20 lg:py-28">
+      <div
+        className="mx-auto max-w-screen-md border border-border p-8 lg:p-10"
         id="idFAQ"
         style={{
           backgroundColor,
           color: textColor,
-          borderRadius: isRounded ? '30px' : '0',
+          borderRadius: isRounded ? '12px' : '0',
         }}
       >
-        <h2 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-center lg:mb-8 lg:text-3xl">
+        <p className="text-center font-mono text-eyebrow uppercase tracking-[0.2em] text-muted">
+          FAQ
+        </p>
+        <h2 className="mt-4 mb-8 text-center text-3xl tracking-tight sm:text-4xl">
           {faqTitle}
         </h2>
-        <div className="max-w-screen-md mx-auto">
+        <div className="mx-auto max-w-screen-md">
           <div id="accordion-flush" data-accordion="collapse">
             {faqItems.length === 0 ? (
-              <div className="text-center py-5">
-                <p>Нет данных для отображения</p>
+              <div className="py-5 text-center">
+                <p>Nothing to show yet</p>
               </div>
             ) : (
               faqItems.map((item, index) => (
@@ -87,18 +90,14 @@ const FAQReact = () => {
                   <h3 id={`accordion-flush-heading-${index + 1}`}>
                     <button
                       type="button"
-                      className={`flex items-center justify-between w-full py-5 font-medium text-left ${
-                        isAccordionActive(index)
-                          ? 'rounded-lg p-2 border-b border-gray-200 dark:border-gray-700'
-                          : 'border-b border-gray-200 dark:border-gray-700'
-                      }`}
+                      className="flex w-full items-center justify-between gap-4 border-b border-border py-5 text-left font-medium"
                       onClick={() => handleAccordionClick(index)}
                       aria-expanded={isAccordionActive(index)}
                       aria-controls={`accordion-flush-body-${index + 1}`}
                     >
-                      <span>{item.question || 'Вопрос'}</span>
+                      <span>{item.question || 'Question'}</span>
                       <svg
-                        className={`w-6 h-6 ${isAccordionActive(index) ? 'rotate-180' : ''}`}
+                        className={`h-5 w-5 shrink-0 text-muted transition-transform ${isAccordionActive(index) ? 'rotate-180' : ''}`}
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -113,11 +112,11 @@ const FAQReact = () => {
                   </h3>
                   <div
                     id={`accordion-flush-body-${index + 1}`}
-                    className={`${isAccordionActive(index) ? '' : 'hidden'} py-5 border-b border-gray-200 dark:border-gray-700`}
+                    className={`${isAccordionActive(index) ? '' : 'hidden'} border-b border-border py-5`}
                     aria-labelledby={`accordion-flush-heading-${index + 1}`}
                   >
-                    <p className="mb-2 p-3 rounded-lg">
-                      {item.answer || 'Ответ'}
+                    <p className="leading-relaxed opacity-80">
+                      {item.answer || 'Answer'}
                     </p>
                   </div>
                 </div>

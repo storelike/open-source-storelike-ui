@@ -33,7 +33,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
   const [successMessage, setSuccessMessage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Используем данные из JSON
+  // Use the data from JSON
   const quizDataText = {
     title: cmQuiz.title.value,
     subtitle: cmQuiz.subtitle.value,
@@ -49,7 +49,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
 
   const handleNextQuestion = () => {
     if (!selectedAnswer) {
-      setError('Пожалуйста, выберите ответ перед продолжением.');
+      setError('Please choose an answer before continuing.');
       return;
     }
     setError('');
@@ -97,30 +97,30 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
     const { name, phone, email, contactMethod } = userData;
 
     if (!agreeToTerms) {
-      setError('Вы должны принять условия!');
+      setError('You must accept the terms!');
       return;
     }
   
     if (contactMethod === 'phone' && !validatePhone(phone)) {
-      setError('Пожалуйста, введите корректный номер телефона!');
+      setError('Please enter a valid phone number!');
       return;
     }
     if (contactMethod === 'phone' && !phone) {
-      setError('Пожалуйста, введите номер телефона!');
+      setError('Please enter a phone number!');
       return;
     }
-  
+
     if (contactMethod === 'email' && !email) {
-      setError('Пожалуйста, введите email!');
+      setError('Please enter an email!');
       return;
     }
     if (contactMethod === 'email' && !validateEmail(email)) {
-      setError('Пожалуйста, введите корректный email!');
+      setError('Please enter a valid email!');
       return;
     }
-  
+
     if (contactMethod === 'telegram' && !phone && !validatePhone(phone)) {
-      setError('Пожалуйста, введите номер телефона для связи через Telegram!');
+      setError('Please enter a phone number to be reached via Telegram!');
       return;
     }
   
@@ -147,7 +147,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
         email: userData.email,
       }).toString();
 
-      setSuccessMessage('Ваши ответы успешно отправлены!');
+      setSuccessMessage('Your answers were sent successfully!');
       setIsModalOpen(true);
       window.location.href = `/thank-you?${queryString}`;
     }
@@ -171,7 +171,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
 
 
             <div className="flex flex-col mb-2 text-sm overflow-hidden sm:text-lg">
-                <label className="font-semibold">Предпочтительный способ связи:</label>
+                <label className="font-semibold">Preferred contact method:</label>
                 <div >
                   <label className="flex items-center cursor-pointer">
                     <input
@@ -182,7 +182,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
                       className="mr-2"
                     />
                     <FaPhone className="text-xl mr-1" />
-                    <span>Телефон</span>
+                    <span>Phone</span>
                   </label>
                   <label className="flex items-center cursor-pointer">
                     <input
@@ -213,7 +213,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
             type="text"
             name="name"
             value={userData.name}
-            placeholder="Ваше имя"
+            placeholder="Your name"
             onChange={handleInputChange}
             className={`${cmContactUs.isFioForm.value ? "":"hidden"} block w-full p-2 mb-2 border rounded`}
             required
@@ -236,7 +236,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
               type="email"
               name="email"
               value={userData.email}
-              placeholder="Ваш email"
+              placeholder="Your email"
               onChange={handleInputChange}
               className="block w-full p-2 mb-2 border rounded"
               required
@@ -252,7 +252,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
               className="mt-1"
             />
             <label htmlFor="agreeToTerms" className="text-sm">
-              Я соглашаюсь с <a href="/privacy-policy" target="_blank" className="text-blue-600 underline">политикой конфиденциальности</a> и <a href="/user-agreement" target="_blank" className="text-blue-600 underline">пользовательским соглашением</a>.
+              I agree to the <a href="/privacy-policy" target="_blank" className="text-blue-600 underline">privacy policy</a> and the <a href="/user-agreement" target="_blank" className="text-blue-600 underline">terms of use</a>.
             </label>
           </div>
 
@@ -272,7 +272,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
                 }
                 mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600`}
             >
-              Отправить ответы
+              Submit answers
             </button>
             </YandexMetricaButton> : (<button  
             onClick={handleSubmit}             
@@ -284,7 +284,7 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
                 }
                 mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600`}
             >
-              Отправить ответы
+              Submit answers
             </button>)}
           </div>
         ) : (
@@ -314,13 +314,13 @@ const Quiz: React.FC<QuizProps> = ({ setShowModalQuiz, onQuizComplete }) => {
                 className={`px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 ${currentQuestionIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''
                   }`}
               >
-                Назад
+                Back
               </button>
               <button
                 onClick={handleNextQuestion}
                 className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
               >
-                Далее                 
+                Next
               </button>
             </div>
             {error && <div className="text-red-500 mb-4 break-words text-sm">{error}</div>}

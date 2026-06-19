@@ -10,14 +10,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Убедитесь, что модальное окно поверх других элементов */
+    z-index: 1000; /* Make sure the modal sits above other elements */
   }
   
   .modalContent {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    width: 400px; /* Ширина модального окна */
+    width: 400px; /* Modal width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
@@ -28,7 +28,7 @@
   }
   
   .confirmButton {
-    background-color: #4CAF50; /* Зеленый цвет */
+    background-color: #4CAF50; /* Green */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -36,7 +36,7 @@
   }
   
   .cancelButton {
-    background-color: #f44336; /* Красный цвет */
+    background-color: #f44336; /* Red */
     color: white;
     border: none;
     padding: 10px 15px;

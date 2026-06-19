@@ -29,7 +29,7 @@ export default function FeedbackForm() {
   const [formValues, setFormValues] = useState({
     name: cmContactUs.isFioForm.value ? "":"NotName",
     contact: "",
-    message: cmContactUs.isMessageActive.value ? "":"Интересует оформление заказа / подробности",
+    message: cmContactUs.isMessageActive.value ? "":"Interested in placing an order / more details",
   });
   const [formErrors, setFormErrors] = useState({
     name: cmContactUs.isFioForm.value ? true : false,
@@ -39,7 +39,7 @@ export default function FeedbackForm() {
   });
   const [isFormValid, setIsFormValid] = useState(false);
 
-  // Проверка валидности формы при изменении значений полей
+  // Validate the form whenever field values change
   useEffect(() => {
     const isNameValid = cmContactUs.isFioForm.value
       ? formValues.name.trim() !== ''
@@ -87,7 +87,7 @@ export default function FeedbackForm() {
         name: !formValues.name.trim(),
         contact: !formValues.contact || (contactMethod === "phone" && !isPhoneValid) || (contactMethod === "email" && !isEmailValid),
         message: !formValues.message.trim(),
-        terms: !agreeToTerms, // ← вот это важно
+        terms: !agreeToTerms, // important: terms must be accepted
       };
       setFormErrors(newFormErrors);
       
@@ -225,12 +225,12 @@ export default function FeedbackForm() {
     className="mt-1"
   />
   <label htmlFor="agreeToTerms" className="text-sm">
-    Я соглашаюсь с <a href="/privacy-policy" target="_blank" className="text-blue-600 underline">политикой конфиденциальности</a> и <a href="/user-agreement" target="_blank" className="text-blue-600 underline">пользовательским соглашением</a>.
+    I agree to the <a href="/privacy-policy" target="_blank" className="text-blue-600 underline">privacy policy</a> and the <a href="/user-agreement" target="_blank" className="text-blue-600 underline">terms of use</a>.
   </label>
 </div>
-{formErrors.terms && <p className="text-red-500 text-sm">Чтобы продолжить необходимо принять условия.</p>}
+{formErrors.terms && <p className="text-red-500 text-sm">You must accept the terms to continue.</p>}
 
-{/* Контакты из cmNavbarBurgerMenuReact */}
+{/* Contacts from cmNavbarBurgerMenuReact */}
 <div className="space-y-2">
   {(cmNavbarBurgerMenuReact.links || [])
     .filter((link) =>
@@ -280,7 +280,7 @@ export default function FeedbackForm() {
               className="w-full text-center text-[#00FF00] transition-colors duration-300 hover:text-[#FF00FF] bg-gray-900 rounded-lg p-2 flex justify-center items-center space-x-2"
             >
               <img src={'/VKLogo.png'} width={24} height={24} alt="Logo VK" />
-              <span>ВКонтакте</span>
+              <span>VK</span>
             </a>
           );
         case "email":

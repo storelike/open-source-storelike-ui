@@ -1,17 +1,17 @@
 // BurgerMenuButton.tsx
 import React from 'react';
 import { cmNavbar } from '../../../../locale/cms-locale.json';
-import styles from './styles.module.css'; // Импортируем стили
+import styles from './styles.module.css'; // Import styles
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-// Функция для затемнения цвета
+// Helper to darken a color
 const darkenColor = (color: string, amount: number): string => {
   const hex = color.replace('#', '');
   let r = parseInt(hex.substring(0, 2), 16);
   let g = parseInt(hex.substring(2, 4), 16);
   let b = parseInt(hex.substring(4, 6), 16);
 
-  // Затемняем цвет
+  // Darken the color
   r = Math.max(0, Math.min(255, Math.floor(r * (1 - amount))));
   g = Math.max(0, Math.min(255, Math.floor(g * (1 - amount))));
   b = Math.max(0, Math.min(255, Math.floor(b * (1 - amount))));
@@ -25,8 +25,8 @@ interface BurgerMenuButtonProps {
 }
 
 const BurgerMenuButton: React.FC<BurgerMenuButtonProps> = ({ isOpen, toggleMenu }) => {
-  const textColor = cmNavbar.textColorBurger.value; // Получаем цвет из JSON
-  const hoverColor = darkenColor(textColor, 0.2); // Затемняем цвет на 20%
+  const textColor = cmNavbar.textColorBurger.value; // Read the color from JSON
+  const hoverColor = darkenColor(textColor, 0.2); // Darken the color by 20%
 
   const style = {
     '--burger-color': textColor,

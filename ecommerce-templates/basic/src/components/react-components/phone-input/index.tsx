@@ -18,10 +18,10 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
   required,
 }) => {
   const formatPhone = (val: string) => {
-    // убираем всё кроме цифр
+    // strip everything except digits
     const digits = val.replace(/\D/g, "").slice(0, 11);
 
-    // формат: +7 (999) 123-45-67
+    // format: +7 (999) 123-45-67
     const parts = [
       digits.slice(0, 1) ? "+7 " : "",
       digits.slice(1, 4) ? `(${digits.slice(1, 4)}) ` : "",

@@ -11,12 +11,12 @@ export const useSendTelegramPay = async (dataPayToSendTelegram: DataPaidProductT
   try {
 
     await fetch(
-      `https://api.telegram.org/bot${api_token}/sendMessage?chat_id=${my_channel_name}&text=Покупатель ${dataPayToSendTelegram?.email_customer || "не указан"}, телефон: ${dataPayToSendTelegram?.phone_customer || "не указан"} оплачивает: ${dataPayToSendTelegram?.title} на сумму: ${dataPayToSendTelegram?.amount} Руб. Заказ №: ${dataPayToSendTelegram?.order_id} Указал доставку: ${dataPayToSendTelegram?.address_delivery || "не указан"} Банк зачисления ${dataPayToSendTelegram.pay_method}`
+      `https://api.telegram.org/bot${api_token}/sendMessage?chat_id=${my_channel_name}&text=Customer ${dataPayToSendTelegram?.email_customer || "not provided"}, phone: ${dataPayToSendTelegram?.phone_customer || "not provided"} is paying for: ${dataPayToSendTelegram?.title} amount: ${dataPayToSendTelegram?.amount} RUB. Order #: ${dataPayToSendTelegram?.order_id} Delivery: ${dataPayToSendTelegram?.address_delivery || "not provided"} Payment bank ${dataPayToSendTelegram.pay_method}`
     )
       .then(() => {
         // handle response
 
-        //   alert("бщение отправлено на телеграм")
+        //   alert("Message sent to Telegram")
 
       })
       .catch((error) => {

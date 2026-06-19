@@ -19,7 +19,7 @@ const WidgetTinkoffHtml: React.FC<{ paidProduct: PaidProduct }> = ({ paidProduct
 
   const discountedPrice = (paidProduct.price - (paidProduct.price * paidProduct.discount) / 100).toFixed(2);
 
-  // Обновляем состояние, когда загружаются данные для paidProduct
+  // Update state when paidProduct data loads
   useEffect(() => {
     if (paidProduct) {
       setProductData(paidProduct);
@@ -54,7 +54,7 @@ const WidgetTinkoffHtml: React.FC<{ paidProduct: PaidProduct }> = ({ paidProduct
 
         if (receipt) {
           if (!email.value && !phone.value) {
-            alert('Поле E-mail или Phone не должно быть пустым');
+            alert('The E-mail or Phone field must not be empty');
             return;
           }
 
@@ -64,7 +64,7 @@ const WidgetTinkoffHtml: React.FC<{ paidProduct: PaidProduct }> = ({ paidProduct
             FfdVersion: '1.2',
             Items: [
               {
-                Name: description.value || 'Оплата',
+                Name: description.value || 'Payment',
                 Price: Number(amount.value * 100),
                 Quantity: 1.0,
                 Amount: Number(amount.value * 100),
@@ -97,7 +97,7 @@ const WidgetTinkoffHtml: React.FC<{ paidProduct: PaidProduct }> = ({ paidProduct
 
           window.pay(TPF);
         } else {
-          console.error('Функция pay не найдена.');
+          console.error('The pay function was not found.');
         }
       };
 
@@ -118,12 +118,12 @@ const WidgetTinkoffHtml: React.FC<{ paidProduct: PaidProduct }> = ({ paidProduct
         <input className={styles.inputRow} type="hidden" name="receipt" value="" />
 
         <label htmlFor="amount" className={`hidden ${styles.mb2} ${styles.textGray100}`}>
-          Сумма заказа
+          Order amount
         </label>
         <input
           className={`hidden ${styles.inputRow}`}
           type="number"
-          placeholder="Сумма заказа"
+          placeholder="Order amount"
           name="amount"
           value={customAmount}
           onChange={(e) => setCustomAmount(Number(e.target.value))}
@@ -134,7 +134,7 @@ const WidgetTinkoffHtml: React.FC<{ paidProduct: PaidProduct }> = ({ paidProduct
           className={styles.inputRow}
           type="hidden"
           name="description"
-          value={`Заказ №${productData?.order_id || ''}, Оплатил: ${productData?.email_customer || ''}, ${
+          value={`Order #${productData?.order_id || ''}, Paid by: ${productData?.email_customer || ''}, ${
             productData?.title?.slice(0, 50) || ''
           }`}
         />
@@ -143,19 +143,19 @@ const WidgetTinkoffHtml: React.FC<{ paidProduct: PaidProduct }> = ({ paidProduct
         <input className={styles.inputRow} type="hidden" name="phone" />
 
         <div className={`${styles.mb6} ${styles.card}`}>
-          <label className={styles.cardLabel}>Ваш заказ:</label>
+          <label className={styles.cardLabel}>Your order:</label>
           <p className={`${styles.mb4} ${styles.cardText}`}>
             <span>№ {productData?.order_id}</span>
           </p>
           <p className={`${styles.mb4} ${styles.cardText}`}>
-            <label className={styles.cardLabel}>Название товара:</label>
+            <label className={styles.cardLabel}>Product name:</label>
             <span className={styles.cardTextBold}>{productData?.title}</span>
           </p>
         </div>
 
         <>
-          <input className={` ${styles.inputRow} ${styles.submitBtn}`} type="submit" value={` Оплатить ${customAmount} ₽`} />
-          <p className='hidden'>Выше можно изменить сумму оплаты!</p>
+          <input className={` ${styles.inputRow} ${styles.submitBtn}`} type="submit" value={` Pay ${customAmount} ₽`} />
+          <p className='hidden'>You can change the payment amount above!</p>
         </>
       </form>
     </>

@@ -25,7 +25,7 @@ interface IninPaymentPageProps {
 const IninPaymentPage: React.FC<IninPaymentPageProps> = ({ product }) => {
   const { title, price, discount, image, is_delivery } = product || {};
 
-  // Рассчитываем цену со скидкой
+  // Calculate the discounted price
   const discountedPrice = discount > 0 ? price - (price * discount) / 100 : price;
 
   const [payerData, setPayerData] = useState({
@@ -35,7 +35,7 @@ const IninPaymentPage: React.FC<IninPaymentPageProps> = ({ product }) => {
     address: '',
   });
 
-  const [isModalOpen, setModalOpen] = useState(false); // Состояние для модального окна
+  const [isModalOpen, setModalOpen] = useState(false); // Modal open state
 
   const handleInputChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
@@ -55,12 +55,12 @@ const IninPaymentPage: React.FC<IninPaymentPageProps> = ({ product }) => {
     orderId: generateOrderId(),
   };
 
-  // Функция для открытия модального окна
+  // Open the modal
   const handleConfirmPayment = () => {
-    setModalOpen(true); // Открываем модальное окно
+    setModalOpen(true); // Open the modal
   };
 
-  // Функция для закрытия модального окна
+  // Close the modal
   const closeModal = () => {
     setModalOpen(false);
   };
@@ -68,8 +68,8 @@ const IninPaymentPage: React.FC<IninPaymentPageProps> = ({ product }) => {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h2 className={styles.textBase}>Страница оплаты</h2>
-        <a href="/" className={styles.textRed500}>На главную</a>
+        <h2 className={styles.textBase}>Payment page</h2>
+        <a href="/" className={styles.textRed500}>Back to home</a>
 
         {product && (
           <>
@@ -88,18 +88,18 @@ const IninPaymentPage: React.FC<IninPaymentPageProps> = ({ product }) => {
                 ) : (
                   <p className={styles.price}>{price.toFixed(2)} ₽</p>
                 )}
-                {is_delivery && <p>Требуется доставка</p>}
+                {is_delivery && <p>Delivery required</p>}
               </div>
             </div>
           </>
         )}
 
         <form>
-          <h4>Данные плательщика</h4>
+          <h4>Payer details</h4>
           <input
             type="text"
             name="name"
-            placeholder="ФИО"
+            placeholder="Full name"
             value={payerData.name}
             onChange={handleInputChange}
             required
@@ -129,7 +129,7 @@ const IninPaymentPage: React.FC<IninPaymentPageProps> = ({ product }) => {
             <input
               type="text"
               name="address"
-              placeholder="Адрес доставки"
+              placeholder="Delivery address"
               value={payerData.address}
               onChange={handleInputChange}
               required
@@ -138,12 +138,12 @@ const IninPaymentPage: React.FC<IninPaymentPageProps> = ({ product }) => {
           )}
 
           <button type="button" onClick={handleConfirmPayment} className={styles.payButton}>
-            Подтвердить
+            Confirm
           </button>
         </form>
       </div>
 
-      {/* Модальное окно для подтверждения оплаты */}
+      {/* Payment confirmation modal */}
       <PaymentProcessModal isOpen={isModalOpen} onClose={closeModal} payData={payDataProduct} />
     </div>
   );

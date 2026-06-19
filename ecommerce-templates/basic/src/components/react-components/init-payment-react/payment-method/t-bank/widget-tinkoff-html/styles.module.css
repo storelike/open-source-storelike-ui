@@ -1,6 +1,6 @@
 /* styles.module.css */
 
-/* Ссылка с фоном и стилями */
+/* Link with background and styles */
 .link {
   text-align: center;
   padding: 10px;
@@ -11,7 +11,7 @@
   display: inline-block;
 }
 
-/* Контейнер для формы */
+/* Form container */
 .formContainer {
   overflow: auto;
   max-width: 600px;
@@ -22,7 +22,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Стиль для строки ввода */
+/* Input row style */
 .inputRow {
   width: 100%;
   padding: 5px;
@@ -31,7 +31,7 @@
   border-radius: 5px;
 }
 
-/* Кнопка отправки */
+/* Submit button */
 .submitBtn {
   display: block;
   padding: 5px;
@@ -45,7 +45,7 @@
   text-align: center;
 }
 
-/* Карта для отображения информации */
+/* Card for displaying information */
 .card {
   margin-bottom: 20px;
   padding: 20px;
@@ -55,12 +55,12 @@
   transition: transform 0.3s ease;
 }
 
-/* Эффект наведения для карты */
+/* Card hover effect */
 .card:hover {
   transform: scale(1.05);
 }
 
-/* Этикетка для карты */
+/* Card label */
 .cardLabel {
   display: block;
   margin-bottom: 10px;
@@ -69,14 +69,14 @@
   color: #4f46e5;
 }
 
-/* Текст на карте */
+/* Card text */
 .cardText {
   font-size: 16px;
   color: #4a5568;
   margin-bottom: 10px;
 }
 
-/* Жирный текст на карте */
+/* Bold card text */
 .cardTextBold {
   display: inline-block;
   font-size: 16px;
@@ -86,7 +86,7 @@
   padding: 5px 10px;
 }
 
-/* Общие отступы */
+/* Shared spacing */
 .mb6 {
   margin-bottom: 24px;
 }
@@ -95,7 +95,7 @@
   margin-bottom: 16px;
 }
 
-/* Цвета текста */
+/* Text colors */
 .textGray100 {
   color: #f7fafc;
 }

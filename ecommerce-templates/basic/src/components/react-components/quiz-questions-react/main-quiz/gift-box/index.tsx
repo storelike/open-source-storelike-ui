@@ -35,12 +35,12 @@ const GiftBox = ({ handleStartQuiz, handleCloseModal }: GiftBoxProps) => {
     
   };
 
-  // Автоматическое появление через 10 секунд
+  // Auto-appear after a delay
   useEffect(() => {
     const timer = setTimeout(() => {
         setShowModalDesktop(true);
         setShowModalMobile(true);
-    }, 3000); // 10000 миллисекунд = 10 секунд
+    }, 3000); // delay in milliseconds
 
     return () => clearTimeout(timer);
   }, []);
@@ -53,14 +53,14 @@ const GiftBox = ({ handleStartQuiz, handleCloseModal }: GiftBoxProps) => {
 
     window.addEventListener('resize', handleResize);
 
-    // Очистка слушателя при размонтировании компонента
+    // Clean up the listener on unmount
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     
       <div className="fixed  top-[120px] right-10 z-30">
-        {/* Иконка для мобильных устройств */}
+        {/* Icon for mobile devices */}
        {showModalMobile && <FadeInWrapper>
         <div className="md:hidden">
           <button onClick={handleToggleModal} className="text-3xl">
@@ -70,7 +70,7 @@ const GiftBox = ({ handleStartQuiz, handleCloseModal }: GiftBoxProps) => {
         
         </FadeInWrapper>}
 
-        {/* Полный модальный блок для десктопа и мобильных устройств */}
+        {/* Full modal for desktop and mobile */}
         {showModal && isMobile && (<FadeInWrapper>
            
           <div className="fixed  top-[70px] right-10 w-60 p-5 ">
@@ -82,9 +82,9 @@ const GiftBox = ({ handleStartQuiz, handleCloseModal }: GiftBoxProps) => {
                   <h3 className="my-2 ml-3 text-lg font-bold text-gray-800 ">{cmQuiz.iconTitleGiftBox.value}</h3>
                 </div>
 
-                {/* Кнопка закрытия */}
+                {/* Close button */}
                 <button
-                  aria-label="Закрыть"
+                  aria-label="Close"
                   className="absolute  top-2 right-2 p-1  rounded-full hover:bg-red-100"
                   onClick={handleCloseModalWindow}
                 >
@@ -105,7 +105,7 @@ const GiftBox = ({ handleStartQuiz, handleCloseModal }: GiftBoxProps) => {
           </div>
        </FadeInWrapper> )}
 
-        {/* Обычный режим для десктопа */}
+        {/* Default desktop mode */}
         <div className={!showModalDesktop ? 'hidden':'hidden md:block'}>
         <FadeInWrapper>
           <div
@@ -113,7 +113,7 @@ const GiftBox = ({ handleStartQuiz, handleCloseModal }: GiftBoxProps) => {
           >
             <div
               className="relative top-[70px] cursor-pointer "
-              onClick={handleToggleModal} // Открытие модального окна при клике на блок
+              onClick={handleToggleModal} // Open the modal when the block is clicked
             >
               <span className="absolute  top-0 left-0 w-full h-full mt-1 ml-1 bg-[#00FF00] rounded-lg "></span>
               <div className="relative p-6 bg-gray-100  border-2 border-[#00FF00]  rounded-lg hover:scale-105 transition duration-500">
@@ -131,11 +131,11 @@ const GiftBox = ({ handleStartQuiz, handleCloseModal }: GiftBoxProps) => {
                   </button>
                 </div>
 
-                {/* Кнопка закрытия */}
+                {/* Close button */}
                 <button
                   className="absolute top-2 right-2 p-1  text-white rounded-full hover:bg-red-100"
                   onClick={handleCloseModalWindow}
-                  aria-label="Закрыть"
+                  aria-label="Close"
                 >
                   <AiOutlineCloseCircle color='red' />
 

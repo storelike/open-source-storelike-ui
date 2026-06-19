@@ -6,14 +6,14 @@
   right: 1.5rem;
   padding: 5px;
   color: var(--burger-color);
-  transition: color 0.3s ease; /* Плавный переход цвета */
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .burgerButton:hover {
-  color: var(--burger-hover-color); /* Цвет при наведении */
+  color: var(--burger-hover-color); /* Hover color */
   
 }
 
 .burgerButton:focus {
-  outline: none; /* Убираем обводку */
+  outline: none; /* Remove the outline */
 }

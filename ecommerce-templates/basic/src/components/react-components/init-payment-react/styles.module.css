@@ -1,6 +1,6 @@
 /* styles.module.css */
 
-/* Контейнер для основной части */
+/* Container for the main section */
 .container {
   max-width: 600px;
   margin: 2rem auto;
@@ -10,7 +10,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Карта для отображения информации */
+/* Card for displaying information */
 .card {
   padding: 1.5rem;
   background-color: #f9f9f9;
@@ -18,7 +18,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Основной текст */
+/* Main text */
 .textBase {
   font-size: 1.75rem;
   color: #4c51bf;
@@ -26,19 +26,19 @@
   text-align: center;
 }
 
-/* Красный текст */
+/* Red text */
 .textRed500 {
   color: #e53e3e;
 }
 
-/* Информация о продукте */
+/* Product information */
 .productInfo {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
 }
 
-/* Изображение продукта */
+/* Product image */
 .productImage {
   width: 150px;
   height: 150px;
@@ -48,7 +48,7 @@
   border: 1px solid #e2e8f0;
 }
 
-/* Заполнитель для изображения */
+/* Image placeholder */
 .imagePlaceholder {
   width: 150px;
   height: 150px;
@@ -63,13 +63,13 @@
   border: 1px solid #e2e8f0;
 }
 
-/* Заголовок для деталей продукта */
+/* Heading for product details */
 .productDetails h3 {
   font-size: 1.25rem;
   color: #2d3748;
 }
 
-/* Оригинальная цена */
+/* Original price */
 .originalPrice {
   font-size: 1rem;
   color: #718096;
@@ -77,20 +77,20 @@
   margin-right: 0.5rem;
 }
 
-/* Сниженная цена */
+/* Discounted price */
 .discountedPrice {
   font-size: 1.25rem;
   color: #e53e3e;
   font-weight: bold;
 }
 
-/* Общая цена */
+/* Total price */
 .price {
   font-size: 1.25rem;
   color: #2d3748;
 }
 
-/* Поле ввода */
+/* Input field */
 .inputField {
   display: block;
   width: 100%;
@@ -102,7 +102,7 @@
   color: #2d3748;
 }
 
-/* Кнопка оплаты */
+/* Pay button */
 .payButton {
   background-color: #4c51bf;
   color: white;
@@ -113,31 +113,31 @@
   transition: background-color 0.2s;
 }
 
-/* Эффект наведения для кнопки */
+/* Button hover effect */
 .payButton:hover {
   background-color: #434190;
 }
 
-/* Мобильные стили */
+/* Mobile styles */
 @media (max-width: 640px) {
   .card {
-    padding: 1rem; /* Уменьшите отступ для мобильных */
-    background-color: #ffffff; /* Можно изменить цвет фона */
-    border-radius: 0.25rem; /* Уменьшите радиус закругления */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Меньшая тень для меньшего размера */
+    padding: 1rem; /* Reduce padding on mobile */
+    background-color: #ffffff; /* You can change the background color */
+    border-radius: 0.25rem; /* Reduce the corner radius */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Smaller shadow for the smaller size */
   }
 }
 
-/* Мобильные стили */
+/* Mobile styles */
 @media (max-width: 640px) {
   .productInfo {
-    flex-direction: column; /* Изменяем направление на колонку */
-    align-items: flex-start; /* Выравнивание текста слева */
+    flex-direction: column; /* Switch direction to column */
+    align-items: flex-start; /* Align text to the left */
   }
 
   .productImage {
-    width: 100%; /* Устанавливаем ширину изображения на 100% */
-    height: auto; /* Высота автоматически подстраивается */
-    margin-bottom: 1rem; /* Добавляем отступ снизу для разделения с текстом */
+    width: 100%; /* Set the image width to 100% */
+    height: auto; /* Height adjusts automatically */
+    margin-bottom: 1rem; /* Add bottom margin to separate from the text */
   }
 }

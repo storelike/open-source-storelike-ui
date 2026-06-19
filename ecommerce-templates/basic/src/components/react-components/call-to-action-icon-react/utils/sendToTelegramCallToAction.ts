@@ -12,11 +12,11 @@ const sendToTelegramCallToAction = async (userData: UserData): Promise<{ success
   const { name, phone, email, message } = userData;
 
   const messageToSend = `
-    Новый запрос на связь:
-    Имя: ${name}
-    Телефон: ${phone}
+    New contact request:
+    Name: ${name}
+    Phone: ${phone}
     Email: ${email}
-    Сообщение: ${message}
+    Message: ${message}
   `;
 
   const url = `https://api.telegram.org/bot${cmAppConfig.cmAppConfig.tokenTelegram.value}/sendMessage`;
@@ -35,13 +35,13 @@ const sendToTelegramCallToAction = async (userData: UserData): Promise<{ success
     });
 
     if (!response.ok) {
-      throw new Error('Ошибка при отправке данных в Telegram');
+      throw new Error('Failed to send data to Telegram');
     }
 
-    return { success: true, message: 'Сообщение успешно отправлено в Telegram.' };
+    return { success: true, message: 'Message sent to Telegram successfully.' };
   } catch (error) {
-    console.error('Ошибка при отправке данных в Telegram:', error);
-    return { success: false, message: 'Ошибка при отправке данных в Telegram.' };
+    console.error('Failed to send data to Telegram:', error);
+    return { success: false, message: 'Failed to send data to Telegram.' };
   }
 };
 

@@ -17,7 +17,7 @@ export interface QuizQuestions {
   giftSubtitle: string;
 }
 
-// Привязка данных из JSON к интерфейсу QuizQuestions
+// Map the JSON data onto the QuizQuestions interface
 export const quizQuestions: QuizQuestions = {
   title: cmQuiz.title.value,
   subtitle: cmQuiz.subtitle.value,

@@ -1,14 +1,14 @@
 ---
 serial_number: 5
-title: "Пример бизнес-сайта (демо)"
-description: "Этот сайт используется как демонстрационный пример карточки товара или услуги в open source проекте. Здесь можно разместить описание преимуществ, условий использования или другой информации, связанной с проектом."
+title: "Example business site (demo)"
+description: "This page is used as a demo example of a product or service card in the open-source project. Here you can place a description of benefits, terms of use, or any other information related to the project."
 pubDate: "2025-09-23"
 updateDate: "2025-09-23"
 draft: false
-snippet: "Краткое описание демо-карточки"
+snippet: "Short description of the demo card"
 image:
   src: "/images-product/creating-website/creating-website.webp"
-  alt: "Демо карточка товара или услуги"
+  alt: "Demo product or service card"
 category: "Demo"
 author: "Open Source Team"
 tags: ["example", "demo", "open source"]

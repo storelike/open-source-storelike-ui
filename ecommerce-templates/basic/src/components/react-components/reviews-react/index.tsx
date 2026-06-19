@@ -10,29 +10,22 @@ interface Review {
 }
 
 const ReviewReact: React.FC<Review> = ({ author, rating, comment }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (<>
-
-      <div
-          className="border p-4 rounded-md shadow-md flex flex-col justify-between mx-2"
-          style={{ width: '100%', maxWidth: '300px', height: isHovered ? 'auto' : '150px' }} // Исправляем ширину карточки
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-      >
-          <h3 className="font-bold text-lg">{author}</h3>
-          <div className="flex mb-1">
-              {[...Array(5)].map((_, index) => (
-                  <span key={index} className={index < rating ? 'text-yellow-500' : 'text-gray-300'}>
-                      ★
-                  </span>
-              ))}
-          </div>
-          <p className={`mt-1 transition-all duration-300 ${isHovered ? '' : 'line-clamp-3'}`}>
-              {comment}
-          </p>
+  return (
+    <div className="flex h-full flex-col rounded-sm border border-border bg-surface p-6">
+      <div className="flex gap-0.5">
+        {[...Array(5)].map((_, index) => (
+          <span
+            key={index}
+            className={index < rating ? 'text-accent' : 'text-muted'}
+          >
+            ★
+          </span>
+        ))}
       </div>
-      </>);
+      <p className="mt-4 flex-1 leading-relaxed text-secondary">{comment}</p>
+      <h3 className="mt-6 text-sm font-medium text-text">{author}</h3>
+    </div>
+  );
 };
 
 
@@ -42,12 +35,12 @@ const ReviewsReact: React.FC = () => {
   const reviewsLength = cmReviews?.list.length || 0;
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  // Функция для перехода к следующему отзыву
+  // Go to the next review
   const nextReview = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % reviewsLength);
   };
 
-  // Функция для перехода к предыдущему отзыву
+  // Go to the previous review
   const prevReview = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + reviewsLength) % reviewsLength);
   };
@@ -56,23 +49,48 @@ const ReviewsReact: React.FC = () => {
 
   useEffect(() => {
     if (scrollRef.current) {
-      // Прокрутка к текущему индексу
+      // Scroll to the current index
       scrollRef.current.scrollTo({
-        left: currentIndex * (scrollRef.current.clientWidth / 3), // 3 — количество видимых отзывов
-        behavior: 'smooth', // Плавная прокрутка
+        left: currentIndex * (scrollRef.current.clientWidth / 3), // 3 — number of visible reviews
+        behavior: 'smooth', // Smooth scroll
       });
     }
   }, [currentIndex]);
 
   return (
-    <div className="max-w-full mx-auto p-6">
-      <h2 className="text-2xl font-semibold mb-4 text-center">{cmReviews?.title.value}</h2>
-      <div className={`flex overflow-x-scroll ${styles.scrollbarHide}`} ref={scrollRef}>
-        {cmReviews?.list.map((review) => (
-          <div
-            key={review?.id}
-            className="flex-shrink-0 w-64 md:w-80 px-2"
+    <section className="py-20 lg:py-28">
+      <div className="mb-12 flex items-end justify-between gap-4">
+        <div>
+          <p className="font-mono text-eyebrow uppercase tracking-[0.2em] text-muted">
+            Reviews
+          </p>
+          <h2 className="mt-6 text-3xl text-text sm:text-4xl">
+            {cmReviews?.title.value}
+          </h2>
+        </div>
+        <div className="hidden shrink-0 gap-2 sm:flex">
+          <button
+            onClick={prevReview}
+            aria-label="Previous review"
+            className="flex h-10 w-10 items-center justify-center rounded-sm border border-border-strong text-text transition-colors hover:bg-surface"
           >
+            ←
+          </button>
+          <button
+            onClick={nextReview}
+            aria-label="Next review"
+            className="flex h-10 w-10 items-center justify-center rounded-sm border border-border-strong text-text transition-colors hover:bg-surface"
+          >
+            →
+          </button>
+        </div>
+      </div>
+      <div
+        className={`flex gap-5 overflow-x-scroll pb-2 ${styles.scrollbarHide}`}
+        ref={scrollRef}
+      >
+        {cmReviews?.list.map((review) => (
+          <div key={review?.id} className="w-72 shrink-0 md:w-80">
             <ReviewReact
               author={review?.author}
               rating={review?.rating}
@@ -81,11 +99,7 @@ const ReviewsReact: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-between mt-4">
-        <button onClick={prevReview} className="text-lg">←</button>
-        <button onClick={nextReview} className="text-lg">→</button>
-      </div>
-    </div>
+    </section>
   );
 };
 

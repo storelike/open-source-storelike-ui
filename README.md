@@ -1,17 +1,23 @@
-# E-commerce & Web Templates – High Performance Focus ⚡
-## Online Store (Storefront)
+# Storelike AIKit — Open-Source AI Office for Entrepreneurs
+## E-commerce & Web Templates, Built on Real Skills from Real Entrepreneurs
 
 ![Online Store (Storefront)](images/online-showcase.jpeg)
 ![Online Store (Storefront)](images/cms-online-showcase.jpeg)
 
+**Storelike AIKit is an open-source toolkit for freelancers, solo entrepreneurs, and small businesses to run their own AI-powered online store — no developer required.**
+
+Every template and skill in this repo grows out of real entrepreneurs sharing how they actually use AI to run their business day to day. As more entrepreneurs share their skills, the toolkit gets smarter for everyone — in every market, in every country. That community feedback loop is the whole point of the project.
+
 **Maximum performance, minimalist design. AI-editable via config files.**
 
-Storelike AIKit is a modular platform of highly optimized e-commerce templates built with a single goal: **Pagespeed 100%** on both mobile and desktop. Templates are configured by editing `cms-locale.json` — no separate admin panel needed. An AI agent can apply changes via text or voice commands through Telegram.
+Storelike AIKit is a modular platform of highly optimized e-commerce templates built with a single goal: **Pagespeed 100%** on both mobile and desktop. Templates are configured by editing `cms-locale.json` — no separate admin panel needed. An AI agent applies changes via text or voice commands through Telegram, so running a store never requires touching code.
 
 Our templates are ready for immediate ad campaigns on Google Ads and fully optimized for SEO.
 
 ### ✨ Key Features
 
+* **Built for freelancers & small business:** No dev team needed — an AI agent sets up, edits, and runs the store for you.
+* **Community-driven skills:** Real entrepreneurs share the AI skills they actually use to run their stores; those skills become part of the toolkit for everyone.
 * **Pagespeed 100%:** Templates are built with minimal HTML/CSS/JS and modern best practices to achieve perfect performance scores.
 * **Minimalistic Design:** Clean, functional design that converts visitors without distracting them.
 * **SEO-Ready:** Full semantic markup, correct meta tags, and indexing-ready structure.
@@ -75,7 +81,7 @@ The platform is modular — each template and each module is installed independe
 
 ### 🤝 Contributing
 
-We welcome developers and designers who share our passion for performance.
+We welcome developers, designers, and — just as importantly — entrepreneurs who want to share the AI skills they use to run their own store. Every shared skill makes this toolkit better for the next person who picks it up, anywhere in the world.
 
 Please read the full guide: **[CONTRIBUTING.md](./CONTRIBUTING.md)**
 

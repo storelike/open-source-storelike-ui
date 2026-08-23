@@ -1,0 +1,106 @@
+name: Deploy website to Yandex Serverless Containers
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: yandex-serverless-production
+  cancel-in-progress: false
+
+env:
+  IMAGE_URL: cr.yandex/${{ vars.YC_REGISTRY_ID }}/${{ vars.YC_IMAGE_NAME }}:${{ github.sha }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Validate repository variables
+        shell: bash
+        env:
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
+          YC_CONTAINER_NAME: ${{ vars.YC_CONTAINER_NAME }}
+          YC_DEPLOY_SA_ID: ${{ vars.YC_DEPLOY_SA_ID }}
+          YC_FOLDER_ID: ${{ vars.YC_FOLDER_ID }}
+          YC_IMAGE_NAME: ${{ vars.YC_IMAGE_NAME }}
+          YC_REGISTRY_ID: ${{ vars.YC_REGISTRY_ID }}
+          YC_RUNTIME_SA_ID: ${{ vars.YC_RUNTIME_SA_ID }}
+        run: |
+          missing=()
+          for variable_name in \
+            PUBLIC_SITE_URL \
+            YC_CONTAINER_NAME \
+            YC_DEPLOY_SA_ID \
+            YC_FOLDER_ID \
+            YC_IMAGE_NAME \
+            YC_REGISTRY_ID \
+            YC_RUNTIME_SA_ID
+          do
+            if [ -z "${!variable_name:-}" ]; then
+              missing+=("$variable_name")
+            fi
+          done
+
+          if [ "${#missing[@]}" -ne 0 ]; then
+            echo "Missing repository variables: ${missing[*]}" >&2
+            exit 1
+          fi
+
+      - name: Log in to Yandex Container Registry
+        uses: yc-actions/yc-cr-login@v3
+        with:
+          yc-sa-id: ${{ vars.YC_DEPLOY_SA_ID }}
+
+      - name: Build and push immutable image
+        env:
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
+        run: |
+          docker build \
+            --build-arg "PUBLIC_SITE_URL=$PUBLIC_SITE_URL" \
+            --tag "$IMAGE_URL" \
+            .
+          docker push "$IMAGE_URL"
+
+      - name: Deploy serverless container revision
+        id: deploy
+        uses: yc-actions/yc-sls-container-deploy@v5
+        with:
+          yc-sa-id: ${{ vars.YC_DEPLOY_SA_ID }}
+          folder-id: ${{ vars.YC_FOLDER_ID }}
+          container-name: ${{ vars.YC_CONTAINER_NAME }}
+          public: true
+          revision-service-account-id: ${{ vars.YC_RUNTIME_SA_ID }}
+          revision-image-url: ${{ env.IMAGE_URL }}
+          revision-runtime: http
+          revision-cores: 1
+          revision-memory: 128Mb
+          revision-core-fraction: 100
+          revision-concurrency: 16
+          revision-execution-timeout: 10
+
+      - name: Verify production health and canonical URL
+        env:
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
+        run: |
+          for attempt in 1 2 3 4 5 6
+          do
+            if curl --fail --silent --show-error "$PUBLIC_SITE_URL/health"; then
+              break
+            fi
+            if [ "$attempt" -eq 6 ]; then
+              exit 1
+            fi
+            sleep 5
+          done
+
+          curl --fail --silent --show-error "$PUBLIC_SITE_URL/" \
+            | grep --fixed-strings "$PUBLIC_SITE_URL"

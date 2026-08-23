@@ -1,0 +1,4 @@
+interface:
+  display_name: "Website → Yandex Serverless"
+  short_description: "Сайт в Yandex Serverless Containers"
+  default_prompt: "Используй $website-yandex-serverless-owner-deploy, чтобы настроить сайт и автодеплой в Yandex Serverless Containers."

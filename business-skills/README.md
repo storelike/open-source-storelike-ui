@@ -9,7 +9,8 @@ business-skills/
 ├── sites-skills/                         # Industry and marketing knowledge
 ├── CamelCaseTelegramCloudflareSkills/    # Telegram bot skill + runnable template
 ├── CamelCaseMaxCloudflareSkills/         # MAX bot skill + runnable template
-└── CamelCaseWebsiteCloudflareSkills/     # Website skill + runnable template
+├── CamelCaseWebsiteCloudflareSkills/     # Cloudflare website skill + template
+└── CamelCaseWebsiteYandexServerlessSkills/ # Yandex website skill + container template
 ```
 
 There is no repeated `business-skills/skills/` layer. Every deployable package is a direct child of `business-skills/`, and its `SKILL.md`, source code, scripts, configuration, and operating instructions live together in that package.
@@ -21,18 +22,19 @@ There is no repeated `business-skills/skills/` layer. Every deployable package i
 | [CamelCaseTelegramCloudflareSkills](CamelCaseTelegramCloudflareSkills/) | Create, configure, and operate a Telegram webhook bot | Astro, Cloudflare Pages, GitHub auto-deploy |
 | [CamelCaseMaxCloudflareSkills](CamelCaseMaxCloudflareSkills/) | Create, configure, and operate a MAX webhook bot | Astro, Cloudflare Pages, GitHub auto-deploy |
 | [CamelCaseWebsiteCloudflareSkills](CamelCaseWebsiteCloudflareSkills/) | Create and maintain a business website without bot code | Static Astro, Cloudflare Pages, GitHub auto-deploy |
+| [CamelCaseWebsiteYandexServerlessSkills](CamelCaseWebsiteYandexServerlessSkills/) | Create and maintain a containerized business website | Static Astro, Yandex Serverless Containers, GitHub OIDC auto-deploy |
 
-Each package is designed for an owner working through an AI coding agent. The owner gives business instructions and completes only account login or explicit approval steps. The agent reads `SKILL.md`, edits the local template, runs checks, commits changes, pushes to GitHub, and verifies the Cloudflare deployment.
+Each package is designed for an owner working through an AI coding agent. The owner gives business instructions and completes only account login or explicit approval steps. The agent reads `SKILL.md`, edits the local template, runs checks, commits changes, pushes to GitHub, and verifies the provider deployment.
 
 Start a package locally:
 
 ```bash
-cd business-skills/CamelCaseWebsiteCloudflareSkills
+cd business-skills/CamelCaseWebsiteYandexServerlessSkills
 npm ci
 npm run dev
 ```
 
-Read the package README and `SKILL.md` before connecting GitHub, Cloudflare, Telegram, or MAX. Never commit real tokens or local secret files.
+Read the package README and `SKILL.md` before connecting GitHub, Cloudflare, Yandex Cloud, Telegram, or MAX. Never commit real tokens or local secret files.
 
 ## Industry and marketing skills
 

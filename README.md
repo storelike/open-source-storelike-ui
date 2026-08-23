@@ -77,7 +77,7 @@ The platform is modular — each template and each module is installed independe
 
 **Core** (`core/`) contains contracts (Zod schemas), runtime (module scanner, dependency resolver, compose generator), and security (editable-checker, secrets guard).
 
-**Business skills** (`business-skills/`) contains industry knowledge plus self-contained Telegram, MAX, and website packages. Each deployable package keeps its `SKILL.md`, source code, scripts, and Cloudflare/GitHub runbook in one directory.
+**Business skills** (`business-skills/`) contains industry knowledge plus self-contained Telegram, MAX, Cloudflare website, and Yandex Serverless website packages. Each deployable package keeps its `SKILL.md`, source code, scripts, and provider runbook in one directory.
 
 **Docs** (`docs/`) — [SECURITY.md](docs/SECURITY.md), [THREAT-MODEL.md](docs/THREAT-MODEL.md), [AI-EDIT-SAFETY.md](docs/AI-EDIT-SAFETY.md), [MODULE-AUTHORING.md](docs/MODULE-AUTHORING.md), [TEMPLATE-AUTHORING.md](docs/TEMPLATE-AUTHORING.md).
 

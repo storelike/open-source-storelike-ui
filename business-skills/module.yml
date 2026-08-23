@@ -1,6 +1,6 @@
 name: business-skills
-version: 1.1.0
-description: Business knowledge plus owner-operated website and bot deployment skills.
+version: 1.2.0
+description: Business knowledge plus Cloudflare and Yandex website and bot deployment skills.
 category: agent
 provides: [business-skills]
 requires: [owneragent]

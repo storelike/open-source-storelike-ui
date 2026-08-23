@@ -1,0 +1,27 @@
+{
+  "name": "astro-business-site-pages-template",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "wrangler pages dev ./dist",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "4.1.18",
+    "astro": "^5.17.1",
+    "tailwindcss": "4.1.18"
+  },
+  "devDependencies": {
+    "@types/node": "^25.1.0",
+    "wrangler": "^4.125.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "overrides": {
+    "vite": "6.4.3"
+  }
+}

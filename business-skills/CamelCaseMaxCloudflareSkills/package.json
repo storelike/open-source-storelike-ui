@@ -1,0 +1,38 @@
+{
+  "name": "astro-max-bot-pages-template",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "dev:wrangler": "npm run build && wrangler pages dev ./dist",
+    "build": "astro build",
+    "preview": "wrangler pages dev ./dist",
+    "deploy": "npm run build && wrangler pages deploy ./dist --project-name astro-max-bot",
+    "logs": "wrangler pages deployment tail --project-name astro-max-bot",
+    "types": "wrangler types",
+    "secret:generate": "node scripts/generate-webhook-secret.mjs",
+    "subscription:set": "node scripts/set-subscription.mjs",
+    "subscription:info": "node scripts/subscription-info.mjs",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
+    "@tailwindcss/vite": "4.1.18",
+    "astro": "^5.17.1",
+    "jose": "^6.2.3",
+    "tailwindcss": "4.1.18"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260820.1",
+    "@types/node": "^25.1.0",
+    "ts-node": "^10.9.2",
+    "wrangler": "^4.125.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "overrides": {
+    "vite": "6.4.3"
+  }
+}

@@ -1,7 +1,6 @@
-# Business Skills — data-only module
-# Contains industry-specific AI skill files for business owners.
-# Developers must not modify this module.
+# Business Skills — data-only compatibility module
+# Deployable skill packages remain available from the repository and are not copied into this image.
 FROM alpine:3.19
-COPY skills/ /skills/
+COPY sites-skills/ /skills/
 VOLUME ["/skills"]
-CMD ["echo", "business-skills is a data-only module"]
+CMD ["echo", "business-skills data module is ready"]

@@ -1,11 +1,11 @@
 name: business-skills
-version: 1.0.0
-description: Business-specific AI skills for real entrepreneurs. Developers must not modify this module.
+version: 1.1.0
+description: Business knowledge plus owner-operated website and bot deployment skills.
 category: agent
 provides: [business-skills]
 requires: [owneragent]
 port: 0
 env: {}
-author: Business owners and entrepreneurs only
+author: Business owners and open-source contributors
 compose:
   networks: [aikit]

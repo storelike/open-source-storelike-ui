@@ -1,0 +1,4 @@
+interface:
+  display_name: "Telegram Bot → Cloudflare"
+  short_description: "Деплой Telegram-бота через GitHub и Pages"
+  default_prompt: "Используй $telegram-cloudflare-owner-deploy, чтобы развернуть этот Telegram-бот и настроить автодеплой после push."

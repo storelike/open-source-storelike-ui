@@ -1,0 +1,4 @@
+interface:
+  display_name: "Website → Cloudflare"
+  short_description: "Сайт с автодеплоем через GitHub и Pages"
+  default_prompt: "Используй $website-cloudflare-owner-deploy, чтобы настроить этот сайт и автоматическую публикацию после push."

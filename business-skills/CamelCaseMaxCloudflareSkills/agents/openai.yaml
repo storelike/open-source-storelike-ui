@@ -1,0 +1,4 @@
+interface:
+  display_name: "MAX Bot → Cloudflare"
+  short_description: "Деплой MAX-бота через GitHub и Pages"
+  default_prompt: "Используй $max-cloudflare-owner-deploy, чтобы развернуть этот MAX-бот и настроить автодеплой после push."

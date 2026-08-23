@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", "Avenir Next", ui-sans-serif, system-ui, sans-serif;
+  --color-cream: #f4f0e8;
+  --color-ink: #1c211d;
+  --color-coral: #d6533c;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #f5f5f4;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  text-underline-offset: 0.2em;
+}
+
+.page-container {
+  width: min(100% - 2rem, 74rem);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 5.5rem;
+}
+
+.section-heading {
+  max-width: 46rem;
+}
+
+.section-heading h2 {
+  margin-top: 1.25rem;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b33e2b;
+}
+
+.eyebrow--light {
+  color: #f29887;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding-inline: 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--accent {
+  background: #d6533c;
+  color: white;
+}
+
+.button--accent:hover {
+  background: #b9422f;
+}
+
+.button--dark {
+  background: #1c211d;
+  color: white;
+}
+
+.button--light {
+  border: 1px solid #d6d3d1;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.nav-link {
+  color: #57534e;
+  transition: color 180ms ease;
+}
+
+.nav-link:hover {
+  color: #1c1917;
+}
+
+.service-card {
+  min-height: 20rem;
+  border: 1px solid #e7e5e4;
+  border-radius: 1.75rem;
+  padding: 1.75rem;
+  background: #fafaf9;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.hero-orb--one {
+  top: -9rem;
+  right: -7rem;
+  width: 26rem;
+  height: 26rem;
+  background: rgba(214, 83, 60, 0.11);
+}
+
+.hero-orb--two {
+  bottom: -10rem;
+  left: 28%;
+  width: 22rem;
+  height: 22rem;
+  background: rgba(120, 144, 116, 0.13);
+}
+
+@media (min-width: 40rem) {
+  .page-container {
+    width: min(100% - 4rem, 74rem);
+  }
+
+  .section {
+    padding-block: 7.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button {
+    transition: none;
+  }
+}
